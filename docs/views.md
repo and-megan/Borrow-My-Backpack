@@ -28,6 +28,9 @@
 ## Requests Index & Items
 ![requests]
 
+## Update Requests
+![update-requests]
+
 ## Dashboard (NOT MVP)
 ![dashboard-view]
 
@@ -41,4 +44,5 @@
 [sporting-goods-form]: ./wireframes/edit_equipment.png
 [sporting-goods-show]: ./wireframes/equipment_listing_view.png
 [requests]: ./wireframes/requests(requests_index_and_request_index_items).png
+[update-requests]: ./wireframes/update_requests.png
 [dashboard-view]: ./wireframes/dashboard_view.png

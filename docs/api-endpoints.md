@@ -33,10 +33,10 @@
 - `DELETE /api/sporting_goods/user_id/sporting_good_id` - delete sporting good of a user
 
 ### Profiles
-- `GET /api/users/index` - show all users
+- `GET /api/profiles/index` - show all users
  - search through profiles
-- `GET /api/user/:id` - show user profile
-- `PATCH /api/user/:id/edit` - edit profile
+- `GET /api/profiles/:id` - show user profile
+- `PATCH /api/profiles/:id/edit` - edit profile
 
 ### Requests
 
@@ -44,6 +44,7 @@
   - shows all of user's requests
   - request index items will be included in this component
 - `POST /api/users/:id/requests/new`: new request
+- `PATCH /api/users/:id/requests/:id/edit`: edit request
 
 ### Events (not MVP)
 - `GET /api/users/:id/events/index`
