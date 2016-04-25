@@ -2,12 +2,17 @@
 
 * `App`
   * `SearchIndex`
-  * `NotebooksIndex`
-    * `NotebookIndexItem`
-  * `NotebookForm`
-  * `NotesIndex`
-    * `NoteForm`
-    * `NoteIndexItem`
-  * `NoteDetail`
-    * `NoteTags`
-    * `NoteEditArea`
+  * `ProfilesIndex`
+    * `EditProfileForm`
+    * `ProfileIndexItem`
+  * `NewSportingGoodForm`
+  * `SportingGoodsIndex`
+    * `SportingGoodIndexItem`
+      * `NewRequestForm`
+      * `EditSportingGoodIndexItem`
+  * `RequestsIndex`
+    * `RequestIndexItem`
+  * `EventsIndex` NB:MVP
+  * `NewEventForm`
+    * `EventIndexItem`
+      * `EditEventIndexItem`
