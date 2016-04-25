@@ -18,7 +18,7 @@ By the end of Week 9, Borrow My Backpack will, at a minimum, satisfy the followi
 - [ ] Minimum features for a CouchSurfing-inspired app: equipment listings, requests, approvals, search functionality, and user accounts
 - [ ] Hosting on Heroku
 - [ ] Aesthetic CSS styling
-- [ ] A production README, replacing this README (**NB**: check out the [sample production README](https://github.com/appacademy/sample-project-proposal/blob/master/docs/production_readme.md) -- you'll write this later)
+- [ ] A production README
 
 ## Product Goals and Priorities
 
