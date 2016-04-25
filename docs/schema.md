@@ -1,51 +1,78 @@
 # Schema Information
 
-## notes
+## users
 column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+email           | string    | not null, indexed, unique
+password_digest | string    | not null
+session_token   | string    | not null, indexed, unique
 
-## notebooks
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
-
-## reminders
+## profiles
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
+lender?     | boolean   | not null, default: false
+
+## sporting_goods
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users), indexed
+lat         | float     | not null
+lng         | float     | not null
+description | text      |
 type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
 
-## tags
+## sporting_goods_photos
+column name       | data type | details
+------------------|-----------|-----------------------
+id                | integer   | not null, primary key
+sporting_goods_id | string    | not null, foreign key (references sporting_goods), indexed
+pic_url           | string    | not null
+
+
+## user_photos
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
+user_id     | integer   | not null, foreign key (references users), indexed
+pic_url     | string    | not null
 
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
-
-## users
+## profile_info
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-username        | string    | not null, indexed, unique
-password_digest | string    | not null
-session_token   | string    | not null, indexed, unique
+profile_id      | string    | not null, foreign key (references profile), indexed
+email           | string    | not null
+phone_number    | integer   |
+about_me        | text      |
+age             | integer   |
+languages       | string    | not null, default: 1
+hobbies         | text      |
+current_city    | string    | not null
+favorite_trip   | text      |
+favorite_quote  | text      |
+
+## requests
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+sender_id       | integer   | not null, foreign key (references user), indexed
+receiver_id     | integer   | not null, foreign key (references user), indexed
+status          | string    | not null, default: "PENDING"
+body            | text      | not null
+approved?       | boolean   | 
+start_date      | date      | not null
+end_date        | date      | not null
+
+## events
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+user_id         | integer   | not null, foreign key (references user), indexed
+description     | text      | not null
+pic_url         | string    | not null
+start_datetime  | datetime  | not null
+end_datetime    | datetime  | not null
