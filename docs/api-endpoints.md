@@ -26,11 +26,11 @@
   - accept `type` as query param
   - accept `location (lat and lng)` as query param
   - accept `user` as query param
-- `POST /api/users/:id/sporting_goods/new` - add sporting good to user
-- `GET /api/sporting_goods/user_id/index` - shows all sporting goods of a user
-- `GET /api/sporting_goods/user_id/sporting_good_id/show` - show single sporting good of a user
-- `PATCH /api/users/:id/sporting_goods/:id` - edit sporting good of a user
-- `DELETE /api/sporting_goods/user_id/sporting_good_id` - delete sporting good of a user
+- `POST /api/sporting_goods/new` - add sporting good to user
+- `GET /api/sporting_goods/index` - shows all sporting goods of a user
+- `GET /api/sporting_goods/:id/show` - show single sporting good of a user
+- `PATCH /api/sporting_goods/:id` - edit sporting good of a user
+- `DELETE /api/sporting_goods/:id` - delete sporting good of a user
 
 ### Profiles
 - `GET /api/profiles/index` - show all users
@@ -40,14 +40,14 @@
 
 ### Requests
 
-- `GET /api/users/:id/requests/index`
+- `GET /api/requests/index`
   - shows all of user's requests
   - request index items will be included in this component
-- `POST /api/users/:id/requests/new`: new request
-- `PATCH /api/users/:id/requests/:id/edit`: edit request
+- `POST /api/requests/new`: new request
+- `PATCH /api/requests/:id/edit`: edit request
 
 ### Events (not MVP)
-- `GET /api/users/:id/events/index`
+- `GET /api/events/index`
   - show all of user's events
 - `GET /api/events/index`
   - show all events
@@ -55,6 +55,6 @@
   - accept `start date` as query param
   - accept `location (lat and lng)` as query param
   - accept `user` as query param
-- `POST /api/users/:id/events/new` - add new event with user as author
-- `PATCH /api/users/:id/events/:id/edit` - edit event with user as author
-- `DELETE /api/events/user_id/events/:id` - delete event of a user
+- `POST /api/events/new` - add new event with user as author
+- `PATCH /api/events/:id/edit` - edit event with user as author
+- `DELETE /api/events/events/:id` - delete event of a user
