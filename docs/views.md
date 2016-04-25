@@ -6,17 +6,39 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## User Show (Public Profile)
+![profile-show]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## User Edit (Profile Edit)
+![edit-profile]
 
-## NotebookForm
-![notebook-form]
+## Sporting Goods Index
+![sporting-goods-index]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+
+## Edit Sporting Good
+![edit-sporting-goods]
+
+## New Sporting Good(Form)
+![sporting-goods-form]
+
+## Sporting Good Show
+![sporting-goods-show]
+
+## Requests Index & Items
+![requests]
+
+## Dashboard (NOT MVP)
+![dashboard]
+
+
+[new-user]: ./wireframes/sign_up(new_user).png
+[new-session]: ./wireframes/log_in(new_session).png
+[profile-show]: ./wireframes/public_profile(user_show).png
+[edit-profile]: ./wireframes/edit_profile_(user_edit).png
+[sporting-goods-index]: .wireframes/equipment_index.png
+[edit-sporting-goods]: .wireframes/edit_equipment.png
+[sporting-goods-form]: .wireframes/edit_equipment.png
+[sporting-goods-show]: .wireframes/equipment_listing_view.png
+[requests]: .wireframes/requests(requests_index_and_request_index_items).png
+[dashboard]: .wireframes/dashboard.png
