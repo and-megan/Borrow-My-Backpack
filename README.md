@@ -133,6 +133,7 @@ user interface.
 **objective:** Enable complex styling.
 
 - [ ] Style with BootStrap & CSS
+- [ ] fancy splash page
 
 ### Phase 8: Styling Cleanup and Seeding (1 day)
 
@@ -143,13 +144,18 @@ user interface.
 - [ ] Add modals, transitions, and other styling flourishes.
 - [ ] Add hover features, fix colors, add permanent picture behind nav bar, look at other websites for inspo.
 
+
 ### Bonus Features (TBD)
-- [ ] pre-filter information based on geolocation
-- [ ] create and attend events
-- [ ] messaging (outside of requests) functionality
+- [ ] users can create and attend events
+- [ ] messaging functionality (outside of requests)
 - [ ] personalized dashboard with upcoming events, borrowings, and lendings
+- [ ] show sporting goods on a map based on lat & lng
 - [ ] comments on sporting goods & events
+- [ ] pre-filter information based on geolocation
 - [ ] create groups
+- [ ] availability calendar for sporting goods
+- [ ] sporting goods ratings
+- [ ] splash page counter with stats, dashboard with stats
 
 
 [phase-one]: ./docs/phases/phase1.md
