@@ -80,7 +80,7 @@ the API.
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (1.5 days)
+### Phase 3: Flux Architecture and Router (3 days)
 
 **Objective:** SportingGoods can be created, requested, edited, and destroyed with the
 user interface.
@@ -121,7 +121,7 @@ user interface.
 - [ ] Catch up on anything you've fallen behind on (especially phase 3)
 
 
-### Phase 6: NavBar Component (0.5 days)
+### Phase 6: NavBar Component (1 day)
 
 **Objective:** Create and style Navigation Bar
 
