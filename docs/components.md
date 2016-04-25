@@ -9,10 +9,10 @@
   * `SportingGoodsIndex`
     * `SportingGoodIndexItem`
       * `NewRequestForm`
-      * `EditSportingGoodIndexItem`
+      * `EditSportingGoodForm`
   * `RequestsIndex`
     * `RequestIndexItem`
-  * `EventsIndex` NB:MVP
+  * `EventsIndex` NB: NOT MVP
   * `NewEventForm`
     * `EventIndexItem`
-      * `EditEventIndexItem`
+      * `EditEventForm`
