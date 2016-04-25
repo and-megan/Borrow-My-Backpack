@@ -1,4 +1,4 @@
-# FresherNote
+# Borrow My Backpack
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
@@ -6,29 +6,38 @@
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+Borrow My Backpack is a web application inspired by CouchSurfing. Borrow My Backpack is built using Ruby on Rails and React.js.
 
-- [ ] New account creation, login, and guest/demo login
-- [ ] Smooth, bug-free navigation
-- [ ] Adequate seed data to demonstrate the site's features
-- [ ] The minimally necessary features for an Evernote-inspired site: note creation and saving, note editing, and notes organized into notebooks
+Borrow My Backpack allows users to share sports equipment. Lenders can post their equipment, such as backpacks and kayaks. Borrowers search through listed equipment and send requests with specific dates to the lender. Lenders can accept or reject borrower requests. Borrow My Backpack could connect people with outdoor adventures without necessitating large purchases. This app was not built for commercial purposes, but rather to showcase the skills of the developer.
+
+By the end of Week 9, Borrow My Backpack will, at a minimum, satisfy the following criteria:
+
+- [ ] Sign in/out with authentication, including a demo account
+- [ ] Responsive, bug-free navigation
+- [ ] Interesting & adequate seed data to show off site's features
+- [ ] Minimum features for a CouchSurfing-inspired app: equipment listings, requests, approvals, search functionality, and user accounts
 - [ ] Hosting on Heroku
-- [ ] CSS styling that is satisfactorily visually appealing
+- [ ] Aesthetic CSS styling
 - [ ] A production README, replacing this README (**NB**: check out the [sample production README](https://github.com/appacademy/sample-project-proposal/blob/master/docs/production_readme.md) -- you'll write this later)
 
 ## Product Goals and Priorities
 
-FresherNote will allow users to do the following:
+Borrow My Backpack (BMB) will allow users to do the following:
 
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [ ] Create an account (MVP)
 - [ ] Log in / Log out, including as a Guest/Demo User (MVP)
-- [ ] Create, read, edit, and delete notes (MVP)
-- [ ] Organize notes within Notebooks (MVP)
-- [ ] Tag notes with multiple tags (expected feature, but not MVP)
-- [ ] Apply complex styling to notes while editing (expected feature, but not MVP)
+- [ ] Create, edit, and view sports equipment listings (MVP)
+- [ ] Edit profile (MVP)
+- [ ] Make and respond to rental requests (MVP)
+- [ ] Search listings based on location and type (MVP)
+- [ ] View upcoming equipment rentals (lender and borrower) on homepage (expected feature, but not MVP)
+- [ ] Create and attend BMB Events. View upcoming events on homepage feed (expected feature, but not MVP)
+- [ ] View equipment listings on a map (if all other features completed)
+- [ ] View equipment availability calendar on equipment listings (if all other features completed)
+
 
 ## Design Docs
 * [View Wireframes][views]
