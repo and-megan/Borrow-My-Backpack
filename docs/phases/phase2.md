@@ -1,4 +1,4 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
+# Phase 2: Flux Architecture and Request and Sporting Good CRUD (2 days)
 
 ## Rails
 ### Models

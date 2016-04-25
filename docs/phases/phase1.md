@@ -1,4 +1,4 @@
-# Phase 1: User Authentication, Note Model and JSON API
+# Phase 1: User Authentication, User and SportingGood Model and JSON API
 
 ## Rails
 ### Models

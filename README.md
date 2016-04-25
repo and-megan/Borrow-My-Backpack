@@ -126,6 +126,7 @@ user interface.
 **Objective:** Create and style Navigation Bar
 
 - [ ] create `NavigationBar` component
+- [ ] create `SearchBar` component
 - [ ] Style new elements
 
 ### Phase 7: Allow Complex Styling (1 day)
