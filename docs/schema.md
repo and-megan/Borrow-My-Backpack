@@ -63,7 +63,7 @@ sender_id       | integer   | not null, foreign key (references user), indexed
 receiver_id     | integer   | not null, foreign key (references user), indexed
 status          | string    | not null, default: "PENDING"
 body            | text      | not null
-approved?       | boolean   | 
+approved?       | boolean   |
 start_date      | date      | not null
 end_date        | date      | not null
 
@@ -76,3 +76,5 @@ description     | text      | not null
 pic_url         | string    | not null
 start_datetime  | datetime  | not null
 end_datetime    | datetime  | not null
+lat             | float     | not null
+lng             | float     | not null

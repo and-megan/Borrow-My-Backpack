@@ -20,34 +20,40 @@
 
 ## JSON API
 
-### Notes
+### Sporting Goods
+- `GET /api/sporting_goods/index` - shows all sporting goods
+  - search through sporting goods
+  - accept `type` as query param
+  - accept `location (lat and lng)` as query param
+  - accept `user` as query param
+- `POST /api/users/:id/sporting_goods/new` - add sporting good to user
+- `GET /api/sporting_goods/user_id/index` - shows all sporting goods of a user
+- `GET /api/sporting_goods/user_id/sporting_good_id/show` - show single sporting good of a user
+- `PATCH /api/users/:id/sporting_goods/:id` - edit sporting good of a user
+- `DELETE /api/sporting_goods/user_id/sporting_good_id` - delete sporting good of a user
 
-- `GET /api/notes`
-  - Notes index/search
-  - accepts `tag_name` query param to list notes by tag
-  - accepts pagination params (if I get there)
-- `POST /api/notes`
-- `GET /api/notes/:id`
-- `PATCH /api/notes/:id`
-- `DELETE /api/notes/:id`
+### Profiles
+- `GET /api/users/index` - show all users
+ - search through profiles
+- `GET /api/user/:id` - show user profile
+- `PATCH /api/user/:id/edit` - edit profile
 
-### Notebooks
+### Requests
 
-- `GET /api/notebooks`
-- `POST /api/notebooks`
-- `GET /api/notebooks/:id`
-- `PATCH /api/notebooks/:id`
-- `DELETE /api/notebooks/:id`
-- `GET /api/notebooks/:id/notes`
-  - index of all notes for a notebook
-  - accepts pagination params (if I get there)
+- `GET /api/users/:id/requests/index`
+  - shows all of user's requests
+  - request index items will be included in this component
+- `POST /api/users/:id/requests/new`: new request
 
-### Tags
-
-- A note's tags will be included in the note show template
-- `GET /api/tags`
-  - includes query param for typeahead suggestions
-- `POST /api/notes/:note_id/tags`: add tag to note by name
-  - if note doesn't already exist, it will be created
-- `DELETE /api/notes/:note_id/tags/:tag_name`: remove tag from note by
-  name
+### Events (not MVP)
+- `GET /api/users/:id/events/index`
+  - show all of user's events
+- `GET /api/events/index`
+  - show all events
+  - search through sporting goods
+  - accept `start date` as query param
+  - accept `location (lat and lng)` as query param
+  - accept `user` as query param
+- `POST /api/users/:id/events/new` - add new event with user as author
+- `PATCH /api/users/:id/events/:id/edit` - edit event with user as author
+- `DELETE /api/events/user_id/events/:id` - delete event of a user
