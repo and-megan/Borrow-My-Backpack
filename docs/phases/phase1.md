@@ -3,18 +3,18 @@
 ## Rails
 ### Models
 * User
-* Note
+* SportingGood
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::SportingGoodsController (create, destroy, index, show, update)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* users/index.json.jbuilder
+* sporting_goods/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
@@ -27,3 +27,6 @@
 
 ## Gems/Libraries
 * BCrypt (Gem)
+
+## Database
+* minimal seedings for testing

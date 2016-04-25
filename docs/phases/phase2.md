@@ -3,36 +3,45 @@
 ## Rails
 ### Models
 
+* Request
+
 ### Controllers
+
+ * Api::RequestsController(show, update, new)
 
 ### Views
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+
 
 ### Stores
-* Note
+
 
 ### Actions
-* ApiActions.receiveAllNotes -> triggered by ApiUtil
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
-* NoteActions.fetchAllNotes -> triggers ApiUtil
-* NoteActions.fetchSingleNote 
-* NoteActions.createNote
-* NoteActions.editNote 
-* NoteActions.destroyNote
+* ApiActions.receiveAllSportingGoods -> triggered by ApiUtil
+* ApiActions.receiveAllRequests -> triggered by ApiUtil
+* ApiActions.receiveSportingGood
+* ApiActions.receiveRequest
+* ApiActions.deleteSportingGood
+* SportingGoodActions.fetchAllSportingGoods -> triggers ApiUtil
+* RequestActions.fetchAllRequests -> triggers ApiUtil
+* SportingGoodActions.fetchSportingGood
+* RequestActions.fetchRequest
+* SportingGoodActions.editSportingGood
+* RequestActions.editRequest
+* SportingGoodActions.destroySportingGood
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllSportingGoods
+* ApiUtil.fetchAllRequests
+* ApiUtil.fetchSportingGood
+* ApiUtil.fetchRequest
+* ApiUtil.createSportingGood
+* ApiUtil.createRequest
+* ApiUtil.editSportingGood
+* ApiUtil.editRequest
+* ApiUtil.destroySportingGood
 
 ## Gems/Libraries
 * Flux Dispatcher (npm)
-* Twitter Bootstrap

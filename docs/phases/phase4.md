@@ -15,4 +15,5 @@
 ### Actions
 
 ## Gems/Libraries
-* react-quill (npm)
+* Bootstrap
+* flexbox

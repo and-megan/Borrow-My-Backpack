@@ -1,40 +1,36 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 5: Profile and Garbage Collection
 
 ## Rails
 ### Models
-* Reminder
+* Profile
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
-
+* Api::ProfilesController (create, destroy, index, show, update)
+* requests/show.json.jbuilder
 ### Views
-* reminders/index.json.jbuilder
+* requests/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+* ProfilesIndex
+  - ProfilesIndexItem
+* ProfileForm & edit
 
 ### Stores
-* Reminder
+* Profile
 
 ### Actions
-* ApiActions.receiveAllReminders -> triggered by ApiUtil
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
-* ReminderActions.fetchAllReminders -> triggers ApiUtil
-* ReminderActions.fetchSingleReminder
-* ReminderActions.createReminder
-* ReminderActions.updateReminder
-* ReminderActions.destroyReminder
+* ApiActions.receiveAllProfiles -> triggered by ApiUtil
+* ApiActions.receiveProfile
+* ProfileActions.fetchAllProfiles -> triggers ApiUtil
+* ProfileActions.fetchProfile
+* ProfileActions.editProfile
+
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
+* ApiUtil.fetchAllProfiles
+* ApiUtil.fetchProfile
+* ApiUtil.createProfile
+* ApiUtil.editProfile
 
 ## Gems/Libraries
