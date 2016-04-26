@@ -3,12 +3,12 @@
 <form action="<%= session_url %>" method="post">
   <%= auth_token_input %>
 
-  <label for="user_username">
-    Username</label>
-    <input type="text" name="user[username]" value="" id="user_username">
+  <label for="user_email">
+    Email
+    <input type="text" name="user[email]" value="" id="user_email">
+  </label>
 
-
-  <label>
+  <label for="user_password">
     Password
     <input type="password" name="user[password]" value="">
   </label>

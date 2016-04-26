@@ -23,7 +23,7 @@
 #
 
 class User < ActiveRecord::Base
-  validates_presence_of :password_digest, :email, :session_token, :lender?, :current_city, :fname, :lname
+  validates_presence_of :password_digest, :email, :session_token, :current_city, :fname, :lname
   validates_uniqueness_of :email
   validates :password, length: {minimum: 6}, allow_nil: :true
 
@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
 		BCrypt::Password.new(self.password_digest).is_password?(password)
 	end
 
-	def reset_session_token!
+	def reset_token!
 		self.session_token = new_session_token
 		ensure_session_token_uniqueness
 		self.save
