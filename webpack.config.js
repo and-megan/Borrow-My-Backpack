@@ -1,1 +1,29 @@
-var path = require("path");\n \n module.exports = {\n context: __dirname,\n entry: "./frontend/entry.jsx",\n output: {\n path: path.join(__dirname, "app", "assets", "javascripts"),\n filename: "bundle.js"\n },\n resolve: {\n extensions: ["", ".js", ".jsx"]\n },\n module: {\n loaders: [\n {\n test: /\.jsx?$/,\n exclude: /(node_modules|bower_components)/,\n loader: "babel",\n query: {\n presets: ["react", "es2015"]\n }\n },\n {\n test: /\.node$/,\n loader: "node-loader"\n }\n ]\n }\n };\n
+
+var path = require("path");
+
+module.exports = {
+  context: __dirname,
+  entry: "./frontend/bmb_entry.jsx",
+  devtool: "source-map",
+  output: {
+    path: path.join(__dirname, 'app', 'assets', 'javascripts'),
+    filename: "bundle.js",
+    devtoolModuleFilenameTemplate: '[resourcePath]',
+    devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel',
+        query: {
+          presets: ['react']
+        }
+      }
+    ]
+  },
+  resolve: {
+    extensions: ["", ".js", ".jsx" ]
+  }
+};

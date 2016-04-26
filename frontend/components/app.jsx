@@ -1,1 +1,14 @@
-var React = require('react');\n \n module.exports = React.createClass({\n \trender: function () {\n \t\treturn(\n \t\t\t<div>\n \t\t\t\tHello World!\n \t\t\t\t{this.props.children}\n \t\t\t</div>\n \t\t);\n \t}\n });\n
+var React = require('react');
+
+var App = React.createClass({
+  render: function () {
+    return (
+      <div>
+        <h1>Borrow My Backpack</h1>
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
+module.exports = App;
