@@ -64,7 +64,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] sign in, sign out pages for User
 - [X] blank landing page after signin
 - [X] create `SportingGood` model
-- [ ] CRUD API for SportingGoods (`SportingGoodsController`)
+- [X] CRUD API for SportingGoods (`SportingGoodsController`)
 - [ ] seed the database with a small amount of test data
 
 ### Phase 2: Models, API, and basic APIUtil (1.5 days)

@@ -1,7 +1,7 @@
 class Api::SportingGoodsController < ApplicationController
 
   def index
-    @sporting_goods = SportingGood.in_bounds(params[:bounds])
+    @sporting_goods = SportingGood.all
   end
 
   def create
