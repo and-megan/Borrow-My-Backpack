@@ -10,7 +10,7 @@
 
 - `GET /users/new`
 - `POST /users`
-- `PATCH /users`
+
 
 ### Session
 
@@ -28,7 +28,7 @@
   - accept `user` as query param
 - `POST /api/sporting_goods/new` - add sporting good to user
 - `GET /api/sporting_goods/index` - shows all sporting goods of a user
-- `GET /api/sporting_goods/:id/show` - show single sporting good of a user
+- `GET /api/sporting_goods/:id` - show single sporting good of a user
 - `PATCH /api/sporting_goods/:id` - edit sporting good of a user
 - `DELETE /api/sporting_goods/:id` - delete sporting good of a user
 
