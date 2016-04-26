@@ -1,0 +1,1 @@
+var ApiUtil = require('../utils/api_utils.js');\n \n var ClientActions = {\n // Example Function\n // fetchAllPokemons: function() {\n // ApiUtil.fetchAllPokemons();\n // }\n }\n \n module.exports = ClientActions;
