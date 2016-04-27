@@ -1,1 +1,23 @@
-var Dispatcher = require('../dispatcher/dispatcher.js');\n // Example Constants call\n // var PokemonConstants = require('../constants/pokemonConstants.js');\n \n var ServerActions = {\n // Example Function\n // receiveAllPokemons: function (pokemons) {\n // Dispatcher.dispatch({\n // actionType: PokemonConstants.POKEMONS_RECEIVED,\n // pokemons: pokemons\n // });\n // }\n }\n \n module.exports = ServerActions;
+var AppDispatcher = require('../dispatcher/dispatcher.js');
+var SportingGoodConstants = require('../constants/sporting_good_constants');
+module.exports = {
+  //SPORTING GOOD ACTIONS
+  receiveAllSportingGoods: function(sportingGoods) {
+    AppDispatcher.dispatch({
+      actionType: SportingGoodConstants.SPORTINGGOODS_RECEIVED,
+      sportingGoods: sportingGoods
+    });
+  },
+  receiveSportingGood: function(sportingGood) {
+    AppDispatcher.dispatch({
+      actionType: SportingGoodConstants.SPORTINGGOOD_RECEIVED,
+      sportingGood: sportingGood
+    });
+  },
+  removeSportingGood: function(sportingGood) {
+    AppDispatcher.dispatch({
+      actionType: SportingGoodConstants.SPORTINGGOOD_REMOVED,
+      sportingGood: sportingGood
+    });
+  }
+};

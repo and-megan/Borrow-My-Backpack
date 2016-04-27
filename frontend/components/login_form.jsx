@@ -77,30 +77,34 @@ var LoginForm = React.createClass({
 		}
 		</ul>);
 	},
+	formFields: function () {
+		return(
+			<section>
+				<label> Email:
+					<input type="text" valueLink={this.linkState("email")}/>
+				</label>
+
+				<label> Password:
+					<input type="password" valueLink={this.linkState("password")}/>
+				</label>
+			</section>
+		)
+	},
 	renderLoginForm: function(){
 		if (this.state.form === "signup" || this.state.currentUser) {
 			return;
 		}
 		return(
 				<form onSubmit={this.handleLoginSubmit}>
+
 					<h2>Log in to your account</h2>
+						{this.formFields()}
+						
 					<section>
-						<label> Email:
-							<input type="text" valueLink={this.linkState("email")}/>
-						</label>
-
-						<label> Password:
-							<input type="password" valueLink={this.linkState("password")}/>
-						</label>
-					</section>
-
-					<section>
-
 							<button type="submit" name="action">Log in</button>
 							<br></br>
 							<br></br>
 							<button name="action" value="signup" className="render-another-form" onClick={this.displaySignupForm}>Go to the sign up page</button>
-
 					</section>
 
 
@@ -111,30 +115,19 @@ var LoginForm = React.createClass({
 		if (this.state.form === "login" || this.state.currentUser) {
 			return;
 		}
-
 		return(
 				<form onSubmit={this.handleSignupSubmit}>
+
 					<h2>Create a new account</h2>
-					<section>
-						<label> Email:
-							<input type="text" valueLink={this.linkState("email")}/>
-						</label>
-
-						<label> Password:
-							<input type="password" valueLink={this.linkState("password")}/>
-						</label>
-					</section>
+					{this.formFields()}
 
 					<section>
-
 							<button name="action" type="submit">Create your account</button>
 							<br></br>
 							<br></br>
 							<br></br>
 							<button name="action" value="login" className="render-another-form" onClick={this.displayLoginForm}>Go to the login page</button>
-
 					</section>
-
 
 				</form>
 		);

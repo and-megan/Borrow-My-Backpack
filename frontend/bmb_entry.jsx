@@ -11,6 +11,7 @@ var hashHistory = ReactRouter.hashHistory;
 var CurrentUserState = require('./mixins/current_user_state');
 //Components
 var LoginForm = require('./components/login_form');
+var SportingGoodIndex = require('./components/sporting_good_index');
 
 var App = React.createClass({
   mixins: [CurrentUserState],
@@ -29,6 +30,8 @@ var App = React.createClass({
 
 var routes = (
     <Route path="/" component={App}>
+      <IndexRoute component={SportingGoodIndex}></IndexRoute>
+      <Route path="sporting_goods" component={SportingGoodIndex} /> 
     </Route>
 );
 
