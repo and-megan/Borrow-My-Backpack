@@ -2,17 +2,17 @@
 
 ## Rails
 ### Models
-* User
-* SportingGood
+* User X
+* SportingGood X
 
 ### Controllers
-* UsersController (create, new)
-* SessionsController (create, new, destroy)
-* Api::SportingGoodsController (create, destroy, index, show, update)
+* UsersController (create, new) X
+* SessionsController (create, new, destroy) X
+* Api::SportingGoodsController (create, destroy, index, show, update) X
 
 ### Views
-* users/new.html.erb
-* session/new.html.erb
+* users/new.html.erb X
+* session/new.html.erb X
 * users/index.json.jbuilder
 * sporting_goods/show.json.jbuilder
 
