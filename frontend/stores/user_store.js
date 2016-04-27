@@ -1,5 +1,5 @@
 var React = require('react');
-var AppDispatcher = ('../dispatcher/dispatcher');
+var AppDispatcher = require('../dispatcher/dispatcher');
 var Store = require('flux/utils').Store;
 
 var UserStore = new Store(AppDispatcher);
@@ -33,7 +33,7 @@ UserStore.setErrors = function (errors) {
 };
 
 UserStore.__onDispatch = function(payload){
-  
+
   switch (payload.actionType) {
     case "LOGIN":
       UserStore.login(payload.user);

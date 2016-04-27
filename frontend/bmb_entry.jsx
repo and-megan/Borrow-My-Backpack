@@ -17,9 +17,9 @@ var App = React.createClass({
   render: function () {
     return (
       <div>
-        <h1>borrow my backpack -app rendering</h1>
-        {this.props.children}
+        <h1>borrow my backpack</h1>
         <LoginForm />
+        {this.props.children}
       </div>
     );
   }
@@ -30,7 +30,6 @@ var App = React.createClass({
 var routes = (
     <Route path="/" component={App}>
     </Route>
-
 );
 
 

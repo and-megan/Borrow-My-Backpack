@@ -13,7 +13,7 @@ var LoginForm = React.createClass({
 	},
 	handleSubmit: function(e){
 		e.preventDefault();
-		UserActions[this.state.form]({
+		UserActions.login({
 			email: this.state.email,
 			password: this.state.password
 		});
