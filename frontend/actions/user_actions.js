@@ -24,7 +24,7 @@ var UserActions = {
 		});
 	},
 	guestLogin: function(){
-		UserActions.login({username: "guest", password: "password"});
+		UserActions.login({email: "guest", password: "password"});
 	},
 	receiveCurrentUser: function(user){
 		AppDispatcher.dispatch({

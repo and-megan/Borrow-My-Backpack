@@ -7,17 +7,33 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
+//Mixin
+var CurrentUserState = require('./mixins/current_user_state');
+//Components
+var LoginForm = require('./components/login_form');
 
-var App = require('./components/app.jsx');
+var App = React.createClass({
+  mixins: [CurrentUserState],
+  render: function () {
+    return (
+      <div>
+        <h1>borrow my backpack -app rendering</h1>
+        {this.props.children}
+        <LoginForm />
+      </div>
+    );
+  }
+});
+
 
 
 var routes = (
-  <Route path="/" component={App}>
-  </Route>
+    <Route path="/" component={App}>
+    </Route>
+
 );
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  var root = document.getElementById("content");
-  ReactDOM.render(<Router history={hashHistory} routes={routes}/>, root);
-});
+  document.addEventListener("DOMContentLoaded", function () {
+  ReactDOM.render(<Router history={hashHistory} routes={routes}/>, document.getElementById("content"));
+  });

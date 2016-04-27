@@ -33,6 +33,7 @@ UserStore.setErrors = function (errors) {
 };
 
 UserStore.__onDispatch = function(payload){
+  
   switch (payload.actionType) {
     case "LOGIN":
       UserStore.login(payload.user);
@@ -44,7 +45,7 @@ UserStore.__onDispatch = function(payload){
       UserStore.setErrors(payload.errors);
       break;
   }
-  UserStore.__emitChange();
+  this.__emitChange();
 };
 
 module.exports = UserStore;
