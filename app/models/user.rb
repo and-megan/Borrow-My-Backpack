@@ -6,10 +6,10 @@
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  lender?         :boolean          default("false")
-#  current_city    :string           not null
-#  fname           :string           not null
-#  lname           :string           not null
+#  lender?         :boolean
+#  current_city    :string
+#  fname           :string
+#  lname           :string
 #  pic_url         :string
 #  phone_number    :string
 #  about_me        :text
@@ -23,7 +23,7 @@
 #
 
 class User < ActiveRecord::Base
-  validates_presence_of :password_digest, :email, :session_token, :current_city, :fname, :lname
+  validates_presence_of :password_digest, :email, :session_token
   validates_uniqueness_of :email
   validates :password, length: {minimum: 6}, allow_nil: :true
 

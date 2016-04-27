@@ -3,25 +3,56 @@ var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var UserActions = require('../actions/user_actions');
 var CurrentUserState = require('../mixins/current_user_state');
 
+
 var LoginForm = React.createClass({
 	mixins: [LinkedStateMixin, CurrentUserState],
 	getInitialState: function(){
-		return {form: "login"};
+		return {
+			form: "login"
+		};
 	},
-	setForm: function(e){
-		this.setState({form: e.currentTarget.value});
-	},
-	handleSubmit: function(e){
+
+
+	handleLoginSubmit: function(e){
 		e.preventDefault();
 		UserActions.login({
 			email: this.state.email,
 			password: this.state.password
 		});
+		this.setState({
+			email: "",
+			password: ""
+		});
+	},
+	handleSignupSubmit: function(e){
+		e.preventDefault();
+		UserActions.signup({
+			email: this.state.email,
+			password: this.state.password
+		});
+    this.setState({
+      email: "",
+      password: ""
+    });
 	},
 	logout: function(e){
 		e.preventDefault();
+		this.setState({
+			form: "login"
+		});
 		UserActions.logout();
 	},
+	displaySignupForm: function () {
+		this.setState({
+			form: "signup"
+		});
+	},
+	displayLoginForm: function () {
+		this.setState({
+			form: "login"
+		});
+	},
+
 	greeting: function(){
 		if (!this.state.currentUser) {
 			return;
@@ -46,12 +77,13 @@ var LoginForm = React.createClass({
 		}
 		</ul>);
 	},
-	form: function(){
-		if (this.state.currentUser) {
+	renderLoginForm: function(){
+		if (this.state.form === "signup" || this.state.currentUser) {
 			return;
 		}
 		return(
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.handleLoginSubmit}>
+					<h2>Log in to your account</h2>
 					<section>
 						<label> Email:
 							<input type="text" valueLink={this.linkState("email")}/>
@@ -63,16 +95,47 @@ var LoginForm = React.createClass({
 					</section>
 
 					<section>
-						<label> Login
-							<input type="Radio" name="action" value="login" onChange={this.setForm}/>
+
+							<button type="submit" name="action">Log in</button>
+							<br></br>
+							<br></br>
+							<button name="action" value="signup" className="render-another-form" onClick={this.displaySignupForm}>Go to the sign up page</button>
+
+					</section>
+
+
+				</form>
+		);
+	},
+	renderSignupForm: function () {
+		if (this.state.form === "login" || this.state.currentUser) {
+			return;
+		}
+
+		return(
+				<form onSubmit={this.handleSignupSubmit}>
+					<h2>Create a new account</h2>
+					<section>
+						<label> Email:
+							<input type="text" valueLink={this.linkState("email")}/>
 						</label>
 
-						<label> Sign Up
-							<input type="Radio" name="action" value="signup" onChange={this.setForm}/>
+						<label> Password:
+							<input type="password" valueLink={this.linkState("password")}/>
 						</label>
 					</section>
 
-					<input type="submit" value="Submit"/>
+					<section>
+
+							<button name="action" type="submit">Create your account</button>
+							<br></br>
+							<br></br>
+							<br></br>
+							<button name="action" value="login" className="render-another-form" onClick={this.displayLoginForm}>Go to the login page</button>
+
+					</section>
+
+
 				</form>
 		);
 	},
@@ -81,7 +144,8 @@ var LoginForm = React.createClass({
 			<div id="login-form">
 				{this.greeting()}
 				{this.errors()}
-				{this.form()}
+				{this.renderLoginForm()}
+				{this.renderSignupForm()}
 			</div>
 		);
 	}
