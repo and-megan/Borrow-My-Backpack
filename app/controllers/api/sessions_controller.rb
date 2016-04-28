@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
 		if @user
 			login!(@user)
-			render "api/users/show"
+			render "api/sporting_goods/index"
 		else
 			@errors = ['email or password is incorrect']
 			render "api/shared/error", status: 401

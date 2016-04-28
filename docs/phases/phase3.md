@@ -5,25 +5,25 @@
 
 
 ### Controllers
-* Api::SportingGoodsController (create, destroy, index, show, update)
+<!-- * Api::SportingGoodsController (create, destroy, index, show, update) -->
 
 ### Views
-* sporting_goods/index.json.jbuilder
-* sporting_goods/show.json.jbuilder
+<!-- * sporting_goods/index.json.jbuilder
+* sporting_goods/show.json.jbuilder -->
 * requests/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* SportingGoodsIndex
+* SportingGoodsIndex *have to get it to stop showing without login*
   - SportingGoodsIndexItem
-* SportingGoodForm & edit
+* SportingGoodForm & edit *form ok haven't done edit*
 * RequestsIndex
   - RequestsIndexItem
 * RequestForm & edit
 * SearchIndex
 
 ### Stores
-* SportingGood
+<!-- * SportingGood -->
 * Request
 
 ### Actions

@@ -19,29 +19,29 @@
 
 
 ### Actions
-* ApiActions.receiveAllSportingGoods -> triggered by ApiUtil
+<!-- * ApiActions.receiveAllSportingGoods -> triggered by ApiUtil -->
 * ApiActions.receiveAllRequests -> triggered by ApiUtil
-* ApiActions.receiveSportingGood
+<!-- * ApiActions.receiveSportingGood -->
 * ApiActions.receiveRequest
-* ApiActions.deleteSportingGood
-* SportingGoodActions.fetchAllSportingGoods -> triggers ApiUtil
+<!-- * ApiActions.deleteSportingGood -->
+<!-- * SportingGoodActions.fetchAllSportingGoods -> triggers ApiUtil -->
 * RequestActions.fetchAllRequests -> triggers ApiUtil
-* SportingGoodActions.fetchSportingGood
+<!-- * SportingGoodActions.fetchSportingGood X -->
 * RequestActions.fetchRequest
-* SportingGoodActions.editSportingGood
+<!-- * SportingGoodActions.editSportingGood X -->
 * RequestActions.editRequest
-* SportingGoodActions.destroySportingGood
+<!-- * SportingGoodActions.destroySportingGood X -->
 
 ### ApiUtil
-* ApiUtil.fetchAllSportingGoods
+<!-- * ApiUtil.fetchAllSportingGoods X -->
 * ApiUtil.fetchAllRequests
-* ApiUtil.fetchSportingGood
+<!-- * ApiUtil.fetchSportingGood X -->
 * ApiUtil.fetchRequest
-* ApiUtil.createSportingGood
+<!-- * ApiUtil.createSportingGood X -->
 * ApiUtil.createRequest
-* ApiUtil.editSportingGood
+<!-- * ApiUtil.editSportingGood X -->
 * ApiUtil.editRequest
-* ApiUtil.destroySportingGood
+<!-- * ApiUtil.destroySportingGood X -->
 
 ## Gems/Libraries
 * Flux Dispatcher (npm)

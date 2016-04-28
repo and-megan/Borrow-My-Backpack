@@ -1,8 +1,13 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var hashHistory = ReactRouter.hashHistory;
+//mixins
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var UserActions = require('../actions/user_actions');
 var CurrentUserState = require('../mixins/current_user_state');
-
+//store
+var UserStore = require('../stores/user_store');
+//actions
+var UserActions = require('../actions/user_actions');
 
 var LoginForm = React.createClass({
 	mixins: [LinkedStateMixin, CurrentUserState],
@@ -11,8 +16,17 @@ var LoginForm = React.createClass({
 			form: "login"
 		};
 	},
-
-
+	componentDidMount: function() {
+		this.userListener = UserStore.addListener(this.onChange);
+	},
+	componentWillUnmount: function() {
+		this.userListener.remove();
+	},
+	onChange: function () {
+		if (this.state.currentUser) {
+			hashHistory.push("/");
+		}
+	},
 	handleLoginSubmit: function(e){
 		e.preventDefault();
 		UserActions.login({
@@ -53,17 +67,17 @@ var LoginForm = React.createClass({
 		});
 	},
 
-	greeting: function(){
-		if (!this.state.currentUser) {
-			return;
-		}
-		return (
-			<div>
-				<h2>Welcome back, {this.state.currentUser.email}</h2>
-				<input type="submit" value="logout" onClick={this.logout}/>
-			</div>
-		);
-	},
+	// greeting: function(){
+	// 	if (!this.state.currentUser) {
+	// 		return;
+	// 	}
+	// 	return (
+	// 		<div>
+	// 			<h2>Welcome back, {this.state.currentUser.email}</h2>
+	// 			<input type="submit" value="logout" onClick={this.logout}/>
+	// 		</div>
+	// 	);
+	// },
 	errors: function(){
 		if (!this.state.userErrors){
 			return;
@@ -88,7 +102,7 @@ var LoginForm = React.createClass({
 					<input type="password" valueLink={this.linkState("password")}/>
 				</label>
 			</section>
-		)
+		);
 	},
 	renderLoginForm: function(){
 		if (this.state.form === "signup" || this.state.currentUser) {
@@ -135,7 +149,6 @@ var LoginForm = React.createClass({
 	render: function(){
 		return (
 			<div id="login-form">
-				{this.greeting()}
 				{this.errors()}
 				{this.renderLoginForm()}
 				{this.renderSignupForm()}

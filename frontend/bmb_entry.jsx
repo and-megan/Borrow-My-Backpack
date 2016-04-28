@@ -12,14 +12,31 @@ var CurrentUserState = require('./mixins/current_user_state');
 //Components
 var LoginForm = require('./components/login_form');
 var SportingGoodIndex = require('./components/sporting_good_index');
+var SportingGoodShow = require('./components/sporting_good_show');
+var Landing = require('./components/landing');
+var NavBar = require('./components/nav_bar');
+//Store
+var UserStore = require('./stores/user_store');
+
+var requireSignedIn = function () {
+  if (!UserStore.currentUser()) {
+    hashHistory.push("login");
+  }
+};
+
+var requireNotSignedIn = function () {
+  if (UserStore.currentUser()) {
+    hashHistory.push("/");
+  }
+};
 
 var App = React.createClass({
-  mixins: [CurrentUserState],
+
   render: function () {
     return (
       <div>
+        <NavBar />
         <h1>borrow my backpack</h1>
-        <LoginForm />
         {this.props.children}
       </div>
     );
@@ -30,8 +47,11 @@ var App = React.createClass({
 
 var routes = (
     <Route path="/" component={App}>
-      <IndexRoute component={SportingGoodIndex}></IndexRoute>
-      <Route path="sporting_goods" component={SportingGoodIndex} /> 
+      <Route path="login" onEnter={requireNotSignedIn} component={LoginForm} />
+      <Route component={Landing} onEnter={requireSignedIn}>
+        <IndexRoute component={SportingGoodIndex} />
+        <Route path="sporting_goods/:sportingGoodId" component={SportingGoodShow} />
+      </Route>
     </Route>
 );
 

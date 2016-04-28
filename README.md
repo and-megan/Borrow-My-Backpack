@@ -75,7 +75,7 @@ the API.
 
 - [ ] Profiles Model & Controller
 - [ ] Requests Model & Controller
-- [ ] jBuilder views for SportingGoods
+- [X] jBuilder views for SportingGoods
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
@@ -86,11 +86,12 @@ the API.
 user interface.
 
 - [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [ ] setup React Router -partially set up
 - implement each SportingGood component, building out the flux loop as needed.
-  - [ ] `SportingGoodsIndex`
-  - [ ] `SportingGoodIndexItem`
-  - [ ] `SportingGoodForm & edit`
+  - [X] `SportingGoodsIndex`
+  - [X] `SportingGoodIndexItem`
+  - [X] `SportingGoodForm` - but need to not display for not logged in
+  - [ ] `& edit`
   - implement each Requests component, building out the flux loop as needed.
     - [ ] `RequestsIndex`
     - [ ] `RequestIndexItem`

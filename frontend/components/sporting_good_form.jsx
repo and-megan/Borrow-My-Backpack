@@ -1,11 +1,18 @@
 var React = require('react');
 var SportingGoodClientActions = require('../actions/sporting_good_client_actions');
+var hashHistory = require('react-router').hashHistory;
 //need to add in lat and lng...
 module.exports = React.createClass({
   getInitialState: function() {
     return {
-      description: ""
+      showForm: false
     };
+  },
+  renderForm: function () {
+    var form = !this.state.showForm;
+    this.setState({
+      showForm: form
+    });
   },
   changeCategory: function (e) {
     var newCategory = e.target.value;
@@ -37,6 +44,39 @@ module.exports = React.createClass({
       description: newDescription
     });
   },
+
+  form: function () {
+    if (this.state.showForm === false) {
+      return;
+    }
+    return(
+      <form onSubmit={this.handleSubmit}>
+
+      <input list="sporting_goods" value={this.state.category} onChange={this.changeCategory}/>
+        <datalist id="sporting_goods">
+          <option value="backpack"></option>
+          <option value="bicycle"></option>
+          <option value="kayak"></option>
+          <option value="skis"></option>
+          <option value="snowboard"></option>
+          <option value="surfboard"></option>
+        </datalist>
+
+
+        <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
+
+        <label>Latitude</label>
+        <input type="number" step="0.000001" value={this.state.lat} onChange={this.changeLat}/>
+
+        <label>Longitude</label>
+        <input type="number" step="0.000001" value={this.state.lng} onChange={this.changeLng}/>
+
+        <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
+
+        <input type="submit" readOnly="true" value="Create Post"/>
+      </form>
+    );
+  },
   handleSubmit: function(event) {
     event.preventDefault();
     var SportingGoodData = {
@@ -48,36 +88,27 @@ module.exports = React.createClass({
 
     };
     SportingGoodClientActions.createSportingGood(SportingGoodData);
+    this.setState({
+      category: "",
+      description: "",
+      lat: "",
+      lng: "",
+      pic_url: ""
+    });
+    hashHistory.push("/sporting_goods");
   },
-  render: function () {
+  buttonFunction: function () {
+    if (this.state.showForm === false) {
+      return ("List a new item");
+    } else {
+      return ("Hide this form");
+    }
+  },
+  render: function() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-
-
-        <input list="sporting_goods" value={this.state.category} onChange={this.changeCategory}/>
-          <datalist id="sporting_goods">
-            <option value="backpack"></option>
-            <option value="bicycle"></option>
-            <option value="kayak"></option>
-            <option value="skis"></option>
-            <option value="snowboard"></option>
-            <option value="surfboard"></option>
-          </datalist>
-
-
-          <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
-
-          <label>Latitude</label>
-          <input type="number" step="0.000001" value={this.state.lat} onChange={this.changeLat}/>
-
-          <label>Longitude</label>
-          <input type="number" step="0.000001" value={this.state.lng} onChange={this.changeLng}/>
-
-          <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
-
-          <input type="submit" readOnly="true" value="Create Post"/>
-        </form>
+      <div id="sporting-good-form">
+        {this.form()}
+        <button onClick={this.renderForm}>Toggle form show</button>
       </div>
     );
   }
