@@ -7,13 +7,14 @@ var SportingGoodClientActions = require('../actions/sporting_good_client_actions
 
 var SportingGoodShow = React.createClass({
   getInitialState: function() {
-    var potentialSportingGood = SportingGoodStore.find(this.props.params.sportingGoodId);
-    var sportingGood = potentialSportingGood ? potentialSportingGood : {};
+    debugger;
+
     return {
-      sportingGood: sportingGood
+      sportingGood: {pic_url: "i'm blank"}
     };
   },
   componentDidMount: function() {
+    debugger;
     this.sportingGoodListener = SportingGoodStore.addListener(this.handleChange);
     SportingGoodClientActions.getSportingGood(parseInt(this.props.params.sportingGoodId));
   },
@@ -27,15 +28,22 @@ var SportingGoodShow = React.createClass({
       sportingGood: sportingGood
     });
   },
+  deleteSportingGood: function () {
+    var potentialSportingGood = SportingGoodStore.find(this.props.params.sportingGoodId);
+    var sportingGood = potentialSportingGood ? potentialSportingGood : {};
+    SportingGoodClientActions.deleteSportingGood(sportingGood);
+  },
   render: function() {
-    var sportingGood = this.state.sportingGood;
+    debugger;
     return (
       <div id="sporting-good-container">
-      <h3>{sportingGood.user + "'s " + sportingGood.category}</h3>
-      <ul>
-        <li>{sportingGood.description}</li>
-        <li>{sportingGood.pic_url}</li>
-      </ul>
+        <ul>
+          <li className="sporting-good-show">
+
+            <img src={this.state.sportingGood.pic_url} alt="sporting_good_item_show" />
+
+          </li>
+        </ul>
     </div>
     );
   }

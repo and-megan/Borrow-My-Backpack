@@ -6,15 +6,17 @@ var SportingGoodClientActions = require('../actions/sporting_good_client_actions
 
 
 var SportingGoodIndexItem = React.createClass({
-
+  goToShowPage: function () {
+    hashHistory.push("sporting_goods/" + this.props.sportingGood.id);
+  },
   render: function() {
-    var sportingGood = this.props.sportingGood;
+
     return (
-      <li>
-        //may want to change what I display...
-        <Link to={"/sporting_goods/" + sportingGood.id.toString()}>{sportingGood.pic_url}</Link>
+      <li className="sporting-good-index-item">
+        <img onClick={this.goToShowPage} alt="sporting_good_pic" src={this.props.sportingGood.pic_url} />
       </li>
     );
+
   }
 
 });

@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+li {
+  display: flex;
+  list-style-image: none;
+}
+
+.sporting-good-index {
+  width: 300px;
+  border: cornflowerblue 1px;
+  flex-wrap: wrap;
+}
+
+.sporting-good-index img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.sporting-good-index-item {
+  flex-wrap: wrap;
+}
