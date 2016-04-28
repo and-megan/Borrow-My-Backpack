@@ -12,7 +12,7 @@ module.exports = React.createClass({
     this.setState({
       type: newType
     });
-  }, 
+  },
   changeLng: function (e) {
     var newLng = e.target.value;
     this.setState({
@@ -64,9 +64,9 @@ module.exports = React.createClass({
 
           <textarea value={this.state.description} onChange={this.changeDescription}>Description</textarea>
 
-          <input type="number" value={this.state.lat} onChange={this.changeLat}>Latitude</input>
+          <input type="number" step="0.000001" value={this.state.lat} onChange={this.changeLat}>Latitude</input>
 
-          <input type="number" value={this.state.lng} onChange={this.changeLng}>Longitude</input>
+          <input type="number" step="0.000001" value={this.state.lng} onChange={this.changeLng}>Longitude</input>
 
           <input type="url" value={this.state.pic_url} onChange={this.changeUrl}>Pic Url</input>
 

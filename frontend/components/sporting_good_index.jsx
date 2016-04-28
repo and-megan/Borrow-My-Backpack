@@ -16,13 +16,13 @@ var SportingGoodIndex = React.createClass({
     };
   },
   componentDidMount: function() {
-    this.sportingGoodListener = SportingGoodStore.addListener(this.getsportingGoods);
-    SportingGoodClientActions.fetchsportingGoods();
+    this.sportingGoodListener = SportingGoodStore.addListener(this.getSportingGoods);
+    SportingGoodClientActions.fetchSportingGoods();
   },
   componentWillUnmount: function() {
     this.sportingGoodListener.remove();
   },
-  getsportingGoods: function () {
+  getSportingGoods: function () {
     this.setState({
       sportingGoods: SportingGoodStore.all()
     });
