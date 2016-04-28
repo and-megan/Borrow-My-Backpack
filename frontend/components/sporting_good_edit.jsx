@@ -4,9 +4,11 @@ var hashHistory = require('react-router').hashHistory;
 //need to add in lat and lng...
 //sporting good form
 module.exports = React.createClass({
+  var potentialSG = SportingGoodStore.find(this.props.params.sportingGoodId);
+  var sportingGood = potentialSG ? potentialSG : {};
   getInitialState: function() {
     return {
-      showForm: false
+      sportingGood: sportingGood
     };
   },
   renderForm: function () {

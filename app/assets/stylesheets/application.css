@@ -33,3 +33,14 @@ li {
 .sporting-good-index-item {
   flex-wrap: wrap;
 }
+
+.sporting-good-container {
+  width: 250px;
+  border: cornflowerblue 1px;
+  flex-wrap: wrap;
+}
+
+.sporting-good-show-pic {
+  max-height: 100%;
+  max-width: 100%
+}

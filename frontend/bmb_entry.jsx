@@ -13,6 +13,7 @@ var CurrentUserState = require('./mixins/current_user_state');
 var LoginForm = require('./components/login_form');
 var SportingGoodIndex = require('./components/sporting_good_index');
 var SportingGoodShow = require('./components/sporting_good_show');
+var SportingGoodEdit = require('./components/sporting_good_edit');
 var Landing = require('./components/landing');
 var NavBar = require('./components/nav_bar');
 //Store
@@ -51,6 +52,7 @@ var routes = (
       <Route component={Landing} onEnter={requireSignedIn}>
         <IndexRoute component={SportingGoodIndex} />
         <Route path="sporting_goods/:sportingGoodId" component={SportingGoodShow} />
+        <Route path="sporting_goods/:sportingGoodId/edit" component={SportingGoodEdit} />
       </Route>
     </Route>
 );
