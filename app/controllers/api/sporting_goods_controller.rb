@@ -23,7 +23,7 @@ class Api::SportingGoodsController < ApplicationController
 
   def sporting_good_params
     params.require(:sporting_good).permit(
-    :lat, :lng, :description, :type,
+    :lat, :lng, :description, :category,
     :pic_url)
   end
 

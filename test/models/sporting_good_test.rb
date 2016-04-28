@@ -7,7 +7,7 @@
 #  lat         :float            not null
 #  lng         :float            not null
 #  description :text
-#  type        :string           not null
+#  category    :string           not null
 #  pic_url     :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

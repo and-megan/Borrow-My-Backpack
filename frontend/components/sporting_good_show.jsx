@@ -31,7 +31,7 @@ var SportingGoodShow = React.createClass({
     var sportingGood = this.state.sportingGood;
     return (
       <div id="sporting-good-container">
-      <h3>{sportingGood.user + "'s " + sportingGood.type}</h3>
+      <h3>{sportingGood.user + "'s " + sportingGood.category}</h3>
       <ul>
         <li>{sportingGood.description}</li>
         <li>{sportingGood.pic_url}</li>

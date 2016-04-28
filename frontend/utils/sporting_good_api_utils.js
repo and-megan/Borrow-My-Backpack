@@ -21,7 +21,7 @@ module.exports = {
     $.ajax({
       type: "POST",
       url: "api/sporting_goods",
-      data: { sportingGood: data },
+      data: { sporting_good: data },
       success: function(sportingGood) {
         ServerActions.receiveSportingGood(sportingGood);
       }
@@ -35,7 +35,7 @@ module.exports = {
         lat: data.lat,
         lng: data.lng,
         description: data.description,
-        type: data.type,
+        category: data.category,
         pic_url: data.pic_url
       }},
       success: function (sportingGood) {
