@@ -34,7 +34,9 @@ var SportingGoodIndex = React.createClass({
     return (
       <div className="sporting-good-index">
         <SportingGoodForm />
-        {SportingGoodIndexItemsTags}
+        <ul>
+          {SportingGoodIndexItemsTags}
+        </ul>
       </div>
     );
   }

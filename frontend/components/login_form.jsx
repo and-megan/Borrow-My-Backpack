@@ -81,7 +81,7 @@ var LoginForm = React.createClass({
 		return(
 			<section>
 				<label> Email:
-					<input type="text" valueLink={this.linkState("email")}/>
+					<input type="email" valueLink={this.linkState("email")}/>
 				</label>
 
 				<label> Password:
@@ -99,7 +99,7 @@ var LoginForm = React.createClass({
 
 					<h2>Log in to your account</h2>
 						{this.formFields()}
-						
+
 					<section>
 							<button type="submit" name="action">Log in</button>
 							<br></br>

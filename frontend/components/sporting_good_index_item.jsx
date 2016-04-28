@@ -10,7 +10,10 @@ var SportingGoodIndexItem = React.createClass({
   render: function() {
     var sportingGood = this.props.sportingGood;
     return (
-      <div />
+      <li>
+        //may want to change what I display...
+        <Link to={"/sporting_goods/" + sportingGood.id.toString()}>{sportingGood.pic_url}</Link>
+      </li>
     );
   }
 
