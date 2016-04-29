@@ -14,15 +14,13 @@
  *= require_self
  */
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic)
-@import "bootstrap-sprockets"
-@import "bootstrap"
 
-*
-  font-family: 'Lato', sans-serif
 
 body
-  background-color: #b6d4be
-
+  display: flex
+  background-color: #7DA592
+  font-family: 'Lato', sans-serif
+  justify-content: center
 
 // #logged-out
 //   background-image: url('bg.jpeg')
@@ -36,6 +34,11 @@ li
   display: flex
   list-style-image: none
 
+#content
+  display: flex
+  align-self: stretch
+  align-items: center
+
 #app-container
   display: flex
   flex-direction: column
@@ -45,7 +48,7 @@ li
   display: flex
   align-self: stretch
   justify-content: space-between
-  background-color: #3E4E43
+  background-color: #3E604F
   height: 90%
 
 #nav-bar-login
@@ -66,21 +69,23 @@ li
   justify-content: space-between
   flex-direction: column
   align-items: center
-  background: rgba(gray, 0.8)
+  background-color: #EDEDCE
 
 .sporting-good-index-container
   display: flex
-  width: 400px
-  height: 300px
   align-self: center
   justify-content: space-between
   flex-direction: column
   align-items: center
-  background: rgba(gray, 0.5)
+  background: #EDEDCE
 
 .sporting-good-index-title
   display: flex
 
+.sporting-good-index-pics
+  display: flex
+  width: 200px
+  height: 200px
 
 #sporting-good-container
   display: flex

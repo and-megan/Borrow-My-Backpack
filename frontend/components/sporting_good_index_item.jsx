@@ -13,7 +13,7 @@ var SportingGoodIndexItem = React.createClass({
 
     return (
       <li className="sporting-good-index-item">
-        <img onClick={this.goToShowPage} alt="sporting_good_pic" src={this.props.sportingGood.pic_url} />
+        <img onClick={this.goToShowPage} alt="sporting_good_pic" className="sporting-good-index-pics" src={this.props.sportingGood.pic_url} />
       </li>
     );
 
