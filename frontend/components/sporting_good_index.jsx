@@ -38,7 +38,6 @@ var SportingGoodIndex = React.createClass({
         <ul>
           {SportingGoodIndexItemsTags}
         </ul>
-        <h5>Click on any item to view details</h5>
       </div>
     );
   }

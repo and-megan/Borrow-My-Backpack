@@ -48,7 +48,7 @@ module.exports = React.createClass({
 
   form: function () {
     if (this.state.showForm === false) {
-      return;
+      return(<h5>Click on any item to view details</h5>);
     }
     return(
       <form onSubmit={this.handleSubmit}>
@@ -115,8 +115,8 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div id="sporting-good-form">
-        {this.form()}
         <button onClick={this.renderForm}>{this.toggleFormShow()}</button>
+        {this.form()}
       </div>
     );
   }
