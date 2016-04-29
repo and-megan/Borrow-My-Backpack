@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic)
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+*
+  font-family: 'Lato', sans-serif
+
+
+body
+
+  background-image: url('bg.jpeg')
+  background-repeat: no-repeat
+  background-size: cover
+
+
+li
+  display: flex
+  list-style-image: none
+
+#app-container
+  display: flex
+  justify-content: center
+
+
+#login-form-container
+  display: flex
+  width: 400px
+  height: 300px
+  justify-content: center
+  flex-direction: column
+  background: rgba(blue, 0.5)
+
+
+.sporting-good-index
+  width: 300px
+  flex-wrap: wrap
+
+
+.sporting-good-index img
+  max-height: 100%
+  max-width: 100%
+
+
+.sporting-good-index-item
+  flex-wrap: wrap
+
+
+.sporting-good-container
+  width: 250px
+  flex-wrap: wrap
+
+
+.sporting-good-show-pic
+  max-height: 100%
+  max-width: 100%

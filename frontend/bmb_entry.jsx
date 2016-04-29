@@ -1,6 +1,7 @@
 //React
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Modal = require("react-modal");
 //Router
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
@@ -35,7 +36,7 @@ var App = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div id="app-container">
         <NavBar />
         <h1>borrow my backpack</h1>
         {this.props.children}
@@ -59,5 +60,6 @@ var routes = (
 
 
   document.addEventListener("DOMContentLoaded", function () {
+  Modal.setAppElement(document.body);
   ReactDOM.render(<Router history={hashHistory} routes={routes}/>, document.getElementById("content"));
   });

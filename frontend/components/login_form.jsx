@@ -109,6 +109,7 @@ var LoginForm = React.createClass({
 			return;
 		}
 		return(
+
 				<form onSubmit={this.handleLoginSubmit}>
 
 					<h2>Log in to your account</h2>
@@ -123,6 +124,7 @@ var LoginForm = React.createClass({
 
 
 				</form>
+
 		);
 	},
 	renderSignupForm: function () {
@@ -148,7 +150,7 @@ var LoginForm = React.createClass({
 	},
 	render: function(){
 		return (
-			<div id="login-form">
+			<div id="login-form-container">
 				{this.errors()}
 				{this.renderLoginForm()}
 				{this.renderSignupForm()}
