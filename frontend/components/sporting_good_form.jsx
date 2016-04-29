@@ -81,7 +81,7 @@ module.exports = React.createClass({
         <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
         <br></br>
 
-        <input type="submit" readOnly="true" value="Create Post"/>
+        <input type="submit" readOnly="true" value="Create a listing"/>
       </form>
     );
   },
@@ -105,7 +105,7 @@ module.exports = React.createClass({
     });
     hashHistory.push("/sporting_goods");
   },
-  buttonFunction: function () {
+  toggleFormShow: function () {
     if (this.state.showForm === false) {
       return ("List a new item");
     } else {
@@ -116,7 +116,7 @@ module.exports = React.createClass({
     return (
       <div id="sporting-good-form">
         {this.form()}
-        <button onClick={this.renderForm}>Toggle form show</button>
+        <button onClick={this.renderForm}>{this.toggleFormShow()}</button>
       </div>
     );
   }

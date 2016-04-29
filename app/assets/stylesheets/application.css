@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+
+* {
+  font-family: 'Lato', sans-serif;
+}
 
 li {
   display: flex;
