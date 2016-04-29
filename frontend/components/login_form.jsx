@@ -105,13 +105,13 @@ var LoginForm = React.createClass({
 	formFields: function () {
 		return(
 			<section className="user-form-fields">
-				<label> Email:
-					<input type="email" valueLink={this.linkState("email")}/>
-				</label>
+				<label className="user-form-label">Email</label>
+					<input className="email" type="email" placeholder="Email" valueLink={this.linkState("email")}/>
 
-				<label> Password:
-					<input type="password" valueLink={this.linkState("password")}/>
-				</label>
+
+				<label className="user-form-label">Password</label>
+					<input className="password" type="password" placeholder="Password" valueLink={this.linkState("password")}/>
+
 			</section>
 		);
 	},
@@ -121,18 +121,19 @@ var LoginForm = React.createClass({
 		}
 		return(
 
-				<form onSubmit={this.handleLoginSubmit}>
+				<form className="user-form" onSubmit={this.handleLoginSubmit}>
 
-					<h2>Log in to your account</h2>
+					<h2>Log In</h2>
 						{this.formFields()}
 
-					<section>
-							<button type="submit" name="action" className="user-submission-button">Log in</button>
-							<br></br>
-							<button type="submit" name="action" className="guest-demo-login" onClick={this.demoLogin}>Guest Demo</button>
-							<br></br>
-							<br></br>
-							<button name="action" value="signup" className="render-another-form" onClick={this.displaySignupForm}>Go to the sign up page</button>
+					<section className="user-button-container">
+
+							<button name="action" value="signup" className="user-button" onClick={this.displaySignupForm}>Sign Up Page</button>
+
+							<button type="submit" name="action" className="user-button" onClick={this.demoLogin}>Guest Demo</button>
+
+							<button type="submit" name="action" className="user-button">Log in</button>
+
 					</section>
 
 
@@ -145,25 +146,25 @@ var LoginForm = React.createClass({
 			return;
 		}
 		return(
-				<form onSubmit={this.handleSignupSubmit}>
+				<form className="user-form" onSubmit={this.handleSignupSubmit}>
 
-					<h2>Create a new account</h2>
+					<h2>Join</h2>
 					{this.formFields()}
 
-					<section>
-							<button name="action" type="submit" className="user-submission-button">Create your account</button>
-							<br></br>
-							<br></br>
-							<br></br>
-							<button name="action" value="login" className="render-another-form" onClick={this.displayLoginForm}>Go to the login page</button>
-					</section>
+					<section className="user-button-container">
 
+							<button name="action" value="login" className="user-button" onClick={this.displayLoginForm}>Go to the login page</button>
+
+							<button name="action" type="submit" className="user-button">Create your account</button>
+
+
+					</section>
 				</form>
 		);
 	},
 	render: function(){
 		return (
-			<div id="login-form-container">
+			<div className="login-form-container">
 				{this.errors()}
 				{this.renderLoginForm()}
 				{this.renderSignupForm()}

@@ -10,21 +10,7 @@ var UserStore = require('../stores/user_store');
 
 var NavBar = React.createClass({
   mixins: [CurrentUserState],
-  userAccountToggle: function () {
-    if (typeof UserStore.currentUser() === 'undefined') {
-      return (
-        <div id="nav-bar-login">
-          <input type="submit" value="login" onClick={this.login}/>
-        </div>
-  		);
-		} else
-    //this needs to be changed when nav bar for real
-      return (
-        <div id="nav-bar-logout">
-  				<input type="submit" value="logout" onClick={this.logout}/>
-  			</div>
-  		);
-  },
+
   logout: function(e){
     e.preventDefault();
     UserActions.logout();
@@ -34,13 +20,42 @@ var NavBar = React.createClass({
     e.preventDefault();
     hashHistory.push("login");
   },
+  userAccountToggle: function () {
+    if (typeof UserStore.currentUser() === 'undefined') {
+      return (
+          <a onClick={this.login}>Log In</a>
+      );
+    } else
+    //this needs to be changed when nav bar for real
+      return (
+          <a onClick={this.logout}>Log Out</a>
+      );
+  },
   render: function() {
 
     return (
-			<div id="nav-bar">
+			<header>
         <h1 id="app-header">Borrow My Backpack</h1>
-        {this.userAccountToggle()}
-			</div>
+        <ul className="nav-buttons">
+          <li className="profile-link">
+            <p>&#x2630;</p>
+            <ul className="dropdown">
+              <li>
+                Settings
+              </li>
+              <li>
+                Profile
+              </li>
+              <li>
+                Whatever
+              </li>
+              <li>
+                {this.userAccountToggle()}
+              </li>
+            </ul>
+          </li>
+        </ul>
+			</header>
 		);
   }
 

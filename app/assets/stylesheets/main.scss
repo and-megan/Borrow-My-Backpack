@@ -1,0 +1,52 @@
+body {
+  background-color: #F5EADF;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3A4039;
+}
+header h1 {
+  padding: 15px;
+  color: #C0D1A7
+}
+.nav-buttons {
+  padding: 15px;
+  cursor: pointer;
+}
+.nav-buttons:hover {
+  color: #F2F6F7;
+}
+.profile-link {
+  position: relative;
+  width: 200px;
+  text-align: right;
+  color: #C0D1A7
+}
+.profile-link:hover {
+  color: #F2F6F7;
+}
+.nav-buttons:hover ul {
+  display: block;
+  background-color: #D9B1A3;
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  width: 200px;
+}
+.dropdown {
+  display: none;
+  text-align: left;
+  color: #3A4039
+}
+
+.dropdown li {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.dropdown li:hover {
+  background-color: #AB6C60;
+}

@@ -32,14 +32,49 @@ var requireNotSignedIn = function () {
   }
 };
 
-
-
 var App = React.createClass({
+  getInitialState: function(){
+    return({ modalOpen: false });
+  },
+  componentDidMount: function() {
+    this.loginListener = UserStore.addListener(this.toggleModal);
+  },
+  componentWillUnmount: function() {
+    this.loginListener.remove();
+  },
+  toggleModal: function () {
+    if (this.state.currentUser) {
+      this.setState({
+        modalOpen: false
+      });
+    } else {
+      this.setState({
+        modalOpen: true
+      });
+    }
+  },
+  closeModal: function(){
+    this.setState({ modalOpen: false });
+  },
+  openModal: function(){
+    this.setState({ modalOpen: true });
+  },
+  modalContent: function(){
+    return(
 
+      <Modal
+        isOpen={this.state.modalOpen}
+        onRequestClose={this.closeModal}>
+        <LoginForm />
+
+      </Modal>
+    );
+  },
   render: function () {
     return(
       <div id="app-container">
         <NavBar />
+        {this.modalContent}
         {this.props.children}
       </div>
     );
