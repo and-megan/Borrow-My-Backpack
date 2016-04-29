@@ -103,7 +103,7 @@ module.exports = React.createClass({
       lng: "",
       pic_url: ""
     });
-    hashHistory.push("/sporting_goods");
+    hashHistory.push("/");
   },
   toggleFormShow: function () {
     if (this.state.showForm === false) {
