@@ -1,22 +1,26 @@
 var React = require('react');
-var SportingGoodClientActions = require('../actions/sporting_good_client_actions');
 var hashHistory = require('react-router').hashHistory;
+//actions
+var SportingGoodClientActions = require('../actions/sporting_good_client_actions');
+//store
+var SportingGoodStore = require('../stores/sporting_good_store');
 //need to add in lat and lng...
 //sporting good form
 module.exports = React.createClass({
-  var potentialSG = SportingGoodStore.find(this.props.params.sportingGoodId);
-  var sportingGood = potentialSG ? potentialSG : {};
+
   getInitialState: function() {
+    var potentialSG = SportingGoodStore.find(this.props.params.sportingGoodId);
+    var sportingGood = potentialSG ? potentialSG : {};
     return {
-      sportingGood: sportingGood
+      user_id: sportingGood.user_id,
+      lat: sportingGood.lat,
+      lng: sportingGood.lng,
+      description: sportingGood.description,
+      category: sportingGood.category,
+      pic_url: sportingGood.pic_url
     };
   },
-  renderForm: function () {
-    var form = !this.state.showForm;
-    this.setState({
-      showForm: form
-    });
-  },
+
   changeCategory: function (e) {
     var newCategory = e.target.value;
     this.setState({
@@ -49,9 +53,6 @@ module.exports = React.createClass({
   },
 
   form: function () {
-    if (this.state.showForm === false) {
-      return;
-    }
     return(
       <form onSubmit={this.handleSubmit}>
 
@@ -76,7 +77,7 @@ module.exports = React.createClass({
 
         <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
 
-        <input type="submit" readOnly="true" value="Create Post"/>
+        <input type="submit" readOnly="true" value="Update Listing"/>
       </form>
     );
   },
@@ -87,31 +88,24 @@ module.exports = React.createClass({
       description: this.state.description,
       lat: this.state.lat,
       lng: this.state.lng,
-      pic_url: this.state.pic_url
-
+      pic_url: this.state.pic_url,
+      id: parseInt(this.props.params.sportingGoodId)
     };
-    SportingGoodClientActions.createSportingGood(SportingGoodData);
+    SportingGoodClientActions.editSportingGood(SportingGoodData);
     this.setState({
-      category: "",
-      description: "",
-      lat: "",
-      lng: "",
-      pic_url: ""
+      category: this.state.category,
+      description: this.state.description,
+      lat: this.state.lat,
+      lng: this.state.lng,
+      pic_url: this.state.pic_url
     });
-    hashHistory.push("/sporting_goods");
+    hashHistory.push("/");
   },
-  buttonFunction: function () {
-    if (this.state.showForm === false) {
-      return ("List a new item");
-    } else {
-      return ("Hide this form");
-    }
-  },
+
   render: function() {
     return (
-      <div id="sporting-good-form">
+      <div id="sporting-good-edit">
         {this.form()}
-        <button onClick={this.renderForm}>Toggle form show</button>
       </div>
     );
   }

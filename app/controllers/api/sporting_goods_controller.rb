@@ -19,6 +19,17 @@ class Api::SportingGoodsController < ApplicationController
     render json: sporting_good
   end
 
+  def update
+    @sporting_good = SportingGood.find(params[:id])
+
+    if @sporting_good.update(sporting_good_params)
+      render json: @sporting_good
+    else
+      render json: @sporting_good.errors.full_messages
+    end
+
+  end
+
   private
 
   def sporting_good_params

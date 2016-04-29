@@ -32,11 +32,13 @@ var SportingGoodIndex = React.createClass({
       return(<SportingGoodIndexItem key={sportingGood.id} sportingGood={sportingGood} />);
     });
     return (
-      <div className="sporting-good-index">
+      <div className="sporting-good-index-container">
+        <h2 className="sporting-good-index-title">Borrow any of these!</h2>
         <SportingGoodForm />
         <ul>
           {SportingGoodIndexItemsTags}
         </ul>
+        <h5>Click on any item to view details</h5>
       </div>
     );
   }

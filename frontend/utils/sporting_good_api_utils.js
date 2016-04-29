@@ -1,5 +1,5 @@
 var ServerActions = require('../actions/server_actions.js');
-
+//sporting good api utils
 module.exports = {
   fetchSportingGoods: function() {
     $.ajax({
@@ -31,7 +31,7 @@ module.exports = {
     $.ajax({
       url: "api/sporting_goods/" + data.id,
       type: "PATCH",
-      data: { sportingGood: {
+      data: { sporting_good: {
         lat: data.lat,
         lng: data.lng,
         description: data.description,

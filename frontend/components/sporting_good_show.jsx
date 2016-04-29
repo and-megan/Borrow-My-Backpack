@@ -14,7 +14,8 @@ var SportingGoodShow = React.createClass({
   mixins: [CurrentUserState],
   getInitialState: function() {
     return {
-      sportingGood: {pic_url: "i'm blank", description: "none"}
+      sportingGood: {pic_url: "i'm blank", description: "none",
+      user_id: ""}
     };
   },
   componentDidMount: function() {
@@ -24,6 +25,7 @@ var SportingGoodShow = React.createClass({
   componentWillUnmount: function() {
     this.sportingGoodListener.remove();
   },
+
   handleChange: function () {
     var potentialSportingGood = SportingGoodStore.find(this.props.params.sportingGoodId);
     var sportingGood = potentialSportingGood ? potentialSportingGood : {};
@@ -32,7 +34,7 @@ var SportingGoodShow = React.createClass({
     });
   },
   currentUserEdit: function () {
-    if (this.state.currentUser !== this.state.sportingGood.user_id) {
+    if (this.state.currentUser.id !== this.state.sportingGood.user_id) {
       return;
     } else {
       return(
@@ -41,7 +43,7 @@ var SportingGoodShow = React.createClass({
     }
   },
   editListing: function () {
-    var url = "/sporting_goods/" + this.props.sportingGood.id.toString() + "/edit";
+    var url = "/sporting_goods/" + this.state.sportingGood.id.toString() + "/edit";
     hashHistory.push(url);
   },
   deleteSportingGood: function () {
@@ -63,6 +65,7 @@ var SportingGoodShow = React.createClass({
             {this.currentUserEdit()}
           </li>
         </ul>
+        <Link to="/">View all listings</Link>
     </div>
     );
   }
