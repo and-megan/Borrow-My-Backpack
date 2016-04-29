@@ -105,11 +105,11 @@ var LoginForm = React.createClass({
 	formFields: function () {
 		return(
 			<section className="user-form-fields">
-				<label className="user-form-label">Email</label>
+				<label className="user-form-label">Email </label>
 					<input className="email" type="email" placeholder="Email" valueLink={this.linkState("email")}/>
 
 
-				<label className="user-form-label">Password</label>
+				<label className="user-form-label">Password </label>
 					<input className="password" type="password" placeholder="Password" valueLink={this.linkState("password")}/>
 
 			</section>
@@ -148,14 +148,14 @@ var LoginForm = React.createClass({
 		return(
 				<form className="user-form" onSubmit={this.handleSignupSubmit}>
 
-					<h2>Join</h2>
+					<h2>Create an account</h2>
 					{this.formFields()}
 
 					<section className="user-button-container">
 
-							<button name="action" value="login" className="user-button" onClick={this.displayLoginForm}>Go to the login page</button>
+							<button name="action" value="login" className="user-button" onClick={this.displayLoginForm}>Login Page</button>
 
-							<button name="action" type="submit" className="user-button">Create your account</button>
+							<button name="action" type="submit" className="user-button">Create Your Account</button>
 
 
 					</section>

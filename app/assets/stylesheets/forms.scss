@@ -17,7 +17,7 @@
   margin-right:auto;
   min-height: 150px;
   max-width: 500px;
-  background: #D2E9FF;
+  background: #b8e4d2;
   padding: 20px 20px 20px 20px;
   color: #666;
   margin-top: 100px;
@@ -27,10 +27,12 @@
 }
 
 .user-form h2 {
+  text-align: center;
+  font-weight: bold;
   padding: 10px 10px 10px 20px;
   display: block;
-  background: #C0E1FF;
-  border-bottom: 1px solid #B8DDFF;
+  background: #93d6bb;
+  border-bottom: 1px solid #81cdaf;
   margin: -20px -20px 15px;
 }
 
@@ -38,7 +40,7 @@
   color: #888;
   width: 70%;
   padding: 0px 0px 0px 5px;
-  border: 1px solid #C5E2FF;
+  border: 1px solid #81cdaf;
   background: #FBFBFB;
   outline: 0;
   -webkit-box-shadow:inset 0px 1px 6px #ECF3F5;
@@ -52,7 +54,7 @@
   color: #888;
   width: 70%;
   padding: 0px 0px 0px 5px;
-  border: 1px solid #C5E2FF;
+  border: 1px solid #81cdaf;
   background: #FBFBFB;
   outline: 0;
   -webkit-box-shadow:inset 0px 1px 6px #ECF3F5;
@@ -70,7 +72,7 @@ section.user-button-container {
 
 .user-button {
   padding: 10px 30px 10px 30px;
-  background: #66C1E4;
+  background: #6fc8a3;
   border: none;
   color: white;
   margin: 10px;
@@ -82,7 +84,7 @@ section.user-button-container {
 }
 
 .user-button:hover {
-  background: #66a2e4;
+  background: #41aa7e;
 }
 
 section.user-form-fields {
@@ -92,4 +94,5 @@ section.user-form-fields {
 
 .user-form-label {
   padding-top: 10px;
+  margin-right: 5px;
 }
