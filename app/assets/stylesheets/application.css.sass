@@ -20,13 +20,17 @@
 *
   font-family: 'Lato', sans-serif
 
-
 body
+  background-color: #b6d4be
 
-  background-image: url('bg.jpeg')
-  background-repeat: no-repeat
-  background-size: cover
 
+// #logged-out
+//   background-image: url('bg.jpeg')
+//   background-repeat: no-repeat
+//   background-size: cover
+//
+// #logged-in
+//   background-color: #b6d4be
 
 li
   display: flex
@@ -34,37 +38,95 @@ li
 
 #app-container
   display: flex
-  justify-content: center
+  flex-direction: column
+  align-items: center
 
+#nav-bar
+  display: flex
+  align-self: stretch
+  justify-content: space-between
+  background-color: #3E4E43
+  height: 90%
+
+#nav-bar-login
+  display: flex
+  height: 50%
+  order: 10
+
+#app-header
+  display: flex
+  align-self: center
+  height: 75%
+  order: 1
 
 #login-form-container
   display: flex
   width: 400px
   height: 300px
-  justify-content: center
+  justify-content: space-between
   flex-direction: column
-  background: rgba(blue, 0.5)
+  align-items: center
+  background: rgba(gray, 0.8)
 
+.sporting-good-index-container
+  display: flex
+  width: 400px
+  height: 300px
+  align-self: center
+  justify-content: space-between
+  flex-direction: column
+  align-items: center
+  background: rgba(gray, 0.5)
+
+.sporting-good-index-title
+  display: flex
+
+
+#sporting-good-container
+  display: flex
+  width: 100px
+  height: 100px
+  justify-content: space-between
+  flex-direction: column
+  align-items: center
+  background: rgba(gray, 0.5)
+
+.user-form-fields
+  display: flex
+
+.user-submission-button
+  display: flex
+  align-self: flex-end
+
+.render-another-form
+  display: flex
 
 .sporting-good-index
   width: 300px
-  flex-wrap: wrap
-
-
-.sporting-good-index img
-  max-height: 100%
-  max-width: 100%
 
 
 .sporting-good-index-item
-  flex-wrap: wrap
+  display: flex
+  align-self:center
+  height: 30%
+  width: 30%
 
+.sporting-good-index-title
+  display: flex
+  order: 10
 
 .sporting-good-container
-  width: 250px
-  flex-wrap: wrap
+  display: flex
+  width: 200px
+  align-self: center
+  align-items: flex-end
+  order: 1
 
+
+.sporting-good-show-pic-description
+  display: flex
 
 .sporting-good-show-pic
-  max-height: 100%
-  max-width: 100%
+  display: flex
+  max-height: 30%
+  max-width: 30%

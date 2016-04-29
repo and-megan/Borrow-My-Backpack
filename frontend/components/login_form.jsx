@@ -38,6 +38,17 @@ var LoginForm = React.createClass({
 			password: ""
 		});
 	},
+	demoLogin: function (e) {
+		e.preventDefault();
+		UserActions.login({
+			email: "borrow@backpack.com",
+			password: "password"
+		});
+		this.setState({
+			email: "",
+			password: ""
+		});
+	},
 	handleSignupSubmit: function(e){
 		e.preventDefault();
 		UserActions.signup({
@@ -93,7 +104,7 @@ var LoginForm = React.createClass({
 	},
 	formFields: function () {
 		return(
-			<section>
+			<section className="user-form-fields">
 				<label> Email:
 					<input type="email" valueLink={this.linkState("email")}/>
 				</label>
@@ -116,7 +127,9 @@ var LoginForm = React.createClass({
 						{this.formFields()}
 
 					<section>
-							<button type="submit" name="action">Log in</button>
+							<button type="submit" name="action" className="user-submission-button">Log in</button>
+							<br></br>
+							<button type="submit" name="action" className="guest-demo-login" onClick={this.demoLogin}>Guest Demo</button>
 							<br></br>
 							<br></br>
 							<button name="action" value="signup" className="render-another-form" onClick={this.displaySignupForm}>Go to the sign up page</button>
@@ -138,7 +151,7 @@ var LoginForm = React.createClass({
 					{this.formFields()}
 
 					<section>
-							<button name="action" type="submit">Create your account</button>
+							<button name="action" type="submit" className="user-submission-button">Create your account</button>
 							<br></br>
 							<br></br>
 							<br></br>

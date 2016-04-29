@@ -32,13 +32,20 @@ var requireNotSignedIn = function () {
   }
 };
 
+
+
 var App = React.createClass({
 
   render: function () {
+    var idName;
+    if (UserStore.currentUser()) {
+      idName = "logged-in";
+    } else {
+      idName = "logged-out";
+    }
     return (
-      <div id="app-container">
+      <div id={idName}>
         <NavBar />
-        <h1>borrow my backpack</h1>
         {this.props.children}
       </div>
     );

@@ -37,7 +37,8 @@ var NavBar = React.createClass({
   render: function() {
 
     return (
-			<div>
+			<div id="nav-bar">
+        <h1 id="app-header">Borrow My Backpack</h1>
         {this.userAccountToggle()}
 			</div>
 		);

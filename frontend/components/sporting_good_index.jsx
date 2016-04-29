@@ -29,7 +29,7 @@ var SportingGoodIndex = React.createClass({
   },
   render: function() {
     var SportingGoodIndexItemsTags = this.state.sportingGoods.map(function(sportingGood) {
-      return(<SportingGoodIndexItem key={sportingGood.id} sportingGood={sportingGood} />);
+      return(<SportingGoodIndexItem key={sportingGood.id} sportingGood={sportingGood} className="sporting-good-item"/>);
     });
     return (
       <div className="sporting-good-index-container">

@@ -21,11 +21,11 @@ User.create!(
 SportingGood.create!(
 id: 1001,
 user_id: 1001,
-description: "Lime green. Seats two.",
+description: "Red. One-seater. Paddle included.",
 category: "kayak",
 lat: 37.769996,
 lng: -122.511281,
-pic_url: "unsplash.com/photos/eRQPWFijcx4"
+pic_url: "http://i.imgur.com/ogPVR.jpg"
 )
 
 SportingGood.create!(
@@ -35,7 +35,7 @@ description: "Large. It is worn, but reliable. It fits a backpacking tent, sleep
 category: "backpack",
 lat: 37.769996,
 lng: -122.511281,
-pic_url: "unsplash.com/photos/XYOOG4j9OUQ"
+pic_url: "http://i.imgur.com/NGi79xE.jpg"
 )
 
 SportingGood.create!(
@@ -45,7 +45,7 @@ description: "3 years old. I can lend you boots, too.",
 category: "snowboard",
 lat: 37.786049,
 lng: -122.481804,
-pic_url: "unsplash.com/photos/pOwhy6PDorE"
+pic_url: "http://i.imgur.com/QuevphZ.jpg"
 )
 
 SportingGood.create!(
@@ -55,7 +55,7 @@ description: "Rain fly included. The outermost pocket has a broken zipper, but i
 category: "backpack",
 lat: 37.786049,
 lng: -122.481804,
-pic_url: "unsplash.com/photos/tvicgTdh7Fg"
+pic_url: "http://i.imgur.com/UINm0AN.jpg"
 )
 
 SportingGood.create!(
@@ -65,5 +65,5 @@ description: "I'm out of town until September, so I'm hoping my surfboard can ge
 category: "surfboard",
 lat: 37.786049,
 lng: -122.481804,
-pic_url: "unsplash.com/photos/5rh8fzL0hI8"
+pic_url: "http://i.imgur.com/JZFHNdb.jpg"
 )

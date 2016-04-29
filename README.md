@@ -27,9 +27,9 @@ Borrow My Backpack (BMB) will allow users to do the following:
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
-- [ ] Create an account (MVP)
-- [ ] Log in / Log out, including as a Guest/Demo User (MVP)
-- [ ] Create, edit, and view sports equipment listings (MVP)
+- [X] Create an account (MVP)
+- [X] Log in / Log out, including as a Guest/Demo User (MVP)
+- [ ] Create, edit, and view sports equipment listings (MVP) -- FIX IMAGE VIEWS
 - [ ] Edit profile (MVP)
 - [ ] Make and respond to rental requests (MVP)
 - [ ] Search listings based on location and type (MVP)
@@ -65,7 +65,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] blank landing page after signin
 - [X] create `SportingGood` model
 - [X] CRUD API for SportingGoods (`SportingGoodsController`)
-- [ ] seed the database with a small amount of test data
+- [X] seed the database with a small amount of test data
 
 ### Phase 2: Models, API, and basic APIUtil (1.5 days)
 
@@ -76,22 +76,22 @@ the API.
 - [ ] Profiles Model & Controller
 - [ ] Requests Model & Controller
 - [X] jBuilder views for SportingGoods
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [X] setup Webpack & Flux scaffold
+- [X] setup `APIUtil` to interact with the API
+- [X] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (3 days)
 
 **Objective:** SportingGoods can be created, requested, edited, and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files
+- [ ] setup the flux loop with skeleton files -- did front end auth & sporting goods
 - [ ] setup React Router -partially set up
 - implement each SportingGood component, building out the flux loop as needed.
   - [X] `SportingGoodsIndex`
   - [X] `SportingGoodIndexItem`
   - [X] `SportingGoodForm` - but need to not display for not logged in
-  - [ ] `& edit`
+  - [X] `& edit`
   - implement each Requests component, building out the flux loop as needed.
     - [ ] `RequestsIndex`
     - [ ] `RequestIndexItem`
