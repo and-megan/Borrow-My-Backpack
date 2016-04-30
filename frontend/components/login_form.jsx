@@ -163,6 +163,7 @@ var LoginForm = React.createClass({
 		);
 	},
 	render: function(){
+		debugger;
 		return (
 			<div className="login-form-container">
 				{this.errors()}

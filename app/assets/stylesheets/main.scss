@@ -3,6 +3,12 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.app-background {
+  background-image: image-url('bg.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -11,6 +17,9 @@ header {
 header h1 {
   padding: 15px;
   color: #b6e3d0;
+}
+#app-container {
+
 }
 .nav-buttons {
   padding: 15px;

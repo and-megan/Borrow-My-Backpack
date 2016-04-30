@@ -70,7 +70,13 @@ var App = React.createClass({
       </Modal>
     );
   },
+  displayBackground: function () {
+    $('body').addClass('app-background');
+  },
   render: function () {
+    if (this.props.location.pathname === '/login') {
+      this.displayBackground();
+    }
     return(
       <div id="app-container">
         <NavBar />

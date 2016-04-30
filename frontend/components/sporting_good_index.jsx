@@ -33,9 +33,8 @@ var SportingGoodIndex = React.createClass({
     });
     return (
       <div className="sporting-good-index-container">
-        <h2 className="sporting-good-index-title">Borrow any of these!</h2>
         <SportingGoodForm />
-        <ul>
+        <ul className = "list-group">
           {SportingGoodIndexItemsTags}
         </ul>
       </div>
