@@ -81,7 +81,7 @@ module.exports = React.createClass({
         <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
         <br></br>
 
-        <input type="submit" readOnly="true" value="Create a listing"/>
+        <input className="user-button" type="submit" readOnly="true" value="Create a listing"/>
       </form>
     );
   },
@@ -115,7 +115,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div id="sporting-good-form">
-        <button onClick={this.renderForm}>{this.toggleFormShow()}</button>
+        <button className="user-button" onClick={this.renderForm}>{this.toggleFormShow()}</button>
         {this.form()}
       </div>
     );

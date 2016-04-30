@@ -17,6 +17,7 @@ var SportingGoodShow = require('./components/sporting_good_show');
 var SportingGoodEdit = require('./components/sporting_good_edit');
 var Landing = require('./components/landing');
 var NavBar = require('./components/nav_bar');
+
 //Store
 var UserStore = require('./stores/user_store');
 

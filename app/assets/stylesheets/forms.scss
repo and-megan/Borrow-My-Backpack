@@ -74,13 +74,14 @@ section.user-button-container {
   padding: 10px 30px 10px 30px;
   background: #6fc8a3;
   border: none;
-  color: white;
+  color: #333333;
   margin: 10px;
+  font-weight: bold;
   max-height: 45px;
   box-shadow: 1px 1px 1px #4C6E91;
   -webkit-box-shadow: 1px 1px 1px #4C6E91;
   -moz-box-shadow: 1px 1px 1px #4C6E91;
-  text-shadow: 1px 1px 1px #5079A3;
+  // text-shadow: 1px 1px 1px #5079A3;
 }
 
 .user-button:hover {

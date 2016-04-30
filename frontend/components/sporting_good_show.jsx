@@ -64,13 +64,14 @@ var SportingGoodShow = React.createClass({
     return (
       <div id="sporting-good-container">
         <ul className="sporting-good-container-ul">
-          <li>
-            <img src={this.state.sportingGood.pic_url} className="sporting-good-show-pic" alt="sporting_good_item_show" />
-          </li>
-          <li className="sporting-good-show-pic-description">
-            {this.state.sportingGood.description}
-          </li>
-
+          <ul className ="sporting-good-row-1">
+            <li>
+              <img src={this.state.sportingGood.pic_url} className="sporting-good-show-pic" alt="sporting_good_item_show" />
+            </li>
+            <li className="sporting-good-show-pic-description">
+              {this.state.sportingGood.description}
+            </li>
+          </ul>
           {this.currentUserEdit()}
 
         </ul>

@@ -37,6 +37,13 @@ class User < ActiveRecord::Base
   class_name: 'SportingGood'
   )
 
+  has_many(
+  :requests,
+  primary_key: :id,
+  foreign_key: :sender_id,
+  class_name: 'Request'
+  )
+
   attr_reader :password
 
   def password=(password)
@@ -60,6 +67,10 @@ class User < ActiveRecord::Base
 		self.save
 		self.session_token
 	end
+
+  def default_profile_pic
+    self.pic_url ||= "http://farm8.staticflickr.com/7208/6788409332_4a73bc7cce_z.jpg"
+  end
 
 	private
 

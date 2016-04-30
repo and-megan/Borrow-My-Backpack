@@ -20,6 +20,10 @@ var NavBar = React.createClass({
     e.preventDefault();
     hashHistory.push("login");
   },
+  goHome: function (e) {
+    e.preventDefault();
+    hashHistory.push("/");
+  },
   userAccountToggle: function () {
     if (typeof UserStore.currentUser() === 'undefined') {
       return (
@@ -35,7 +39,7 @@ var NavBar = React.createClass({
 
     return (
 			<header>
-        <h1 id="app-header">Borrow My Backpack</h1>
+        <h1 id="app-header" onClick={this.goHome}>Borrow My Backpack</h1>
         <ul className="nav-buttons">
           <li className="profile-link">
             <p>&#x2630;</p>
