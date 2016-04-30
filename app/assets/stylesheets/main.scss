@@ -1,35 +1,35 @@
 body {
-  background-color: #F5EADF;
+  background-color: #eff9f5;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  background-color: #3A4039;
+  background-color: #153729;
 }
 header h1 {
   padding: 15px;
-  color: #C0D1A7
+  color: #b6e3d0;
 }
 .nav-buttons {
   padding: 15px;
   cursor: pointer;
 }
 .nav-buttons:hover {
-  color: #F2F6F7;
+  color: #a8dec7;
 }
 .profile-link {
   position: relative;
   width: 200px;
   text-align: right;
-  color: #C0D1A7
+  color: #b8e4d2;
 }
 .profile-link:hover {
   color: #F2F6F7;
 }
 .nav-buttons:hover ul {
   display: block;
-  background-color: #D9B1A3;
+  background-color: #d2eee2;
   position: absolute;
   top: 30px;
   left: 15px;
@@ -37,8 +37,8 @@ header h1 {
 }
 .dropdown {
   display: none;
-  text-align: left;
-  color: #3A4039
+  text-align: right;
+  color: #3A4039;
 }
 
 .dropdown li {
@@ -48,5 +48,5 @@ header h1 {
   border-right: 1px solid black;
 }
 .dropdown li:hover {
-  background-color: #AB6C60;
+  background-color: #6fc8a3;
 }
