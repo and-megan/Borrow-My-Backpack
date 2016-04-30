@@ -43,9 +43,9 @@ module.exports = {
       }
     });
   },
-  deleteSportingGood: function(id) {
+  deleteSportingGood: function(object) {
     $.ajax({
-      url: "api/sporting_goods/" + id.toString(),
+      url: "api/sporting_goods/" + object.id.toString(),
       type: "DELETE",
       success: function(sportingGood) {
         ServerActions.removeSportingGood(sportingGood);

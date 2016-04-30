@@ -1,6 +1,21 @@
-.sporting-good-index-container {
-
+.sporting-good-container-ul {
+  display: flex;
+  flex-direction: column;
 }
 .list-group {
-  
+
+}
+.sporting-good-show-pic {
+  display: flex;
+  width: 200px;
+  height: 200px;
+}
+
+.sporting-good-show-pic-description {
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  border:solid 1px #46b688;
+  padding:5px;
+  background-color: #eff9f5;
+  max-width: 30%;
 }

@@ -38,10 +38,18 @@ var SportingGoodShow = React.createClass({
       return;
     } else {
       return(
-        <button onClick={this.editListing}>Edit Listing</button>
+        <ul>
+          <li>
+            <button className="user-button" onClick={this.editListing}>Edit Listing</button>
+          </li>
+          <li>
+            <button className="user-button" onClick={this.deleteSportingGood}>Delete Listing</button>
+          </li>
+        </ul>
       );
     }
   },
+
   editListing: function () {
     var url = "/sporting_goods/" + this.state.sportingGood.id.toString() + "/edit";
     hashHistory.push(url);
@@ -50,20 +58,21 @@ var SportingGoodShow = React.createClass({
     var potentialSportingGood = SportingGoodStore.find(this.props.params.sportingGoodId);
     var sportingGood = potentialSportingGood ? potentialSportingGood : {};
     SportingGoodClientActions.deleteSportingGood(sportingGood);
+    hashHistory.push("/");
   },
   render: function() {
     return (
       <div id="sporting-good-container">
-        <ul>
-          <li className="sporting-good-show-pic">
-            <img src={this.state.sportingGood.pic_url} alt="sporting_good_item_show" />
+        <ul className="sporting-good-container-ul">
+          <li>
+            <img src={this.state.sportingGood.pic_url} className="sporting-good-show-pic" alt="sporting_good_item_show" />
           </li>
           <li className="sporting-good-show-pic-description">
             {this.state.sportingGood.description}
           </li>
-          <li>
-            {this.currentUserEdit()}
-          </li>
+
+          {this.currentUserEdit()}
+
         </ul>
         <Link to="/">View all listings</Link>
     </div>
