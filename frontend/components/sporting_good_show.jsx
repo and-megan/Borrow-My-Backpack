@@ -80,7 +80,6 @@ var SportingGoodShow = React.createClass({
   },
 
   editListing: function () {
-    debugger;
     var url = "/sporting_goods/" + this.state.sportingGood.id.toString() + "/edit";
     hashHistory.push(url);
   },
@@ -114,14 +113,20 @@ var SportingGoodShow = React.createClass({
         <Modal
           isOpen={this.state.requestModalOpen}
           onRequestClose={this.closeRequestModal}>
+
           <RequestBox user={this.state.currentUser} sportingGood={this.state.sportingGood}/>
+
+          <button className="user-button" value="Cancel Request" onClick={this.closeRequestModal}>Cancel</button>
+
         </Modal>
-        <Modal 
+
+        <Modal
           isOpen={this.state.editModalOpen}
           onRequestClose={this.closeEditModal}>
           <div>
             <SportingGoodEdit sportingGood={this.state.sportingGood}/>
           </div>
+          <button className="user-button" value="Cancel" onClick={this.closeEditModal}>Cancel</button>
         </Modal>
         <Link className="back-to-listings" to="/">View all listings</Link>
     </div>

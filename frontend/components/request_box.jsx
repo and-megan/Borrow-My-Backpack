@@ -49,6 +49,7 @@ var RequestBox = React.createClass({
       errors: [],
       success: false
     });
+    SportingGoodShow.closeRequestModal();
   },
   goToLanding: function () {
     hashHistory.push('/');
@@ -58,11 +59,7 @@ var RequestBox = React.createClass({
       success: true
     });
   },
-  closeEditModal: function () {
-    debugger;
-    var url = "sporting_goods/" + this.props.sportingGood.id.toString();
-    hashHistory.push(url);
-  },
+
   render: function() {
     var button;
     if (this.state.success) {
@@ -70,8 +67,7 @@ var RequestBox = React.createClass({
     } else {
       button =
       <div className="request-button-container">
-        <button type="submit" className="user-button" value="Make Request" onClick={this.buttonToggle}>Make your request</button>
-        <button className="user-button" value="Cancel Request" onClick={this.closeEditModal}>Cancel</button>
+        <button type="submit" className="user-button" value="Make Request" onClick={this.buttonToggle}>Send your request</button>
       </div>;
     }
     var adjective;
