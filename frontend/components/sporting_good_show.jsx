@@ -3,19 +3,25 @@ var React = require('react');
 var Link = require('react-router').Link;
 var ReactRouter = require('react-router');
 var hashHistory = ReactRouter.hashHistory;
+var Modal = require("react-modal");
 //store
 var SportingGoodStore = require('../stores/sporting_good_store');
 //actions
 var SportingGoodClientActions = require('../actions/sporting_good_client_actions');
 //mixins
 var CurrentUserState = require('../mixins/current_user_state');
+//components
+var RequestBox = require('./request_box');
+var SportingGoodEdit = require('./sporting_good_edit');
 
 var SportingGoodShow = React.createClass({
   mixins: [CurrentUserState],
   getInitialState: function() {
     return {
-      sportingGood: {pic_url: "i'm blank", description: "none",
-      user_id: ""}
+      sportingGood: {pic_url: "", description: "",
+      user_id: "", id: ""},
+      requestModalOpen: false,
+      editModalOpen: false
     };
   },
   componentDidMount: function() {
@@ -25,7 +31,30 @@ var SportingGoodShow = React.createClass({
   componentWillUnmount: function() {
     this.sportingGoodListener.remove();
   },
-
+  closeRequestModal: function(){
+    this.setState({ requestModalOpen: false });
+  },
+  openRequestModal: function(){
+    this.setState({ requestModalOpen: true });
+  },
+  closeEditModal: function () {
+    this.setState({
+      editModalOpen: false
+    });
+  },
+  openEditModal: function () {
+    this.setState({
+      editModalOpen: true
+    });
+  },
+  toggleRequestForm: function () {
+    if (this.state.currentUser.id === this.state.sportingGood.user_id) {
+      return;
+    }
+    return (
+      <button className="user-button" onClick={this.openRequestModal}>Request this {this.state.sportingGood.category}!</button>
+    );
+  },
   handleChange: function () {
     var potentialSportingGood = SportingGoodStore.find(this.props.params.sportingGoodId);
     var sportingGood = potentialSportingGood ? potentialSportingGood : {};
@@ -40,7 +69,7 @@ var SportingGoodShow = React.createClass({
       return(
         <ul>
           <li>
-            <button className="user-button" onClick={this.editListing}>Edit Listing</button>
+            <button className="user-button" onClick={this.openEditModal}>Edit Listing</button>
           </li>
           <li>
             <button className="user-button" onClick={this.deleteSportingGood}>Delete Listing</button>
@@ -51,6 +80,7 @@ var SportingGoodShow = React.createClass({
   },
 
   editListing: function () {
+    debugger;
     var url = "/sporting_goods/" + this.state.sportingGood.id.toString() + "/edit";
     hashHistory.push(url);
   },
@@ -60,7 +90,11 @@ var SportingGoodShow = React.createClass({
     SportingGoodClientActions.deleteSportingGood(sportingGood);
     hashHistory.push("/");
   },
+
   render: function() {
+
+
+
     return (
       <div id="sporting-good-container">
         <ul className="sporting-good-container-ul">
@@ -72,10 +106,24 @@ var SportingGoodShow = React.createClass({
               {this.state.sportingGood.description}
             </li>
           </ul>
-          {this.currentUserEdit()}
 
+          <br></br>
+          {this.currentUserEdit()}
+          {this.toggleRequestForm()}
         </ul>
-        <Link to="/">View all listings</Link>
+        <Modal
+          isOpen={this.state.requestModalOpen}
+          onRequestClose={this.closeRequestModal}>
+          <RequestBox user={this.state.currentUser} sportingGood={this.state.sportingGood}/>
+        </Modal>
+        <Modal 
+          isOpen={this.state.editModalOpen}
+          onRequestClose={this.closeEditModal}>
+          <div>
+            <SportingGoodEdit sportingGood={this.state.sportingGood}/>
+          </div>
+        </Modal>
+        <Link className="back-to-listings" to="/">View all listings</Link>
     </div>
     );
   }

@@ -4,7 +4,7 @@ class Api::RequestsController < ApplicationController
   end
 
   def create
-    request = current_user.request.create!(request_params)
+    request = current_user.requests.create!(request_params)
     render json: request
   end
 

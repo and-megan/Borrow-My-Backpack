@@ -4,6 +4,7 @@ var RequestConstants = require('../constants/request_constants');
 var Store = require('flux/utils').Store;
 var RequestStore = new Store(AppDispatcher);
 var _requests = {};
+var _errors = [];
 
 RequestStore.find = function(id) {
   return _requests[id];
@@ -30,6 +31,15 @@ RequestStore.removeRequest = function(request) {
   delete _requests[request.id];
 };
 
+RequestStore.resetErrors = function (errors) {
+  _errors = [];
+  _errors = errors.responseJSON.errors;
+};
+
+RequestStore.allErrors = function () {
+  return _errors.slice(0);
+};
+
 RequestStore.__onDispatch = function(payload){
   switch (payload.actionType) {
     case RequestConstants.REQUESTS_RECEIVED:
@@ -41,9 +51,12 @@ RequestStore.__onDispatch = function(payload){
     case RequestConstants.REQUEST_REMOVED:
       this.removeRequest(payload.request);
       break;
+    case RequestConstants.REQUEST_ERROR:
+      this.resetErrors(payload.errors);
+      break;
   }
   this.__emitChange();
-}; 
+};
 
 
 

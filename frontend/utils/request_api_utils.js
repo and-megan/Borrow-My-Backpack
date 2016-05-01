@@ -49,5 +49,5 @@ module.exports = {
         ServerActions.removeRequest(request);
       }
     });
-  } 
+  }
 };
