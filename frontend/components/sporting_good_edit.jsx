@@ -61,7 +61,9 @@ module.exports = React.createClass({
     } else {
       return(
         <form onSubmit={this.handleSubmit}>
+        <div className="sporting-edit-div">
 
+        <label>Type</label>
         <input list="sporting_goods" value={this.state.category} onChange={this.changeCategory}/>
           <datalist id="sporting_goods">
             <option value="backpack"></option>
@@ -72,18 +74,21 @@ module.exports = React.createClass({
             <option value="tent"></option>
           </datalist>
 
-
+          <br></br>
+          <label>Description</label>
           <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
-
+          <br></br>
           <label>Latitude</label>
           <input type="number" step="0.000001" value={this.state.lat} onChange={this.changeLat}/>
-
+          <br></br>
           <label>Longitude</label>
           <input type="number" step="0.000001" value={this.state.lng} onChange={this.changeLng}/>
-
+          <br></br>
+          <label>Picture url</label>
           <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
-
-          <input type="submit" readOnly="true" value="Update Listing"/>
+          <br></br>
+          <input type="submit" className="user-button" readOnly="true" value="Update Listing!"/>
+        </div>
         </form>
       );
     }

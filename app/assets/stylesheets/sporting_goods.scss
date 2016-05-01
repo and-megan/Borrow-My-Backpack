@@ -22,6 +22,7 @@
   background-color: #eff9f5;
   max-height: 200px;
   max-width: 40%;
+  min-width: 200px;
   overflow: auto;
   margin: 5px;
 }
@@ -70,4 +71,12 @@
 .sporting-good-index-item-category {
   background-color: #eff9f5;
   text-align: center;
+}
+//sporting good edit
+.sporting-edit-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 300px;
+  align-items: flex-start;
 }
