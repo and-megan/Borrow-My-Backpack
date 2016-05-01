@@ -30,6 +30,7 @@ var Map = React.createClass({
     }
   },
   render: function() {
+    debugger;
     return (
       <div id="map" ref="map"></div>
     );

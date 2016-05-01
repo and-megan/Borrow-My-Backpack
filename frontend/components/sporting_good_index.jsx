@@ -8,6 +8,7 @@ var SportingGoodStore = require('../stores/sporting_good_store');
 //components
 var SportingGoodForm = require('./sporting_good_form');
 var SportingGoodIndexItem = require('./sporting_good_index_item');
+var Map = require('./map');
 
 
 var SportingGoodIndex = React.createClass({
@@ -60,8 +61,12 @@ var SportingGoodIndex = React.createClass({
             </div>
             <button className="user-button" value="Cancel" onClick={this.closeFormModal}>Cancel</button>
           </Modal>
-
-
+        <div className="map-sg-index">
+          <Map
+            sportingGoods={this.state.sportingGoods}
+            onMapClick={this.handleMapClick}
+            onMarkerClick={this.handleMarkerClick}/>
+        </div>
         <ul className = "list-group">
           {SportingGoodIndexItemsTags}
         </ul>
