@@ -59,9 +59,9 @@ module.exports = React.createClass({
           <option value="backpack"></option>
           <option value="bicycle"></option>
           <option value="kayak"></option>
-          <option value="skis"></option>
           <option value="snowboard"></option>
           <option value="surfboard"></option>
+            <option value="tent"></option>
         </datalist>
         <br></br>
 

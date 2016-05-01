@@ -19,8 +19,7 @@ var RequestBox = React.createClass({
       end_date: "",
       sender_id: userId,
       sporting_good_id: sportingGoodId,
-      errors: [],
-      success: false
+      errors: []
     };
   },
   componentDidMount: function() {
@@ -47,39 +46,22 @@ var RequestBox = React.createClass({
       sender_id: userId,
       sporting_good_id: sportingGoodId,
       errors: [],
-      success: false
     });
-    SportingGoodShow.closeRequestModal();
   },
   goToLanding: function () {
     hashHistory.push('/');
   },
-  successToggle: function () {
-    this.setState({
-      success: true
-    });
-  },
 
   render: function() {
-    var button;
-    if (this.state.success) {
-      button = <button type="submit" className="user-button" value="Successfully Sent A Request!"></button>;
-    } else {
-      button =
+    var button =
       <div className="request-button-container">
-        <button type="submit" className="user-button" value="Make Request" onClick={this.buttonToggle}>Send your request</button>
+        <button type="submit" className="user-button" value="Make Request" onClick={this.props.onClick}>Send your request</button>
       </div>;
-    }
-    var adjective;
-      if (this.props.sportingGood.category === 'skis') {
-        adjective = "these";
-      } else {
-        adjective = "this";
-      }
+
     return (
       <div className="request-box-container">
         <div className="request-heading">
-          <text className="request-title">Want to borrow {adjective} {this.props.sportingGood.category}?</text>
+          <text className="request-title">Want to borrow this {this.props.sportingGood.category}?</text>
         </div>
         <div className="request-form-container">
           <form className="" onSubmit={this.handleSubmit} id="request-form">

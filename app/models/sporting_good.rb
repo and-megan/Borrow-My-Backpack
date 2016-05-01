@@ -15,7 +15,7 @@
 
 class SportingGood < ActiveRecord::Base
   validates_presence_of :user_id, :lat, :lng, :category
-  validates :category, inclusion: { in: %w(backpack kayak bicycle tent surfboard snowboard skis),
+  validates :category, inclusion: { in: %w(backpack kayak bicycle tent surfboard snowboard tent),
     message: "%{value} is not a valid input" }
 
   belongs_to(

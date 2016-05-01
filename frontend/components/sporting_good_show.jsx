@@ -64,7 +64,7 @@ var SportingGoodShow = React.createClass({
   },
   currentUserEdit: function () {
     if (this.state.currentUser.id !== this.state.sportingGood.user_id) {
-      return;
+      return "";
     } else {
       return(
         <ul>
@@ -114,7 +114,7 @@ var SportingGoodShow = React.createClass({
           isOpen={this.state.requestModalOpen}
           onRequestClose={this.closeRequestModal}>
 
-          <RequestBox user={this.state.currentUser} sportingGood={this.state.sportingGood}/>
+          <RequestBox user={this.state.currentUser} sportingGood={this.state.sportingGood} requestModalOpen={this.state.requestModalOpen} onClick={this.closeRequestModal}/>
 
           <button className="user-button" value="Cancel Request" onClick={this.closeRequestModal}>Cancel</button>
 

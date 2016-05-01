@@ -29,7 +29,7 @@ class Api::RequestsController < ApplicationController
   private
   def request_params
     params.require(:request).permit(
-      :sporting_good_id, :message, :start_date, :end_date
+      :sporting_good_id, :message, :start_date, :end_date, :sender_id
     )
   end
 end
