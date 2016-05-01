@@ -12,11 +12,11 @@ Borrow My Backpack allows users to share sports equipment. Lenders can post thei
 
 By the end of Week 9, Borrow My Backpack will, at a minimum, satisfy the following criteria:
 
-- [ ] Sign in/out with authentication, including a demo account
+- [X] Sign in/out with authentication, including a demo account
 - [ ] Responsive, bug-free navigation
 - [ ] Interesting & adequate seed data to show off site's features
 - [ ] Minimum features for a CouchSurfing-inspired app: equipment listings, requests, approvals, search functionality, and user accounts
-- [ ] Hosting on Heroku
+- [X] Hosting on Heroku
 - [ ] Aesthetic CSS styling
 - [ ] A production README
 
@@ -29,9 +29,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [X] Create an account (MVP)
 - [X] Log in / Log out, including as a Guest/Demo User (MVP)
-- [ ] Create, edit, and view sports equipment listings (MVP) -- FIX IMAGE VIEWS
+- [X] Create, edit, and view sports equipment listings (MVP)
 - [ ] Edit profile (MVP)
-- [ ] Make and respond to rental requests (MVP)
+- [ ] Make and respond to rental requests (MVP) - need to respond
 - [ ] Search listings based on location and type (MVP)
 - [ ] View upcoming equipment rentals (lender and borrower) on homepage (expected feature, but not MVP)
 - [ ] Create and attend BMB Events. View upcoming events on homepage feed (expected feature, but not MVP)
@@ -74,7 +74,7 @@ the API.
 
 
 - [ ] Profiles Model & Controller
-- [ ] Requests Model & Controller
+- [X] Requests Model & Controller
 - [X] jBuilder views for SportingGoods
 - [X] setup Webpack & Flux scaffold
 - [X] setup `APIUtil` to interact with the API
@@ -85,7 +85,7 @@ the API.
 **Objective:** SportingGoods can be created, requested, edited, and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files -- did front end auth & sporting goods
+- [ ] setup the flux loop with skeleton files -- did front end auth & sporting goods & requests
 - [ ] setup React Router -partially set up
 - implement each SportingGood component, building out the flux loop as needed.
   - [X] `SportingGoodsIndex`
@@ -126,7 +126,7 @@ user interface.
 
 **Objective:** Create and style Navigation Bar
 
-- [ ] create `NavigationBar` component
+- [X] create `NavigationBar` component -- needs more stuff
 - [ ] create `SearchBar` component
 - [ ] Style new elements
 
