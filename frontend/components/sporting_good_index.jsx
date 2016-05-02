@@ -1,5 +1,7 @@
 var React = require('react');
-var History = require('react-router').History;
+var ReactRouter = require('react-router');
+
+var hashHistory = ReactRouter.hashHistory;
 var Modal = require("react-modal");
 //actions
 var SportingGoodClientActions = require('../actions/sporting_good_client_actions');
@@ -40,6 +42,10 @@ var SportingGoodIndex = React.createClass({
       formModalOpen: false
     });
   },
+  handleMarkerClick: function () {
+    var sportingGoodId = this.state.sportingGoodId;
+    hashHistory.push('sporting_goods/' + sportingGoodId.toString());
+  },
   toggleNewListingForm: function () {
     return (
       <button className="user-button" onClick={this.openFormModal}>Make a new listing!</button>
@@ -52,6 +58,8 @@ var SportingGoodIndex = React.createClass({
     return (
       <div className="sporting-good-index-container">
         {this.toggleNewListingForm()}
+        <div className="sporting-good-index-view">
+
           <Modal
             isOpen={this.state.formModalOpen}
             onRequestClose={this.closeFormModal}>
@@ -61,15 +69,19 @@ var SportingGoodIndex = React.createClass({
             </div>
             <button className="user-button" value="Cancel" onClick={this.closeFormModal}>Cancel</button>
           </Modal>
-        <div className="map-sg-index">
-          <Map
-            sportingGoods={this.state.sportingGoods}
-            onMapClick={this.handleMapClick}
-            onMarkerClick={this.handleMarkerClick}/>
+
+          <ul className = "list-group">
+            {SportingGoodIndexItemsTags}
+          </ul>
+
+          <div className="map-sg-index">
+            <Map
+              sportingGoods={this.state.sportingGoods}
+              onMapClick={this.handleMapClick}
+              onMarkerClick={this.handleMarkerClick}/>
+          </div>
+
         </div>
-        <ul className = "list-group">
-          {SportingGoodIndexItemsTags}
-        </ul>
       </div>
     );
   }

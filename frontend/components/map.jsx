@@ -2,14 +2,17 @@ var React = require('react');
 var SportingGoodStore = require('../stores/sporting_good_store');
 var SportingGoodClientActions = require('../actions/sporting_good_client_actions');
 var SportingGoodApiUtil = require('../utils/sporting_good_api_utils');
+var FilterActions = require('../actions/filter_actions');
+var ReactRouter = require('react-router');
+var hashHistory = ReactRouter.hashHistory;
 
 var Map = React.createClass({
   componentDidMount: function(){
     var mapDOMNode = document.getElementById("map");
     // EDITED VAR MAP DOMNODE FROM THE GOOGLE COPY PASTE TO BE ABLE TO GRAB THE ID=MAP IN RENDER FUNCTION
     var mapOptions = {
-      center: {lat: 37.7758, lng: -122.435},
-      zoom: 13
+      center: {lat: 37.819633, lng: -122.368883},
+      zoom: 11
     };
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.sportingGoodChangeListener = SportingGoodStore.addListener(this.addSportingGoodMarkers);
@@ -18,19 +21,26 @@ var Map = React.createClass({
     this.sportingGoodChangeListener.remove();
   },
   addSportingGoodMarkers: function () {
+    var allSportingGoods = [];
 
-    var allSportingGoods = SportingGoodStore.all();
+    allSportingGoods = SportingGoodStore.all();
 
     for (var i = 0; i < allSportingGoods.length; i++) {
       var myLatLng = new google.maps.LatLng(allSportingGoods[i].lat, allSportingGoods[i].lng);
-      var marker = new google.maps.Marker({
-        position: myLatLng
-      });
-      marker.setMap(this.map);
+      this.createSportingGoodMarker(myLatLng, allSportingGoods[i].id);
     }
   },
+  createSportingGoodMarker: function (pos, SGid) {
+    var marker = new google.maps.Marker({
+      position: pos,
+      id: SGid
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+      hashHistory.push('sporting_goods/' + marker.id);
+    });
+    marker.setMap(this.map);
+  },
   render: function() {
-    debugger;
     return (
       <div id="map" ref="map"></div>
     );
