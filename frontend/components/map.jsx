@@ -9,7 +9,6 @@ var hashHistory = ReactRouter.hashHistory;
 var Map = React.createClass({
   componentDidMount: function(){
     var mapDOMNode = document.getElementById("map");
-    // EDITED VAR MAP DOMNODE FROM THE GOOGLE COPY PASTE TO BE ABLE TO GRAB THE ID=MAP IN RENDER FUNCTION
     var mapOptions = {
       center: {lat: 37.819633, lng: -122.368883},
       zoom: 11

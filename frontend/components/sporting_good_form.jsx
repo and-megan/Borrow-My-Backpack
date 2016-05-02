@@ -4,10 +4,12 @@ var hashHistory = require('react-router').hashHistory;
 //need to add in lat and lng...
 //sporting good form
 module.exports = React.createClass({
+
   getInitialState: function() {
     return {
       category: "",
       description: "",
+      address: "",
       lat: "",
       lng: "",
       pic_url: ""
@@ -20,16 +22,10 @@ module.exports = React.createClass({
       category: newCategory
     });
   },
-  changeLng: function (e) {
-    var newLng = e.target.value;
+  changeAddress: function (e) {
+    var newAddress = e.target.value;
     this.setState({
-      lng: newLng
-    });
-  },
-  changeLat: function (e) {
-    var newLat = e.target.value;
-    this.setState({
-      lat: newLat
+      address: newAddress
     });
   },
   changeUrl: function (e) {
@@ -45,27 +41,29 @@ module.exports = React.createClass({
     });
   },
 
-
-  // readOnly="true"
   handleSubmit: function(event) {
-
     event.preventDefault();
-    var SportingGoodData = {
-      category: this.state.category,
-      description: this.state.description,
-      lat: this.state.lat,
-      lng: this.state.lng,
-      pic_url: this.state.pic_url
+    var latitude;
+    var longitude;
+    var addressInput = document.getElementById('address-input').value;
+    var geocoder = new google.maps.Geocoder();
 
-    };
-    SportingGoodClientActions.createSportingGood(SportingGoodData);
-    this.setState({
-      category: "",
-      description: "",
-      lat: "",
-      lng: "",
-      pic_url: ""
-    });
+    geocoder.geocode({address: addressInput}, function (results, status) {
+
+      if (status === google.maps.GeocoderStatus.OK) {
+        latitude = results[0].geometry.location.lat();
+        longitude = results[0].geometry.location.lng();
+        var SportingGoodData = {
+        category: this.state.category,
+        description: this.state.description,
+        lat: latitude,
+        lng: longitude,
+        pic_url: this.state.pic_url
+        };
+        SportingGoodClientActions.createSportingGood(SportingGoodData);
+      }
+    }.bind(this));
+
     this.props.onClick();
     hashHistory.push("/");
   },
@@ -92,12 +90,9 @@ module.exports = React.createClass({
             <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
             <br></br>
 
-            <label>Latitude</label>
-            <input type="number" step="0.000001" value={this.state.lat} onChange={this.changeLat}/>
-            <br></br>
 
-            <label>Longitude</label>
-            <input type="number" step="0.000001" value={this.state.lng} onChange={this.changeLng}/>
+            <label>Address</label>
+            <input type="text" id="address-input" value={this.state.address} onChange={this.changeAddress}/>
             <br></br>
 
             <label>Picture Url</label>
