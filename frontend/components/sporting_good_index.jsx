@@ -32,6 +32,11 @@ var SportingGoodIndex = React.createClass({
       sportingGoods: SportingGoodStore.all()
     });
   },
+  componentWillReceiveProps: function () {
+    this.setState({
+      sporting_goods: SportingGoodStore.all()
+    });
+  },
   openFormModal: function () {
     this.setState({
       formModalOpen: true
