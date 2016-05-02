@@ -9,6 +9,14 @@ module.exports = {
       }
     });
   },
+  // fetchRequestsById: function (id) {
+  //   $.ajax({
+  //     url: "api/requests",
+  //     success: function (requests) {
+  //       ServerActions.receiveAll(requests);
+  //     }
+  //   });
+  // },
   getRequest: function(id) {
     $.ajax({
       url:"api/requests/" + id.toString(),

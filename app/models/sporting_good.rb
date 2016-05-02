@@ -25,6 +25,11 @@ class SportingGood < ActiveRecord::Base
   class_name: 'User'
   )
 
-
+  has_many(
+  :requests,
+  primary_key: :id,
+  foreign_key: :sporting_good_id,
+  class_name: 'Request'
+  )
 
 end

@@ -44,6 +44,9 @@ class User < ActiveRecord::Base
   class_name: 'Request'
   )
 
+  has_many :received_requests, through: :sporting_goods,
+  source: :requests
+
   attr_reader :password
 
   def password=(password)

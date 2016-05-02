@@ -97,10 +97,7 @@ user interface.
     - [ ] `RequestsIndex`
     - [ ] `RequestIndexItem`
     - [X] `RequestForm`
-  <!-- - implement each Events component, building out the flux loop as needed. IF TIME.
-    - [ ] `EventsIndex`
-    - [ ] `EventIndexItem`
-    - [ ] `EventForm & edit` -->
+
     - [X] show sporting goods on a map based on lat & lng
 
 
@@ -113,15 +110,21 @@ user interface.
 - [X] add basic colors & styles
 - [X] Add modals
 
-### Phase 5: SearchBar Component (1 day)
+### Phase 5: ClickFilter Component (1 day)
 
 **Objective:** Create and style Search Bar
 
 
-- [ ] create `SearchBar` component
+- [ ] create `ClickFilter` component
 - [ ] Style new elements
 
-### Phase 6: Profiles React (1 day)
+### Phase 6: Allow Complex Styling (1 day)
+
+**objective:** Enable complex styling.
+
+- [ ] Style with CSS
+- [ ] fancy splash page
+### Phase 7: Profiles React (1 day)
 
 **Objective:** Get Profile component stuff fleshed out.
 - implement each Profile component, building out the flux loop as needed.
@@ -133,12 +136,7 @@ user interface.
 
 
 
-### Phase 7: Allow Complex Styling (1 day)
 
-**objective:** Enable complex styling.
-
-- [ ] Style with BootStrap & CSS
-- [ ] fancy splash page
 
 ### Phase 8: Styling Cleanup and Seeding (1 day)
 
@@ -160,6 +158,10 @@ user interface.
 - [ ] availability calendar for sporting goods
 - [ ] sporting goods ratings
 - [ ] splash page counter with stats, dashboard with stats
+<!-- - implement each Events component, building out the flux loop as needed. IF TIME.
+  - [ ] `EventsIndex`
+  - [ ] `EventIndexItem`
+  - [ ] `EventForm & edit` -->
 
 
 [phase-one]: ./docs/phases/phase1.md

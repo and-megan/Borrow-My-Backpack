@@ -4,7 +4,7 @@ class Request < ActiveRecord::Base
   validate :start_date_before_end_date
 
   belongs_to(
-  :user,
+  :sender,
   primary_key: :id,
   foreign_key: :sender_id,
   class_name: 'User'
@@ -17,6 +17,12 @@ class Request < ActiveRecord::Base
   class_name: 'SportingGood'
   )
 
+  has_one(
+  :recipient,
+  through: :sporting_good,
+  source: :user
+  )
+  
   private
 
   def start_date_before_end_date

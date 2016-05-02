@@ -15,5 +15,8 @@ module.exports = {
   },
   deleteRequest: function (id) {
     RequestApiUtil.deleteRequest(id);
+  },
+  getRequestsById: function (id) {
+    RequestApiUtil.fetchRequestsById(id);
   }
 };
