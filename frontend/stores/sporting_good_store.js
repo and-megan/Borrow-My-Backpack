@@ -3,6 +3,7 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 var SportingGoodConstants = require('../constants/sporting_good_constants');
 var Store = require('flux/utils').Store;
 var SportingGoodStore = new Store(AppDispatcher);
+
 var _sportingGoods = {};
 
 SportingGoodStore.find = function(id) {
@@ -13,7 +14,7 @@ SportingGoodStore.all = function() {
   return Object.keys(_sportingGoods).map(function(id) {
     return _sportingGoods[id];
   });
-}; 
+};
 
 SportingGoodStore.setSportingGood = function(sportingGood) {
   _sportingGoods[sportingGood.id] = sportingGood;

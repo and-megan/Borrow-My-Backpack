@@ -2,7 +2,6 @@ var React = require('react');
 var SportingGoodStore = require('../stores/sporting_good_store');
 var SportingGoodClientActions = require('../actions/sporting_good_client_actions');
 var SportingGoodApiUtil = require('../utils/sporting_good_api_utils');
-var FilterActions = require('../actions/filter_actions');
 var ReactRouter = require('react-router');
 var hashHistory = ReactRouter.hashHistory;
 

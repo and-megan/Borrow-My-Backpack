@@ -1,22 +1,23 @@
 var ServerActions = require('../actions/server_actions.js');
 //request api utils
 module.exports = {
-  fetchRequests: function() {
+  fetchSentRequests: function() {
     $.ajax({
       url: "api/requests",
       success: function (requests) {
-        ServerActions.receiveAll(requests);
+        ServerActions.receiveAllRequests(requests.sent_requests);
       }
     });
   },
-  // fetchRequestsById: function (id) {
-  //   $.ajax({
-  //     url: "api/requests",
-  //     success: function (requests) {
-  //       ServerActions.receiveAll(requests);
-  //     }
-  //   });
-  // },
+  fetchReceivedRequests: function() {
+    $.ajax({
+      url: "api/requests",
+      success: function (requests) {
+        ServerActions.receiveAllRequests(requests.received_requests);
+      },
+      error: console.log("Ajax error on fetchReceivedRequests")
+    });
+  },
   getRequest: function(id) {
     $.ajax({
       url:"api/requests/" + id.toString(),
@@ -26,6 +27,7 @@ module.exports = {
     });
   },
   createRequest: function(data) {
+
     $.ajax({
       type: "POST",
       url: "api/requests",

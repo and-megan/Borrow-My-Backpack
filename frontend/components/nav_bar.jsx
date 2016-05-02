@@ -7,6 +7,8 @@ var UserActions = require('../actions/user_actions');
 var CurrentUserState = require('../mixins/current_user_state');
 //store
 var UserStore = require('../stores/user_store');
+//components
+var RequestInbox = require('./request_inbox');
 
 var NavBar = React.createClass({
   mixins: [CurrentUserState],
@@ -35,6 +37,15 @@ var NavBar = React.createClass({
           <a onClick={this.logout}>Log Out</a>
       );
   },
+  receivedRequestsInbox: function () {
+    return (
+      <a onClick={this.goToReceivedRequestInbox}>Requests Received</a>
+    );
+  },
+  goToReceivedRequestInbox: function (e) {
+    e.preventDefault();
+    hashHistory.push("sporting_goods/received_requests");
+  },
   render: function() {
 
     return (
@@ -51,7 +62,7 @@ var NavBar = React.createClass({
                 Profile
               </li>
               <li>
-                Whatever
+                {this.receivedRequestsInbox()}
               </li>
               <li>
                 {this.userAccountToggle()}

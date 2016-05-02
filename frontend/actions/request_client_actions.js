@@ -1,8 +1,11 @@
 var RequestApiUtil = require('../utils/request_api_utils');
 //request client actions
 module.exports = {
-  fetchRequests: function () {
-    RequestApiUtil.fetchRequests();
+  fetchSentRequests: function () {
+    RequestApiUtil.fetchSentRequests();
+  },
+  fetchReceivedRequests: function () {
+    RequestApiUtil.fetchReceivedRequests();
   },
   getRequest: function (id) {
     RequestApiUtil.getRequest(id);

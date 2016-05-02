@@ -22,10 +22,11 @@ module.exports = {
       sportingGood: sportingGood
     });
   },
-  receiveAllRequests: function(request) {
+  receiveAllRequests: function(requests) {
+
     AppDispatcher.dispatch({
       actionType: RequestConstants.REQUESTS_RECEIVED,
-      request: request
+      requests: requests
     });
   },
   receiveRequest: function(request) {

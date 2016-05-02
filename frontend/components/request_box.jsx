@@ -47,6 +47,7 @@ var RequestBox = React.createClass({
       sporting_good_id: sportingGoodId,
       errors: [],
     });
+    this.props.onClick();
   },
   goToLanding: function () {
     hashHistory.push('/');
@@ -55,7 +56,7 @@ var RequestBox = React.createClass({
   render: function() {
     var button =
       <div className="request-button-container">
-        <button type="submit" className="user-button" value="Make Request" onClick={this.props.onClick}>Send your request</button>
+        <button type="submit" className="user-button" value="Make Request" >Send your request</button>
       </div>;
 
     return (

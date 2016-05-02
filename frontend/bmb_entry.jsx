@@ -17,9 +17,11 @@ var SportingGoodShow = require('./components/sporting_good_show');
 var SportingGoodEdit = require('./components/sporting_good_edit');
 var Landing = require('./components/landing');
 var NavBar = require('./components/nav_bar');
-
+var RequestInbox = require('./components/request_inbox');
+var SentRequestInbox = require('./components/sent_request_inbox');
 //Store
 var UserStore = require('./stores/user_store');
+
 
 var requireSignedIn = function () {
   if (!UserStore.currentUser()) {
@@ -95,6 +97,8 @@ var routes = (
       <Route path="login" onEnter={requireNotSignedIn} component={LoginForm} />
       <Route component={Landing} onEnter={requireSignedIn}>
         <IndexRoute component={SportingGoodIndex} />
+        <Route path="sporting_goods/received_requests" component={RequestInbox} />
+        <Route path="sporting_goods/sent_requests" component={SentRequestInbox} />
         <Route path="sporting_goods/:sportingGoodId" component={SportingGoodShow} />
         <Route path="sporting_goods/:sportingGoodId/edit" component={SportingGoodEdit} />
       </Route>

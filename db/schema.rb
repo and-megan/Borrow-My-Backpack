@@ -11,19 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430192941) do
+ActiveRecord::Schema.define(version: 20160502234123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "requests", force: :cascade do |t|
-    t.integer  "sender_id",        null: false
-    t.integer  "sporting_good_id", null: false
+    t.integer  "sender_id",                        null: false
+    t.integer  "sporting_good_id",                 null: false
     t.text     "message"
-    t.date     "start_date",       null: false
-    t.date     "end_date",         null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.date     "start_date",                       null: false
+    t.date     "end_date",                         null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "responded?",       default: false
+    t.string   "status_response"
   end
 
   add_index "requests", ["sender_id"], name: "index_requests_on_sender_id", using: :btree
