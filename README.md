@@ -85,33 +85,43 @@ the API.
 **Objective:** SportingGoods can be created, requested, edited, and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files -- did front end auth & sporting goods & requests
-- [ ] setup React Router -partially set up
+- [X] setup the flux loop with skeleton files
+- [X] setup React Router
 - implement each SportingGood component, building out the flux loop as needed.
   - [X] `SportingGoodsIndex`
   - [X] `SportingGoodIndexItem`
   - [X] `SportingGoodForm` - but need to not display for not logged in
   - [X] `& edit`
+  - [X] create `NavigationBar` component -- needs more stuff
   - implement each Requests component, building out the flux loop as needed.
     - [ ] `RequestsIndex`
     - [ ] `RequestIndexItem`
-    - [ ] `RequestForm & edit`
+    - [X] `RequestForm`
   <!-- - implement each Events component, building out the flux loop as needed. IF TIME.
     - [ ] `EventsIndex`
     - [ ] `EventIndexItem`
     - [ ] `EventForm & edit` -->
-
+    - [X] show sporting goods on a map based on lat & lng
 
 
 ### Phase 4: Start Styling (0.5 days)
 
 **Objective:** Existing pages (including singup/signin) will look good.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [X] create a basic style guide
+- [ ] position elements on the page - sort of
+- [X] add basic colors & styles
+- [X] Add modals
 
-### Phase 5: Profiles React (1 day)
+### Phase 5: SearchBar Component (1 day)
+
+**Objective:** Create and style Search Bar
+
+
+- [ ] create `SearchBar` component
+- [ ] Style new elements
+
+### Phase 6: Profiles React (1 day)
 
 **Objective:** Get Profile component stuff fleshed out.
 - implement each Profile component, building out the flux loop as needed.
@@ -122,13 +132,6 @@ user interface.
 - [ ] Catch up on anything you've fallen behind on (especially phase 3)
 
 
-### Phase 6: NavBar Component (1 day)
-
-**Objective:** Create and style Navigation Bar
-
-- [X] create `NavigationBar` component -- needs more stuff
-- [ ] create `SearchBar` component
-- [ ] Style new elements
 
 ### Phase 7: Allow Complex Styling (1 day)
 
@@ -143,7 +146,7 @@ user interface.
 
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [ ] transitions, and other styling flourishes.
 - [ ] Add hover features, fix colors, add permanent picture behind nav bar, look at other websites for inspo.
 
 
@@ -151,7 +154,6 @@ user interface.
 - [ ] users can create and attend events
 - [ ] messaging functionality (outside of requests)
 - [ ] personalized dashboard with upcoming events, borrowings, and lendings
-- [ ] show sporting goods on a map based on lat & lng
 - [ ] comments on sporting goods & events
 - [ ] pre-filter information based on geolocation
 - [ ] create groups
