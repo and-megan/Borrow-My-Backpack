@@ -33,9 +33,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Edit profile (MVP)
 - [ ] Make and respond to rental requests (MVP) - need to respond
 - [ ] Search listings based on location and type (MVP)
-- [ ] View upcoming equipment rentals (lender and borrower) on homepage (expected feature, but not MVP)
-- [ ] Create and attend BMB Events. View upcoming events on homepage feed (expected feature, but not MVP)
-- [ ] View equipment listings on a map (if all other features completed)
+- [X] View equipment listings on a map (if all other features completed)
+- [ ] View upcoming equipment rentals (lender and borrower) on homepage (if all other features completed)
+- [ ] Create and attend BMB Events. View upcoming events on homepage feed (if all other features completed)
 - [ ] View equipment availability calendar on equipment listings (if all other features completed)
 
 
