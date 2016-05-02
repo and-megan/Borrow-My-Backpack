@@ -1,7 +1,7 @@
 var React = require('react');
 var SportingGoodClientActions = require('../actions/sporting_good_client_actions');
 var hashHistory = require('react-router').hashHistory;
-//need to add in lat and lng...
+
 //sporting good form
 module.exports = React.createClass({
 
@@ -54,11 +54,11 @@ module.exports = React.createClass({
         latitude = results[0].geometry.location.lat();
         longitude = results[0].geometry.location.lng();
         var SportingGoodData = {
-        category: this.state.category,
-        description: this.state.description,
-        lat: latitude,
-        lng: longitude,
-        pic_url: this.state.pic_url
+          category: this.state.category,
+          description: this.state.description,
+          lat: latitude,
+          lng: longitude,
+          pic_url: this.state.pic_url
         };
         SportingGoodClientActions.createSportingGood(SportingGoodData);
       }
@@ -72,6 +72,9 @@ module.exports = React.createClass({
 
       return(
         <div id="sporting-good-form">
+          <h1>Create a new listing</h1>
+          <br></br>
+          <br></br>
           <form onSubmit={this.handleSubmit}>
 
           <label>Type</label>
@@ -85,18 +88,20 @@ module.exports = React.createClass({
               <option value="tent"></option>
             </datalist>
             <br></br>
-
+            <br></br>
             <label>Description</label>
             <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
             <br></br>
-
+            <br></br>
 
             <label>Address</label>
             <input type="text" id="address-input" value={this.state.address} onChange={this.changeAddress}/>
             <br></br>
+            <br></br>
 
             <label>Picture Url</label>
             <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
+            <br></br>
             <br></br>
 
             <button className="user-button" type="submit"  value="Create a listing">List it!</button>
