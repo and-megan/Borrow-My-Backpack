@@ -1,3 +1,24 @@
 // Place all the styles related to the requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.completed-request-approve {
+  border: 3px solid black;
+  background-color: #1a4533;
+  opacity: 0.8;
+}
+.completed-request-deny {
+  border: 3px solid black;
+  background-color: #680000;
+  opacity: 0.8;
+}
+.completed-request-container {
+  display: flex;
+  max-width: 500px;
+  flex-direction: column;
+}
+.pending-request {
+  border: 3px solid black;
+  background-color: #FFFF66;
+  opacity: 0.8;
+}

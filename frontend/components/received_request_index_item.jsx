@@ -97,23 +97,3 @@ var ReceivedRequestIndexItem = React.createClass({
 });
 
 module.exports = ReceivedRequestIndexItem;
-
-// <ul>
-//   <li>{receivedRequest.sender.email} has requested this {receivedRequest.sporting_good.category}</li>
-//   <li>
-//     <img src={receivedRequest.sporting_good.pic_url}
-//         className="sporting-good-index-pics"
-//         alt="sporting-good-img-of-requested" />
-//   </li>
-//   <li>{receivedRequest.message}</li>
-//   <li>{receivedRequest.start_date}</li>
-//   <li>{receivedRequest.end_date}</li>
-// </ul>
-// {receivedRequest.sender.email}
-
-// if (this.props.receivedRequest.responded) {
-//
-//   this.alreadyResponded();
-// } else {
-//   this.notYetResponded();
-// }

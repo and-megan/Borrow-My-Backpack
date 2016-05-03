@@ -39,7 +39,17 @@ var NavBar = React.createClass({
   },
   receivedRequestsInbox: function () {
     return (
-      <a onClick={this.goToReceivedRequestInbox}>Requests Received</a>
+      <a onClick={this.goToReceivedRequestInbox}>Received Requests</a>
+    );
+  },
+  sentRequestsInbox: function () {
+    return (
+      <a onClick={this.goToSentRequestInbox}>Sent Requests</a>
+    );
+  },
+  seeAllListings: function () {
+    return (
+      <a onClick={this.goToAllListings}>See All Listings</a>
     );
   },
   greeting: function () {
@@ -52,6 +62,14 @@ var NavBar = React.createClass({
   goToReceivedRequestInbox: function (e) {
     e.preventDefault();
     hashHistory.push("sporting_goods/received_requests");
+  },
+  goToSentRequestInbox: function (e) {
+    e.preventDefault();
+    hashHistory.push("sporting_goods/sent_requests");
+  },
+  goToAllListings: function (e) {
+    e.preventDefault();
+    hashHistory.push("/");
   },
   render: function() {
 
@@ -67,10 +85,13 @@ var NavBar = React.createClass({
                 Settings
               </li>
               <li>
-                Profile
+                {this.receivedRequestsInbox()}
               </li>
               <li>
-                {this.receivedRequestsInbox()}
+                {this.sentRequestsInbox()}
+              </li>
+              <li>
+                {this.seeAllListings()}
               </li>
               <li>
                 {this.userAccountToggle()}

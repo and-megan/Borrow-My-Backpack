@@ -43,12 +43,12 @@ var SentRequestInbox = React.createClass({
     return (
       <div className="requests-sent-container">
         <h1>Sent Requests</h1>
+        <div>
+          <a className="link" onClick={this.goToReceivedRequests}>See your received requests</a>
+        </div>
         <ul className="group-requests">
           {SentIndexItemsTags}
         </ul>
-        <div>
-          <button className="user-button" onClick={this.goToReceivedRequests}>See your received requests</button>
-        </div>
       </div>
     );
   }

@@ -9,6 +9,7 @@ var RequestStore = require("../stores/request_store");
 var RequestClientActions = require("../actions/request_client_actions");
 //components
 var ReceivedRequestIndexItem = require('./received_request_index_item');
+var FinishedRequestDetail = require('./finished_request_detail');
 
 //FOR DEALING WITH RECEIVED REQUESTS
 
@@ -42,19 +43,19 @@ var RequestInbox = React.createClass({
         return(<ReceivedRequestIndexItem key={receivedRequest.id} receivedRequest={receivedRequest} />);
       } else {
         return (
-          <div>COMPLETED</div>
+          <FinishedRequestDetail key={receivedRequest.id} receivedRequest={receivedRequest}/>
         );
       }
     });
     return (
       <div className="requests-received-container">
         <h1>Received Requests</h1>
+          <div>
+              <a className="link" onClick={this.goToSentRequests}>See your sent requests</a>
+          </div>
         <ul className="group-requests">
           {RequestIndexItemsTags}
         </ul>
-        <div>
-          <button className="user-button" onClick={this.goToSentRequests}>See your sent requests</button>
-        </div>
       </div>
     );
   }

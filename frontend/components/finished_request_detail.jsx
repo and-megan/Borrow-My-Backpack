@@ -2,7 +2,7 @@ var React = require('react');
 //actions
 
 
-var RequestIndexItemDetail = React.createClass({
+var FinishedRequestDetail = React.createClass({
   getInitialState: function() {
     return {
 
@@ -10,10 +10,18 @@ var RequestIndexItemDetail = React.createClass({
   },
 
   render: function() {
+    var classColor;
     var receivedRequest = this.props.receivedRequest;
-
+    if (receivedRequest.status_response === "APPROVE") {
+      classColor = 'completed-request-approve';
+    } else {
+      classColor = 'completed-request-deny';
+    }
     return (
-      <ul>
+      <ul className='completed-request-container'>
+        <li className={classColor}>
+          <h2>{receivedRequest.status_response}</h2>
+        </li>
         <li>{receivedRequest.sender.email}</li>
         <li>{receivedRequest.sporting_good.category}</li>
         <li className="sporting-good-index-item">
@@ -26,4 +34,4 @@ var RequestIndexItemDetail = React.createClass({
 
 });
 
-module.exports = RequestIndexItemDetail;
+module.exports = FinishedRequestDetail;
