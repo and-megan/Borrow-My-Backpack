@@ -1,4 +1,5 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
+var ServerActions = require('../actions/server_actions.js');
 
 var UserApiUtil = {
 	post: function(options){
@@ -26,6 +27,27 @@ var UserApiUtil = {
 			error: error
 		});
 	},
+	getUser: function (id) {
+
+		$.ajax({
+			url: 'api/user/' + id.toString(),
+			method: 'get',
+			success: function (user) {
+				ServerActions.receiveUser(user);
+			},
+			error: function () {
+				console.log("nooooooo");
+			}
+		});
+	},
+	fetchUsers: function () {
+		$.ajax({
+			url:"api/user",
+			success: function(users) {
+				ServerActions.receiveUsers(users);
+			}
+		});
+	}
 };
 
 module.exports = UserApiUtil;

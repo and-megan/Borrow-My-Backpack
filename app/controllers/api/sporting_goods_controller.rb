@@ -1,7 +1,19 @@
 class Api::SportingGoodsController < ApplicationController
 
   def index
-    @sporting_goods = SportingGood.all
+    @sporting_goods = []
+    sporting_goods = SportingGood.all
+
+    if (params[:filters])
+      params[:filters].each do |filter|
+        filtered_sg = SportingGood.where(category: filter)
+        @sporting_goods.push(filtered_sg)
+      end
+
+    else
+      @sporting_goods = SportingGood.all
+    end
+
   end
 
   def create

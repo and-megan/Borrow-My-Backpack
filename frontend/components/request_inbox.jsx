@@ -32,9 +32,6 @@ var RequestInbox = React.createClass({
       receivedRequests: RequestStore.all()
     });
   },
-  handleClickOnStatus: function () {
-
-  },
   goToSentRequests: function () {
     hashHistory.push('sporting_goods/sent_requests');
   },

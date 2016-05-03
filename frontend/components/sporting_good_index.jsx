@@ -11,6 +11,7 @@ var SportingGoodStore = require('../stores/sporting_good_store');
 var SportingGoodForm = require('./sporting_good_form');
 var SportingGoodIndexItem = require('./sporting_good_index_item');
 var Map = require('./map');
+var ClickFilter = require('./click_filter');
 //Mixin
 var CurrentUserState = require('../mixins/current_user_state');
 
@@ -67,7 +68,7 @@ var SportingGoodIndex = React.createClass({
       <div className="sporting-good-index-container">
         {this.toggleNewListingForm()}
         <div className="sporting-good-index-view">
-
+          <ClickFilter />
           <Modal
             isOpen={this.state.formModalOpen}
             onRequestClose={this.closeFormModal}>

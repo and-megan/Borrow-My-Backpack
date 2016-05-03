@@ -32,4 +32,5 @@ class SportingGood < ActiveRecord::Base
   class_name: 'Request'
   )
 
+
 end

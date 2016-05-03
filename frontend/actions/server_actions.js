@@ -1,6 +1,7 @@
 var AppDispatcher = require('../dispatcher/dispatcher.js');
 var SportingGoodConstants = require('../constants/sporting_good_constants');
 var RequestConstants = require('../constants/request_constants');
+var UserConstants = require('../constants/user_constants');
 module.exports = {
   //SERVER ACTIONS
 
@@ -40,6 +41,18 @@ module.exports = {
     AppDispatcher.dispatch({
       actionType: RequestConstants.REQUEST_REMOVED,
       request: request
+    });
+  },
+  receiveUser: function (user) {
+    AppDispatcher.dispatch({
+      actionType: UserConstants.USER_RECEIVED,
+      user: user
+    });
+  },
+  receiveUsers: function (users) {
+    AppDispatcher.dispatch({
+      actionType: UserConstants.USERS_RECEIVED,
+      users: users
     });
   }
 };

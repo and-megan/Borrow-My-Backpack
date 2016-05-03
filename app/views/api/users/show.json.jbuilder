@@ -1,1 +1,1 @@
-json.extract! @user, *@user.attributes.keys
+json.partial! 'user', user: @user

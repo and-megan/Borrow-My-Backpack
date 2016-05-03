@@ -6,7 +6,12 @@ var hashHistory = ReactRouter.hashHistory;
 var RequestApiUtil = require("../utils/request_api_utils");
 //store
 var RequestStore = require("../stores/request_store");
-//component
+var UserStore = require("../stores/user_store");
+var SportingGoodStore = require("../stores/sporting_good_store");
+//components
+var RequestIndexItemDetail = require('./request_index_item_detail');
+
+
 
 var ReceivedRequestIndexItem = React.createClass({
   mixins: [LinkedStateMixin],
@@ -18,11 +23,10 @@ var ReceivedRequestIndexItem = React.createClass({
       receivedRequest = {requestApproval: ""};
     }
     return {
-      requestApproval: receivedRequest.requestApproval
+      requestApproval: receivedRequest.requestApproval,
     };
   },
   componentDidMount: function() {
-
     var receivedRequest;
     if (this.props.receivedRequest.id) {
       receivedRequest = RequestStore.find(this.props.receivedRequest.id);
@@ -59,11 +63,12 @@ var ReceivedRequestIndexItem = React.createClass({
   },
 
   render: function() {
-
     var receivedRequest = this.props.receivedRequest;
     return (
       <li className="request-index-item">
-
+        <div className="request-index-item-info">
+          <RequestIndexItemDetail key={receivedRequest.id} receivedRequest={receivedRequest}/>
+        </div>
 
           <form onSubmit={this.handleSubmit}>
 

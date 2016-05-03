@@ -1,9 +1,10 @@
 var ServerActions = require('../actions/server_actions.js');
 //sporting good api utils
 module.exports = {
-  fetchSportingGoods: function() {
+  fetchSportingGoods: function(filters) {
     $.ajax({
       url: "api/sporting_goods",
+      data: {filters: filters},
       success: function (sportingGoods) {
         ServerActions.receiveAllSportingGoods(sportingGoods);
       }
