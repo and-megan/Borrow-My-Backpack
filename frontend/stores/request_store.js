@@ -59,5 +59,5 @@ RequestStore.__onDispatch = function(payload){
 };
 
 
-
-module.exports = RequestStore;
+// TODO: REMOVE THIS
+module.exports = window.RequestStore = RequestStore;

@@ -53,6 +53,7 @@ module.exports = React.createClass({
       if (status === google.maps.GeocoderStatus.OK) {
         latitude = results[0].geometry.location.lat();
         longitude = results[0].geometry.location.lng();
+
         var SportingGoodData = {
           category: this.state.category,
           description: this.state.description,

@@ -39,9 +39,15 @@ var RequestInbox = React.createClass({
     hashHistory.push('sporting_goods/sent_requests');
   },
   render: function() {
-  
+
     var RequestIndexItemsTags = this.state.receivedRequests.map(function(receivedRequest) {
-      return(<ReceivedRequestIndexItem key={receivedRequest.id} receivedRequest={receivedRequest} />);
+      if (receivedRequest.status_response === "") {
+        return(<ReceivedRequestIndexItem key={receivedRequest.id} receivedRequest={receivedRequest} />);
+      } else {
+        return (
+          <div>COMPLETED</div>
+        );
+      }
     });
     return (
       <div className="requests-received-container">

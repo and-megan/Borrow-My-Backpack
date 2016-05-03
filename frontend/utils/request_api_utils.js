@@ -10,12 +10,12 @@ module.exports = {
     });
   },
   fetchReceivedRequests: function() {
+
     $.ajax({
       url: "api/requests",
       success: function (requests) {
         ServerActions.receiveAllRequests(requests.received_requests);
-      },
-      error: console.log("Ajax error on fetchReceivedRequests")
+      }
     });
   },
   getRequest: function(id) {
@@ -42,9 +42,8 @@ module.exports = {
       url: "api/requests/" + data.id,
       type: "PATCH",
       data: { request: {
-        message: data.message,
-        start_date: data.start_date,
-        end_date: data.end_date
+        status_response: data.requestApproval,
+        responded: true
       }},
       success: function (request) {
         ServerActions.receiveRequest(request);

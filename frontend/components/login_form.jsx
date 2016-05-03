@@ -28,6 +28,7 @@ var LoginForm = React.createClass({
 		}
 	},
 	handleLoginSubmit: function(e){
+		debugger;
 		e.preventDefault();
 		UserActions.login({
 			email: this.state.email,
@@ -67,12 +68,14 @@ var LoginForm = React.createClass({
 		});
 		UserActions.logout();
 	},
-	displaySignupForm: function () {
+	displaySignupForm: function (e) {
+		e.preventDefault();
 		this.setState({
 			form: "signup"
 		});
 	},
-	displayLoginForm: function () {
+	displayLoginForm: function (e) {
+		e.preventDefault();
 		this.setState({
 			form: "login"
 		});

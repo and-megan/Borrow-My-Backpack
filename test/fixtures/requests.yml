@@ -10,8 +10,8 @@
 #  end_date         :date             not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
-#  responded?       :boolean          default("false")
-#  status_response  :string
+#  responded        :boolean          default("false")
+#  status_response  :string           default("")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

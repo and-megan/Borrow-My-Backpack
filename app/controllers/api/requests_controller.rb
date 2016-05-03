@@ -25,6 +25,13 @@ class Api::RequestsController < ApplicationController
     @request = Request.find(params[:id])
     if @request.update(request_params)
       render json: @request
+
+      @request_notification = RequestNotification.new()
+      sporting_good = SportingGood.find(@request.sporting_good_id)
+      owner = sporting_good.user
+      @request_notification.request_id = @request.id
+      @request_notification.recipient_id = owner.id
+
     else
       render json: @request.errors.full_messages
     end
@@ -32,7 +39,7 @@ class Api::RequestsController < ApplicationController
   private
   def request_params
     params.require(:request).permit(
-      :sporting_good_id, :message, :start_date, :end_date, :sender_id
+      :sporting_good_id, :message, :start_date, :end_date, :sender_id, :responded, :status_response
     )
   end
 end

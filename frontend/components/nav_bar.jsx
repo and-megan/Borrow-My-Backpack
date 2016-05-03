@@ -42,6 +42,13 @@ var NavBar = React.createClass({
       <a onClick={this.goToReceivedRequestInbox}>Requests Received</a>
     );
   },
+  greeting: function () {
+    if (this.state.currentUser) {
+      return(
+        <h2>Hello, {this.state.currentUser.email}</h2>
+      );
+    }
+  },
   goToReceivedRequestInbox: function (e) {
     e.preventDefault();
     hashHistory.push("sporting_goods/received_requests");
@@ -51,6 +58,7 @@ var NavBar = React.createClass({
     return (
 			<header>
         <h1 id="app-header" onClick={this.goHome}>Borrow My Backpack</h1>
+        {this.greeting()}
         <ul className="nav-buttons">
           <li className="profile-link">
             <p>&#x2630;</p>

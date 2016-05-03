@@ -11,9 +11,11 @@ var SportingGoodStore = require('../stores/sporting_good_store');
 var SportingGoodForm = require('./sporting_good_form');
 var SportingGoodIndexItem = require('./sporting_good_index_item');
 var Map = require('./map');
-
+//Mixin
+var CurrentUserState = require('../mixins/current_user_state');
 
 var SportingGoodIndex = React.createClass({
+  mixins: [CurrentUserState],
   getInitialState: function() {
     return {
       sportingGoods: [],
@@ -34,7 +36,8 @@ var SportingGoodIndex = React.createClass({
   },
   componentWillReceiveProps: function () {
     this.setState({
-      sporting_goods: SportingGoodStore.all()
+      sporting_goods: SportingGoodStore.all(),
+      curUser: this.state.currentUser
     });
   },
   openFormModal: function () {
