@@ -2,7 +2,9 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 var ServerActions = require('../actions/server_actions.js');
 
 var UserApiUtil = {
+
 	post: function(options){
+
 		$.ajax({
 			url: options.url,
 			type: "POST",
@@ -20,6 +22,7 @@ var UserApiUtil = {
 		});
 	},
 	fetchCurrentUser: function(success, error){
+
 		$.ajax({
 			url: '/api/session',
 			method: 'get',

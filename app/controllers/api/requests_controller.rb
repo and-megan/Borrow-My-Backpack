@@ -7,8 +7,12 @@ class Api::RequestsController < ApplicationController
   end
 
   def create
-    request = current_user.requests.create!(request_params)
-    render json: request
+    request = current_user.requests.new(request_params)
+    if request.save
+      render json: request
+    else
+      render json: request.errors.full_messages, status: 422
+    end
   end
 
   def show

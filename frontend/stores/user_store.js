@@ -9,6 +9,7 @@ var _users = {};
 
 UserStore.login = function (user) {
   _currentUser = user;
+
   _authErrors = null;
 };
 
@@ -65,6 +66,7 @@ UserStore.__onDispatch = function(payload){
 
   switch (payload.actionType) {
     case "LOGIN":
+
       UserStore.login(payload.user);
       break;
     case "LOGOUT":

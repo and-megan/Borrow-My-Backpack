@@ -1,4 +1,6 @@
 var RequestApiUtil = require('../utils/request_api_utils');
+var AppDispatcher = require('../dispatcher/dispatcher');
+var RequestConstants = require('../constants/request_constants');
 //request client actions
 module.exports = {
   fetchSentRequests: function () {
@@ -6,6 +8,11 @@ module.exports = {
   },
   fetchReceivedRequests: function () {
     RequestApiUtil.fetchReceivedRequests();
+  },
+  resetMessages: function () {
+    AppDispatcher.dispatch({
+      actionType: RequestConstants.RESET_MESSAGE
+    });
   },
   getRequest: function (id) {
     RequestApiUtil.getRequest(id);

@@ -34,6 +34,9 @@ module.exports = {
       data: { request: data },
       success: function(request) {
         ServerActions.receiveRequest(request);
+      },
+      error: function (error) {
+        ServerActions.receiveRequestError(error);
       }
     });
   },

@@ -7,12 +7,12 @@ var ClickFilter = React.createClass({
   getInitialState: function() {
     return {
       filters: [],
-      backpackButton: "user-button",
-      bicycleButton: "user-button",
-      kayakButton: "user-button",
-      snowboardButton: "user-button",
-      surfboardButton: "user-button",
-      tentButton: "user-button"
+      'backpack': false,
+      'bicycle': false,
+      'kayak': false,
+      'snowboard': false,
+      'surfboard': false,
+      'tent': false
 
     };
   },
@@ -20,123 +20,37 @@ var ClickFilter = React.createClass({
   updateStore: function (filters) {
     SportingGoodClientActions.fetchSportingGoods(filters);
   },
-  toggleBackpack: function () {
-    if (this.state.filters.indexOf('backpack') === -1) {
-      var newFilterState = this.state.filters.concat('backpack');
-      this.setState({
-        filters: newFilterState,
-        backpackButton: "user-button-active"
-      });
+
+  toggleFilterState: function (e) {
+    if (this.state.filters.indexOf(e.target.value) === -1) {
+      var newState = {};
+      var newFilterState = this.state.filters.concat(e.target.value);
+      newState[e.target.value] = true;
+      newState['filters'] = newFilterState;
+      this.setState(newState);
       this.updateStore(newFilterState);
     } else {
-      var backpack = this.state.filters.indexOf('backpack');
+
+      var backpack = this.state.filters.indexOf(e.target.value);
       var newFilters = this.state.filters.splice(backpack, 1);
-      this.setState({
-        filters: newFilters,
-        backpackButton: "user-button"
-      });
+
+      var updatedState={};
+      updatedState[e.target.value] = true;
+      updatedState['filters'] = this.state.filters;
+      this.setState(updatedState);
       this.updateStore(this.state.filters);
     }
   },
-  toggleBicycle: function () {
-    if (this.state.filters.indexOf('bicycle') === -1) {
-      var newFilterState = this.state.filters.concat('bicycle');
-      this.setState({
-        filters: newFilterState,
-        bicycleButton: "user-button-active"
-      });
-      this.updateStore(newFilterState);
-    } else {
-      var bicycle = this.state.filters.indexOf('bicycle');
-      var newFilters = this.state.filters.splice(bicycle, 1);
-      this.setState({
-        filters: newFilters,
-        bicycleButton: "user-button"
-      });
-      this.updateStore(this.state.filters);
-    }
-  },
-  toggleKayak: function () {
-    if (this.state.filters.indexOf('kayak') === -1) {
-      var newFilterState = this.state.filters.concat('kayak');
-      this.setState({
-        filters: newFilterState,
-        kayakButton: "user-button-active"
-      });
-      this.updateStore(newFilterState);
-    } else {
-      var kayak = this.state.filters.indexOf('kayak');
-      var newFilters = this.state.filters.splice(kayak, 1);
-      this.setState({
-        filters: newFilters,
-        kayakButton: "user-button"
-      });
-      this.updateStore(this.state.filters);
-    }
-  },
-  toggleSnowboard: function () {
-    if (this.state.filters.indexOf('snowboard') === -1) {
-      var newFilterState = this.state.filters.concat('snowboard');
-      this.setState({
-        filters: newFilterState,
-        snowboardButton: "user-button-active"
-      });
-      this.updateStore(newFilterState);
-    } else {
-      var snowboard = this.state.filters.indexOf('snowboard');
-      var newFilters = this.state.filters.splice(snowboard, 1);
-      this.setState({
-        filters: newFilters,
-        snowboardButton: "user-button"
-      });
-      this.updateStore(this.state.filters);
-    }
-  },
-  toggleSurfboard: function () {
-    if (this.state.filters.indexOf('surfboard') === -1) {
-      var newFilterState = this.state.filters.concat('surfboard');
-      this.setState({
-        filters: newFilterState,
-        surfboardButton: "user-button-active"
-      });
-      this.updateStore(newFilterState);
-    } else {
-      var surfboard = this.state.filters.indexOf('surfboard');
-      var newFilters = this.state.filters.splice(surfboard, 1);
-      this.setState({
-        filters: newFilters,
-        surfboardButton: "user-button"
-      });
-      this.updateStore(this.state.filters);
-    }
-  },
-  toggleTent: function () {
-    if (this.state.filters.indexOf('tent') === -1) {
-      var newFilterState = this.state.filters.concat('tent');
-      this.setState({
-        filters: newFilterState,
-        tentButton: "user-button-active"
-      });
-      this.updateStore(newFilterState);
-    } else {
-      var tent = this.state.filters.indexOf('tent');
-      var newFilters = this.state.filters.splice(tent, 1);
-      this.setState({
-        filters: newFilters,
-        tentButton: "user-button"
-      });
-      this.updateStore(this.state.filters);
-    }
-  },
+
   showAll: function () {
     this.setState({
       filters: [],
-      backpackButton: "user-button",
-      bicycleButton: "user-button",
-      kayakButton: "user-button",
-      snowboardButton: "user-button",
-      surfboardButton: "user-button",
-      tentButton: "user-button"
+      backpackButton: false,
+      bicycleButton: false,
+      kayakButton: false,
+      snowboardButton: false,
+      surfboardButton: false,
+      tentButton: false
     });
     this.updateStore([]);
   },
@@ -144,18 +58,25 @@ var ClickFilter = React.createClass({
 
     return (
       <div className="click-filter-all">
+        <h2>Filter By Type</h2>
         <div className="click-filter-container">
-          <button className="user-button" className={this.state.backpackButton} onClick={this.toggleBackpack}>Backpacks</button>
+          <label>Backpack</label>
+          <input type="checkbox" defaultChecked={this.state.backpackButton} onClick={this.toggleFilterState} value="backpack"/>
           <br></br>
-          <button className="user-button" className={this.state.bicycleButton} onClick={this.toggleBicycle}>Bicycles</button>
+          <label>Bicycle</label>
+          <input type="checkbox" defaultChecked={this.state.bicycleButton} onClick={this.toggleFilterState} value="bicycle"/>
           <br></br>
-          <button className="user-button" className={this.state.kayakButton} onClick={this.toggleKayak}>Kayaks</button>
+          <label>Kayak</label>
+          <input type="checkbox" defaultChecked={this.state.kayakButton} onClick={this.toggleFilterState} value="kayak"/>
           <br></br>
-          <button  className="user-button" className={this.state.snowboardButton} onClick={this.toggleSnowboard}>Snowboards</button>
+          <label>SnowBoard</label>
+          <input type="checkbox" defaultChecked={this.state.snowboardButton} onClick={this.toggleFilterState} value="snowboard"/>
           <br></br>
-          <button className="user-button" className={this.state.surfboardButton} onClick={this.toggleSurfboard}>Surfboard</button>
+          <label>Surfboard</label>
+          <input type="checkbox" defaultChecked={this.state.surfboardButton} onClick={this.toggleFilterState} value="surfboard"/>
           <br></br>
-          <button className="user-button" className={this.state.tentButton} onClick={this.toggleTent}>Tent</button>
+          <label>Tent</label>
+          <input type="checkbox" defaultChecked={this.state.tentButton} onClick={this.toggleFilterState} value="tent"/>
         </div>
           <br></br>
           <div className="show-all-button-container">
@@ -168,3 +89,12 @@ var ClickFilter = React.createClass({
 });
 
 module.exports = ClickFilter;
+// <button className={this.state.bicycleButton} onClick={this.toggleBicycle}>Bicycles</button>
+// <br></br>
+// <button className={this.state.kayakButton} onClick={this.toggleKayak}>Kayaks</button>
+// <br></br>
+// <button className={this.state.snowboardButton} onClick={this.toggleSnowboard}>Snowboards</button>
+// <br></br>
+// <button className={this.state.surfboardButton} onClick={this.toggleSurfboard}>Surfboard</button>
+// <br></br>
+// <button className={this.state.tentButton} onClick={this.toggleTent}>Tent</button>

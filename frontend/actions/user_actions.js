@@ -16,6 +16,7 @@ var UserActions = {
 		});
 	},
 	login: function(user){
+
 		UserApiUtil.post({
 			url: "/api/session",
 			user: user,
@@ -27,7 +28,8 @@ var UserActions = {
 		UserActions.login({email: "guest", password: "password"});
 	},
 	receiveCurrentUser: function(user){
-		AppDispatcher.dispatch({
+
+			AppDispatcher.dispatch({
 			actionType: UserConstants.LOGIN,
 			user: user
 		});

@@ -6,8 +6,10 @@ var hashHistory = ReactRouter.hashHistory;
 var Modal = require("react-modal");
 //store
 var SportingGoodStore = require('../stores/sporting_good_store');
+var RequestStore = require('../stores/request_store');
 //actions
 var SportingGoodClientActions = require('../actions/sporting_good_client_actions');
+var RequestClientActions = require('../actions/request_client_actions');
 //mixins
 var CurrentUserState = require('../mixins/current_user_state');
 //components
@@ -21,15 +23,29 @@ var SportingGoodShow = React.createClass({
       sportingGood: {pic_url: "", description: "",
       user_id: "", id: ""},
       requestModalOpen: false,
-      editModalOpen: false
+      editModalOpen: false,
+      messages: []
     };
   },
   componentDidMount: function() {
     this.sportingGoodListener = SportingGoodStore.addListener(this.handleChange);
     SportingGoodClientActions.getSportingGood(parseInt(this.props.params.sportingGoodId));
+    RequestClientActions.resetMessages();
+    this.requestChangeListener = RequestStore.addListener(this.updateRequests);
   },
   componentWillUnmount: function() {
     this.sportingGoodListener.remove();
+    this.requestChangeListener.remove();
+  },
+  updateRequests: function () {
+    this.setState({
+      messages: RequestStore.fetchMessages()
+    });
+  },
+  successMessage: function () {
+    return(<div>{this.state.messages.map(function (message) {
+      return(<div>{message}</div>);
+    })}</div>);
   },
   closeRequestModal: function(){
     this.setState({ requestModalOpen: false });
@@ -91,8 +107,9 @@ var SportingGoodShow = React.createClass({
   },
 
   render: function() {
-
-
+    if (!this.state.currentUser || !this.state.sportingGood) {
+      return (<div></div>);
+    }
 
     return (
       <div id="sporting-good-container">
@@ -109,6 +126,7 @@ var SportingGoodShow = React.createClass({
           <br></br>
           {this.currentUserEdit()}
           {this.toggleRequestForm()}
+          {this.successMessage()}
         </ul>
         <Modal
           isOpen={this.state.requestModalOpen}

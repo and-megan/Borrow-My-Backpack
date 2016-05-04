@@ -26,7 +26,6 @@ var SportingGoodIndex = React.createClass({
   componentDidMount: function() {
     this.sportingGoodListener = SportingGoodStore.addListener(this.getSportingGoods);
     SportingGoodClientActions.fetchSportingGoods();
-    CurrentUserState.updateUser();
   },
   componentWillUnmount: function() {
     this.sportingGoodListener.remove();

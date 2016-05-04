@@ -37,6 +37,12 @@ module.exports = {
       request: request
     });
   },
+  receiveRequestError: function (error) {
+    AppDispatcher.dispatch({
+      actionType: RequestConstants.REQUEST_ERROR,
+      error: error
+    });
+  },
   removeRequest: function(request) {
     AppDispatcher.dispatch({
       actionType: RequestConstants.REQUEST_REMOVED,

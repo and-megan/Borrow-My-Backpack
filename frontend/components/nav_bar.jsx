@@ -13,6 +13,18 @@ var RequestInbox = require('./request_inbox');
 var NavBar = React.createClass({
   mixins: [CurrentUserState],
 
+  componentDidMount: function() {
+    this.curUserListener = UserStore.addListener(this.getCurrentUser);
+  },
+  componentWillUnmount: function() {
+    this.curUserListener.remove();
+  },
+  getCurrentUser: function () {
+    this.setState({
+      currentUser: UserStore.currentUser()
+    });
+  },
+
   logout: function(e){
     e.preventDefault();
     UserActions.logout();

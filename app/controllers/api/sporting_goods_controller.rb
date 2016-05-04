@@ -1,17 +1,9 @@
 class Api::SportingGoodsController < ApplicationController
 
   def index
-    @sporting_goods = []
-    sporting_goods = SportingGood.all
 
     if (params[:filters])
-      params[:filters].each do |filter|
-        filtered_sg = SportingGood.where(category: filter)
-        filtered_sg.each do |sg|
-          @sporting_goods.push(sg)
-        end
-      end
-      # return @sporting_goods
+      @sporting_goods = SportingGood.where(category: params[:filters])
       render json: @sporting_goods
     else
       @sporting_goods = SportingGood.all

@@ -5,6 +5,7 @@ var Store = require('flux/utils').Store;
 var RequestStore = new Store(AppDispatcher);
 var _requests = {};
 var _errors = [];
+var _messages = [];
 
 RequestStore.find = function(id) {
   return _requests[id];
@@ -37,8 +38,19 @@ RequestStore.resetErrors = function (errors) {
 };
 
 RequestStore.allErrors = function () {
-  return _errors.slice(0);
+  return _errors.slice();
 };
+
+RequestStore.resetMessages = function (messages) {
+  _messages = [];
+  _messages = messages;
+};
+
+RequestStore.fetchMessages = function () {
+  return _messages.slice();
+};
+
+
 
 RequestStore.__onDispatch = function(payload){
   switch (payload.actionType) {
@@ -47,12 +59,16 @@ RequestStore.__onDispatch = function(payload){
       break;
     case RequestConstants.REQUEST_RECEIVED:
       this.setRequest(payload.request);
+      this.resetMessages(["Successfully sent!"]);
       break;
     case RequestConstants.REQUEST_REMOVED:
       this.removeRequest(payload.request);
       break;
     case RequestConstants.REQUEST_ERROR:
-      this.resetErrors(payload.errors);
+      this.resetMessages(payload.error.responseJSON);
+      break;
+    case RequestConstants.RESET_MESSAGE:
+      this.resetMessages([]);
       break;
   }
   this.__emitChange();
@@ -60,4 +76,4 @@ RequestStore.__onDispatch = function(payload){
 
 
 // TODO: REMOVE THIS
-module.exports = window.RequestStore = RequestStore;
+module.exports = RequestStore;

@@ -40,6 +40,7 @@ var LoginForm = React.createClass({
 	},
 	demoLogin: function (e) {
 		e.preventDefault();
+	
 		UserActions.login({
 			email: "borrow@backpack.com",
 			password: "password"

@@ -20,7 +20,7 @@ var NavBar = require('./components/nav_bar');
 var RequestInbox = require('./components/request_inbox');
 var SentRequestInbox = require('./components/sent_request_inbox');
 //Store
-var UserStore = require('./stores/user_store');
+var UserStore = window.UserStore = require('./stores/user_store');
 
 
 var requireSignedIn = function () {
@@ -95,7 +95,7 @@ var App = React.createClass({
 var routes = (
     <Route path="/" component={App}>
       <Route path="login" onEnter={requireNotSignedIn} component={LoginForm} />
-      <Route component={Landing} onEnter={requireSignedIn}>
+      <Route component={Landing} >
         <IndexRoute component={SportingGoodIndex} />
         <Route path="sporting_goods/received_requests" component={RequestInbox} />
         <Route path="sporting_goods/sent_requests" component={SentRequestInbox} />

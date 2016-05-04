@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
 			render "api/sporting_goods/index"
 		else
 			@errors = ['email or password is incorrect']
-			render "api/shared/error"
+			render "api/shared/error", status: 401
 		end
   end
 
@@ -22,12 +22,13 @@ class Api::SessionsController < ApplicationController
   end
 
   def show
+
     if current_user
       @user = current_user
       render "api/users/show"
     else
       @errors = nil
-      render "api/shared/error"
+      render "api/shared/error", status: 401
     end
   end
 end
