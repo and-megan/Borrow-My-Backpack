@@ -28,7 +28,6 @@ var LoginForm = React.createClass({
 		}
 	},
 	handleLoginSubmit: function(e){
-		debugger;
 		e.preventDefault();
 		UserActions.login({
 			email: this.state.email,

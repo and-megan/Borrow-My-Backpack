@@ -72,3 +72,14 @@ header h1 {
 .link:hover {
   cursor: pointer;
 }
+.click-filter-container {
+  display: flex;
+  flex-direction: row;
+}
+.click-filter-all {
+  display: flex;
+  flex-direction: column;
+}
+.show-all-button-container {
+  width: 150px;
+}
