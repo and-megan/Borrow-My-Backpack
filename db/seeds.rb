@@ -98,7 +98,7 @@ pic_url: "http://i.imgur.com/UINm0AN.jpg"
 
 SportingGood.create!(
 id: 1005,
-user_id: 1002,
+user_id: 1001,
 description: "I'm out of town until September, so I'm hoping my surfboard can get a little love.",
 category: "surfboard",
 lat: 37.786049,
@@ -242,7 +242,7 @@ description: "Great bag for hiking or camping. Lots of support for anyone with a
 category: "backpack",
 lat: 37.755574,
 lng: -122.499546,
-pic_url: "http://www.adventurecats.org/wp-content/uploads/2016/01/Bolt-and-Keel-Adventure-Cats-14-of-17.jpg"
+pic_url: "http://stepoutdoorscolorado.com/wp-content/uploads/2012/05/Fitting-A-Backpack-During-A-Step-Outdoors-Backpacking-Adventure.jpg"
 )
 SportingGood.create!(
 id: 1021,
@@ -260,13 +260,13 @@ description: "Very rideable as-is. Also has a spikey stomp plate installed. Grea
 category: "snowboard",
 lat: 37.737979,
 lng: -122.453144,
-pic_url: "http://7-themes.com/data_images/out/56/6961426-snowboard-winter.jpg"
+pic_url: "https://pixabay.com/static/uploads/photo/2013/05/26/18/01/snowboard-113784_960_720.jpg"
 )
 SportingGood.create!(
 id: 1023,
 user_id: 1007,
 description: "In great condition. Large bag that will hold a lot of gear. Great for trekking, backpacking, travel, etc.",
-category: "snowboard",
+category: "backpack",
 lat: 37.897452,
 lng: -122.552021,
 pic_url: "http://thekitchenrag.com/wp-content/uploads/blogger/-59YXEmZPOLM/UEWY2bcYsJI/AAAAAAAAAWg/vBuQaglmAYU/s1600/IMG_4923.jpg"
@@ -277,7 +277,7 @@ user_id: 1006,
 description: "Top lid pocket holds your map, compass or GPS, spare batteries and other small equipment items; interior valuables pocket secures important items
 SOS label inside the lid includes information to help if you're lost or need assistance
 Side compression straps cinch down loads for jostle-free carrying; attachment points allow you to lash trekking poles and ice tools to pack exterior",
-category: "snowboard",
+category: "backpack",
 lat: 37.999247,
 lng: -122.476490,
 pic_url: "http://stewieshow.com/wp-content/uploads/2016/03/dreamstime_xl_31762033.jpg"

@@ -7,6 +7,7 @@ var ClickFilter = React.createClass({
   getInitialState: function() {
     return {
       filters: []
+
     };
   },
 
