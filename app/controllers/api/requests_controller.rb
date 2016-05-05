@@ -28,7 +28,7 @@ class Api::RequestsController < ApplicationController
   def update
     @request = Request.find(params[:id])
     if @request.update(request_params)
-      render json: @request
+
 
       @request_notification = RequestNotification.new()
       sporting_good = SportingGood.find(@request.sporting_good_id)
@@ -36,6 +36,7 @@ class Api::RequestsController < ApplicationController
       @request_notification.request_id = @request.id
       @request_notification.recipient_id = owner.id
 
+      render :show
     else
       render json: @request.errors.full_messages
     end

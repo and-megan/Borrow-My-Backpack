@@ -4,6 +4,8 @@ var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var hashHistory = ReactRouter.hashHistory;
 //request api util
 var RequestApiUtil = require("../utils/request_api_utils");
+//actions
+var RequestClientActions = require('../actions/request_client_actions');
 //store
 var RequestStore = require("../stores/request_store");
 var UserStore = require("../stores/user_store");
@@ -16,30 +18,26 @@ var RequestIndexItemDetail = require('./request_index_item_detail');
 var ReceivedRequestIndexItem = React.createClass({
   mixins: [LinkedStateMixin],
   getInitialState: function() {
-    var receivedRequest;
-    if (this.props.receivedRequest.id) {
-      receivedRequest = RequestStore.find(this.props.receivedRequest.id);
+    var receivedRequest = this.props.receivedRequest;
+    if (receivedRequest.id) {
+      receivedRequest = RequestStore.find(receivedRequest.id);
     } else {
       receivedRequest = {requestApproval: ""};
     }
     return {
+      receivedRequest: receivedRequest,
       requestApproval: receivedRequest.requestApproval,
     };
   },
-  componentDidMount: function() {
-    var receivedRequest;
-    if (this.props.receivedRequest.id) {
-      receivedRequest = RequestStore.find(this.props.receivedRequest.id);
-      this.setState({
-        requestApproval: receivedRequest.requestApproval
-      });
-    } else {
-      receivedRequest = {requestApproval: ""};
-      this.setState({
-        requestApproval: receivedRequest.requestApproval
-      });
-    }
+
+  componentWillReceiveProps: function(nextProps) {
+    var receivedRequest = nextProps.receivedRequest;
+    this.setState({
+      receivedRequest: receivedRequest,
+      requestApproval: receivedRequest.requestApproval
+    });
   },
+
   updateApproval: function () {
     this.setState({
       requestApproval: "APPROVE"
@@ -59,6 +57,7 @@ var ReceivedRequestIndexItem = React.createClass({
       requestApproval: this.state.requestApproval
     };
     RequestApiUtil.updateRequest(requestData);
+
     hashHistory.push("sporting_goods/received_requests");
   },
 

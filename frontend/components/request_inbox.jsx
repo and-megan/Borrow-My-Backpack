@@ -28,7 +28,6 @@ var RequestInbox = React.createClass({
     this.receivedRequestsListener.remove();
   },
   getReceivedRequests: function () {
-
     this.setState({
       receivedRequests: RequestStore.all()
     });
