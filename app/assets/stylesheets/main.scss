@@ -63,6 +63,7 @@ header h1 {
   top: 90px;
   left: -40px;
   width: 250px;
+  z-index: 2;
 }
 .dropdown {
   display: none;
@@ -121,15 +122,14 @@ header h1 {
   display: flex;
   align-self: flex-start;
   margin: 10px;
-  z-index: -5;
 }
 .list-group {
   display: flex;
-  max-width: 800px;
+  max-width: 900px;
   min-width: 700px;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left: 75px;
+  padding-left: 50px;
 }
 .checkbox {
   display: flex;
