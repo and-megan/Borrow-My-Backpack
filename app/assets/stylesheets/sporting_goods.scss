@@ -53,14 +53,15 @@
 }
 
 .sporting-good-index-item img {
-  height: 280px;
+  height: 300px;
   overflow: hidden;
-  width: 280px;
+  width: 300px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin: 1px;
 	cursor: pointer;
+
 }
 
 .sporting-good-index-item img:hover {
@@ -98,4 +99,28 @@
 }
 .show-all-button-container {
   align-self: center;
+}
+//show
+.group-requests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin-left: 100px;
+}
+.completed-request-container {
+  display: flex;
+  max-width: 1200px;
+  min-width: 850px;
+  align-items: center;
+}
+.received-request-image {
+  height: 400px;
+  width: 600px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 1px;
+}
+.received-request-index-item {
+
 }

@@ -27,11 +27,11 @@ header h1 {
   font-size: 20px;
   color: #b8e4d2;
   padding-top: 60px;
-  padding-left: 750px;
+  padding-left: 300px;
 }
 #map {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
 }
 .nav-buttons {
   padding: 15px;
@@ -107,7 +107,7 @@ header h1 {
 }
 .click-filter-all {
   display: flex;
-  width: 225px;
+  width: 150px;
   background-color: #85d2b2;
   color: #797478;
   padding: 10px;
@@ -125,11 +125,11 @@ header h1 {
 }
 .list-group {
   display: flex;
-  max-width: 900px;
-  min-width: 700px;
+  max-width: 600px;
+  min-width: 500px;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left: 50px;
+  padding-left: 15px;
 }
 .checkbox {
   display: flex;

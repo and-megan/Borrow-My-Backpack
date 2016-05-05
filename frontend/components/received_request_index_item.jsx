@@ -64,7 +64,7 @@ var ReceivedRequestIndexItem = React.createClass({
   render: function() {
     var receivedRequest = this.props.receivedRequest;
     return (
-      <li className="request-index-item">
+      <li className="received-request-index-item">
         <div className="request-index-item-info">
           <RequestIndexItemDetail key={receivedRequest.id} receivedRequest={receivedRequest}/>
         </div>

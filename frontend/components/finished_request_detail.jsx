@@ -47,7 +47,7 @@ var FinishedRequestDetail = React.createClass({
         </li>
 
         <li>{receivedRequest.sporting_good.category}</li>
-        <li className="sporting-good-index-item">
+        <li className="received-request-finished-li">
           <img src={receivedRequest.sporting_good.pic_url} className="received-request-pic" alt="sporting-good-item-pic" />
         </li>
         <li>{receivedRequest.start_date} to {receivedRequest.end_date}</li>

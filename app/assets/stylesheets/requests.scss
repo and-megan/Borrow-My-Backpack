@@ -14,11 +14,16 @@
 }
 .completed-request-container {
   display: flex;
-  max-width: 500px;
+  max-width: 1000px;
   flex-direction: column;
+  max-height: 500px;
 }
 .pending-request {
   border: 3px solid black;
   background-color: #FFFF66;
   opacity: 0.8;
+}
+.received-request-pic {
+  width: 600px;
+  height: 400px;
 }
