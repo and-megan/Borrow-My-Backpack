@@ -73,7 +73,7 @@ module.exports = React.createClass({
 
       return(
         <div id="sporting-good-form">
-          <h1>Create a new listing</h1>
+          <h2 className="modal-title">Create a new listing</h2>
           <br></br>
           <br></br>
           <form onSubmit={this.handleSubmit}>
@@ -96,7 +96,7 @@ module.exports = React.createClass({
             <br></br>
 
             <label>Address</label>
-            <input type="text" id="address-input" value={this.state.address} onChange={this.changeAddress}/>
+            <textarea type="text" id="address-input" value={this.state.address} onChange={this.changeAddress}/>
             <br></br>
             <br></br>
 

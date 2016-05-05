@@ -76,7 +76,7 @@ var ClickFilter = React.createClass({
           </div>
           <br></br>
           <div className="checkbox-label">
-            <label for="checkboxSn">SnowBoard</label>
+            <label for="checkboxSn">Snowboard</label>
             <input className="checkboxSn" type="checkbox" defaultChecked={this.state.snowboardButton} onClick={this.toggleFilterState} value="snowboard"/>
           </div>
           <br></br>
@@ -90,10 +90,7 @@ var ClickFilter = React.createClass({
             <input className="checkboxTe" type="checkbox" defaultChecked={this.state.tentButton} onClick={this.toggleFilterState} value="tent"/>
           </div>
         </div>
-          <br></br>
-          <div className="show-all-button-container">
-            <button className="user-button" className="user-button" onClick={this.showAll}>Show All Listings</button>
-          </div>
+
       </div>
     );
   }

@@ -34,7 +34,7 @@ header h1 {
 }
 #map {
   width: 400px;
-  height: 600px;
+  height: 500px;
 }
 .nav-buttons {
   padding: 15px;
@@ -97,7 +97,11 @@ header h1 {
 .click-filter-all {
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 300px;
+  margin-left: 5px;
+  -webkit-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  -moz-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
 
 }
 .show-all-button-container {
@@ -109,6 +113,7 @@ header h1 {
   flex-direction: column;
   align-items: flex-start;
   height: 375px;
+  color: #5d5d5d;
 }
 .click-filter-all {
   display: flex;
@@ -126,6 +131,7 @@ header h1 {
   font-weight: bold;
   font-size: large;
   color: #2e302f;
+  border-bottom: 1px solid #5d5d5d;
 }
 .map-sg-index {
   display: flex;
@@ -141,6 +147,8 @@ header h1 {
   display: flex;
   max-width: 700px;
   min-width: 500px;
+  max-height: 650px;
+  overflow: scroll;
   flex-direction: row;
   flex-wrap: wrap;
   padding-left: 25px;
@@ -153,4 +161,9 @@ header h1 {
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-start;
+}
+.modal-title {
+  font-weight: bold;
+  padding: 5px;
+  border-bottom: 1px solid #CCC;
 }

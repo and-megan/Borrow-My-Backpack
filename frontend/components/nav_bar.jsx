@@ -95,9 +95,7 @@ var NavBar = React.createClass({
           <li className="profile-link">
             <p className="profile-hover">&#x2630;</p>
             <ul className="dropdown">
-              <li>
-                Settings
-              </li>
+
               <li>
                 {this.receivedRequestsInbox()}
               </li>
