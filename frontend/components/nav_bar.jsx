@@ -67,7 +67,7 @@ var NavBar = React.createClass({
   greeting: function () {
     if (this.state.currentUser) {
       return(
-        <h2 className="greeting">Hello {this.state.currentUser.email}</h2>
+        <h2 className="greeting">Hello, {this.state.currentUser.email}</h2>
       );
     }
   },
