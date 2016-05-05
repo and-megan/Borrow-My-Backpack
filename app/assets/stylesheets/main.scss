@@ -1,6 +1,7 @@
 body {
   background-color: #eff9f5;
   font-family: 'Lato', sans-serif;
+  font-size: 20px;
 }
 
 // .app-background {
@@ -15,12 +16,18 @@ header {
   background-color: #153729;
 }
 header h1 {
-  padding: 15px;
+  padding: 8px;
   color: #b6e3d0;
 }
 
 #app-container {
 
+}
+.greeting {
+  font-size: 20px;
+  color: #b8e4d2;
+  padding-top: 60px;
+  padding-left: 750px;
 }
 #map {
   width: 500px;
@@ -42,22 +49,29 @@ header h1 {
 .profile-link:hover {
   color: #F2F6F7;
 }
+.profile-hover {
+  padding-top: 25px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  font-size: 40px;
+}
 .nav-buttons:hover ul {
   display: block;
   background-color: #d2eee2;
   position: absolute;
-  top: 30px;
-  left: 15px;
-  width: 200px;
+  font-size: 20px;
+  top: 90px;
+  left: -40px;
+  width: 250px;
 }
 .dropdown {
   display: none;
-  text-align: right;
+  text-align: left;
   color: #3A4039;
 }
 
 .dropdown li {
-  padding: 10px;
+  padding: 15px;
   border-bottom: 1px solid black;
   border-left: 1px solid black;
   border-right: 1px solid black;

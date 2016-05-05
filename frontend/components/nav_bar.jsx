@@ -67,7 +67,7 @@ var NavBar = React.createClass({
   greeting: function () {
     if (this.state.currentUser) {
       return(
-        <h2>Hello, {this.state.currentUser.email}</h2>
+        <h2 className="greeting">Hello, {this.state.currentUser.email}</h2>
       );
     }
   },
@@ -87,11 +87,13 @@ var NavBar = React.createClass({
 
     return (
 			<header>
-        <h1 id="app-header" onClick={this.goHome}>Borrow My Backpack</h1>
+        <h1 id="app-header" onClick={this.goHome}>
+          <img src="/assets/bmblogo.png" alt="Borrow My Backpack." />
+        </h1>
         {this.greeting()}
         <ul className="nav-buttons">
           <li className="profile-link">
-            <p>&#x2630;</p>
+            <p className="profile-hover">&#x2630;</p>
             <ul className="dropdown">
               <li>
                 Settings

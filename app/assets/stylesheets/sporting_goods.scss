@@ -35,7 +35,8 @@
 
 // index page
 .sporting-good-index-container {
-  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .sporting-good-index-item {

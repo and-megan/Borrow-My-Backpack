@@ -39,7 +39,7 @@ var UserApiUtil = {
 				ServerActions.receiveUser(user);
 			},
 			error: function () {
-				console.log("nooooooo");
+	
 			}
 		});
 	},
