@@ -14,6 +14,9 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: #153729;
+  -webkit-box-shadow: 0px 5px 11px -1px rgba(161,158,161,1);
+  -moz-box-shadow: 0px 5px 11px -1px rgba(161,158,161,1);
+  box-shadow: 0px 5px 11px -1px rgba(161,158,161,1);
 }
 header h1 {
   padding: 8px;
@@ -31,7 +34,7 @@ header h1 {
 }
 #map {
   width: 400px;
-  height: 400px;
+  height: 600px;
 }
 .nav-buttons {
   padding: 15px;
@@ -95,6 +98,7 @@ header h1 {
   display: flex;
   flex-direction: column;
   height: 500px;
+
 }
 .show-all-button-container {
   width: 150px;
@@ -103,35 +107,50 @@ header h1 {
 .click-filter-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   height: 375px;
 }
 .click-filter-all {
   display: flex;
-  width: 150px;
+  width: 120px;
   background-color: #85d2b2;
   color: #797478;
   padding: 10px;
 
 }
 .filter-header {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin-bottom: 20px;
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: large;
+  color: #2e302f;
 }
 .map-sg-index {
   display: flex;
   align-self: flex-start;
-  margin: 10px;
+  margin: 8px 10px;
+  border: 2px solid #40a87d;
+  -webkit-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  -moz-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+
 }
 .list-group {
   display: flex;
-  max-width: 600px;
+  max-width: 700px;
   min-width: 500px;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left: 15px;
+  padding-left: 25px;
 }
 .checkbox {
   display: flex;
   padding-left: 5px;
+}
+.checkbox-label{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
 }

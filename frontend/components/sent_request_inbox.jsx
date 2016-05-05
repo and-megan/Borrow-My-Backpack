@@ -41,10 +41,12 @@ var SentRequestInbox = React.createClass({
       return(<SentRequestIndexItem key={sentRequest.id} sentRequest={sentRequest} />);
     });
     return (
-      <div className="requests-sent-container">
-        <h1>Sent Requests</h1>
+      <div className="requests-container">
+      <div className='inbox-h1-container'>
+        <h1 className='inbox-h1'>Your Sent Requests</h1>
         <div>
           <a className="link" onClick={this.goToReceivedRequests}>See your received requests</a>
+        </div>
         </div>
         <ul className="group-requests">
           {SentIndexItemsTags}

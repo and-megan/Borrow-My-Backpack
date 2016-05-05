@@ -33,25 +33,35 @@ var FinishedRequestDetail = React.createClass({
   render: function() {
 
     var classColor;
+    var displayresponse;
+    var displayResponse;
     var receivedRequest = this.state.receivedRequest;
     if (receivedRequest.status_response === "APPROVE") {
-      classColor = 'completed-request-approve';
+      classColor = 'inner-box';
+      displayresponse = 'APPROVED';
+      displayResponse = 'APPROVED';
     } else {
-      classColor = 'completed-request-deny';
+      classColor = 'inner-box-d';
+      displayresponse = 'DENIED';
+      displayResponse = 'DENIED';
     }
 
     return (
-      <ul className='completed-request-container'>
-        <li className={classColor}>
-          <h2>{receivedRequest.status_response}</h2>
-        </li>
+      <div className="outer-box">
+        <div className={classColor}>
+            <img src={receivedRequest.sporting_good.pic_url} className="received-request-pic" alt="sporting-good-item-pic" />
+            <div className="received-request-detail">
+              <div>{receivedRequest.sender.email} wants to borrow your {receivedRequest.sporting_good.category}!</div>
 
-        <li>{receivedRequest.sporting_good.category}</li>
-        <li className="received-request-finished-li">
-          <img src={receivedRequest.sporting_good.pic_url} className="received-request-pic" alt="sporting-good-item-pic" />
-        </li>
-        <li>{receivedRequest.start_date} to {receivedRequest.end_date}</li>
-      </ul>
+              <div>Dates Requested:
+                <div>{receivedRequest.start_date}</div>
+                <div>{receivedRequest.end_date}</div>
+              </div>
+            </div>
+            <h2 className={displayresponse}>{displayResponse}</h2>
+        </div>
+
+      </div>
     );
   }
 

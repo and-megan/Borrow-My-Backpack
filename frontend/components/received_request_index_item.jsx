@@ -69,9 +69,9 @@ var ReceivedRequestIndexItem = React.createClass({
           <RequestIndexItemDetail key={receivedRequest.id} receivedRequest={receivedRequest}/>
         </div>
 
-          <form onSubmit={this.handleSubmit}>
+          <form className='approve-deny-form' onSubmit={this.handleSubmit}>
 
-            <section>
+            <section className="approve-deny-radio">
               <label> Approve
                 <input type="Radio" name="action" value={receivedRequest.requestApproval}
                 checked={this.state.requestApproval === "APPROVE"}
@@ -84,8 +84,6 @@ var ReceivedRequestIndexItem = React.createClass({
                 onChange={this.updateDenial}/>
               </label>
             </section>
-
-
 
             <button className="user-button" type="submit"  value="Send a response">Send a response</button>
           </form>

@@ -2,28 +2,190 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.completed-request-approve {
-  border: 3px solid black;
-  background-color: #1a4533;
-  opacity: 0.8;
-}
+
 .completed-request-deny {
-  border: 3px solid black;
   background-color: #680000;
-  opacity: 0.8;
+  opacity: 0.6;
+  width: 100%;
+  height: 40%;
+  z-index: 2;
 }
 .completed-request-container {
-  display: flex;
+  display: relative;
   max-width: 1000px;
   flex-direction: column;
   max-height: 500px;
+  border: 1px solid grey;
 }
+
 .pending-request {
-  border: 3px solid black;
   background-color: #FFFF66;
-  opacity: 0.8;
+  opacity: 0.6;
+  width: 100%;
+  height: 40%;
+  z-index: 2;
 }
 .received-request-pic {
   width: 600px;
   height: 400px;
+}
+
+.outer-box {
+  width: 900px;
+  height: 400px;
+  display: block;
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.outer-box-p {
+  width: 900px;
+  height: 400px;
+  display: block;
+  position: relative;
+
+  padding-bottom: 10px;
+  margin-top: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+
+.outer-box img {
+  width: 500px;
+  height: 100%;
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+.outer-box-p img {
+  width: 500px;
+  height: 100%;
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+.received-request-detail {
+  top: 0;
+  left: 500px;
+  position: absolute;
+  font-size: 18px;
+}
+
+.outer-box .inner-box {
+  background: #758f84;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  opacity: .6;
+  transition: opacity .5s;
+  border-bottom: 1px solid grey;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  -moz-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+}
+.outer-box .inner-box-d {
+  background: #AB241E;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  opacity: .6;
+  transition: opacity .5s;
+  border-bottom: 1px solid grey;
+  margin-bottom: 2px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  -moz-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+}
+.outer-box-p .inner-box-p {
+  background: #dce362;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  opacity: .9;
+  transition: opacity .5s;
+
+  margin-bottom: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  -moz-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+}
+.APPROVED {
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  width: 100%;
+  font-size: 100px;
+  color: darken(black, 30%);
+  opacity: 0.9;
+}
+.DENIED {
+  position: absolute;
+  top: 150px;
+  left: 250px;
+  width: 100%;
+  font-size: 100px;
+  color: black;
+  opacity: 0.9;
+}
+.PENDING {
+  position: absolute;
+  top: 25px;
+  left: 80px;
+  width: 100%;
+  font-size: 60px;
+  color: black;
+}
+.received-request-pic-p {
+  opacity: 1.0;
+  width: 600px;
+  height: 400px;
+}
+
+.approve-deny-form {
+  background-color: #dee571;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 0;
+  margin: 0;
+  padding-right: 30px;
+  padding-top: 10px;
+}
+.inbox-h1-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.inbox-h1 {
+  align-self: center;
+}
+.requests-sent-container {
+  margin: 10px;
 }
