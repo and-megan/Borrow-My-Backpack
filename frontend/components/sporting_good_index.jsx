@@ -57,7 +57,7 @@ var SportingGoodIndex = React.createClass({
   },
   toggleNewListingForm: function () {
     return (
-      <button className="user-button" onClick={this.openFormModal}>Make a new listing!</button>
+      <div className="new-listing-wrap"><button className="user-button" onClick={this.openFormModal}>Make a new listing!</button></div>
     );
   },
   render: function() {

@@ -58,25 +58,25 @@ var ClickFilter = React.createClass({
 
     return (
       <div className="click-filter-all">
-        <h2>Filter By Type</h2>
+        <h2 className="filter-header">Filter By Type</h2>
         <div className="click-filter-container">
           <label>Backpack</label>
-          <input type="checkbox" defaultChecked={this.state.backpackButton} onClick={this.toggleFilterState} value="backpack"/>
+          <input className="checkbox" type="checkbox" defaultChecked={this.state.backpackButton} onClick={this.toggleFilterState} value="backpack"/>
           <br></br>
           <label>Bicycle</label>
-          <input type="checkbox" defaultChecked={this.state.bicycleButton} onClick={this.toggleFilterState} value="bicycle"/>
+          <input className="checkbox" type="checkbox" defaultChecked={this.state.bicycleButton} onClick={this.toggleFilterState} value="bicycle"/>
           <br></br>
           <label>Kayak</label>
-          <input type="checkbox" defaultChecked={this.state.kayakButton} onClick={this.toggleFilterState} value="kayak"/>
+          <input className="checkbox" type="checkbox" defaultChecked={this.state.kayakButton} onClick={this.toggleFilterState} value="kayak"/>
           <br></br>
           <label>SnowBoard</label>
-          <input type="checkbox" defaultChecked={this.state.snowboardButton} onClick={this.toggleFilterState} value="snowboard"/>
+          <input className="checkbox" type="checkbox" defaultChecked={this.state.snowboardButton} onClick={this.toggleFilterState} value="snowboard"/>
           <br></br>
           <label>Surfboard</label>
-          <input type="checkbox" defaultChecked={this.state.surfboardButton} onClick={this.toggleFilterState} value="surfboard"/>
+          <input className="checkbox" type="checkbox" defaultChecked={this.state.surfboardButton} onClick={this.toggleFilterState} value="surfboard"/>
           <br></br>
           <label>Tent</label>
-          <input type="checkbox" defaultChecked={this.state.tentButton} onClick={this.toggleFilterState} value="tent"/>
+          <input className="checkbox" type="checkbox" defaultChecked={this.state.tentButton} onClick={this.toggleFilterState} value="tent"/>
         </div>
           <br></br>
           <div className="show-all-button-container">

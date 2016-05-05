@@ -44,15 +44,22 @@
   color: #797478;
   margin:  5px 5px 20px 5px;
 }
+.new-listing-wrap {
+  display: flex;
+  align-self: flex-end;
+  max-width: 20%;
+  margin-top: 10px;
+  margin-right: 260px;
+}
 
 .sporting-good-index-item img {
-  height: 128px;
+  height: 250px;
   overflow: hidden;
-  width: 128px;
+  width: 250px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  margin: 5px;
+  margin: 1px;
 	cursor: pointer;
 }
 
@@ -71,6 +78,9 @@
   background-color: #eff9f5;
   text-align: center;
 }
+.sporting-good-index-view {
+  display: flex;
+}
 //sporting good edit
 .sporting-edit-div {
   display: flex;
@@ -85,4 +95,7 @@
   flex-direction: column;
   justify-content: space-between;
 
+}
+.show-all-button-container {
+  align-self: center;
 }
