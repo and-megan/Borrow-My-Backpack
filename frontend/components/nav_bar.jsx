@@ -13,12 +13,12 @@ var RequestInbox = require('./request_inbox');
 var NavBar = React.createClass({
   mixins: [CurrentUserState],
 
-  componentDidMount: function() {
-    this.curUserListener = UserStore.addListener(this.getCurrentUser);
-  },
-  componentWillUnmount: function() {
-    this.curUserListener.remove();
-  },
+  // componentDidMount: function() {
+  //   this.curUserListener = UserStore.addListener(this.getCurrentUser);
+  // },
+  // componentWillUnmount: function() {
+  //   this.curUserListener.remove();
+  // },
   getCurrentUser: function () {
     this.setState({
       currentUser: UserStore.currentUser()
@@ -84,7 +84,7 @@ var NavBar = React.createClass({
     hashHistory.push("/");
   },
   render: function() {
-
+    console.log(this.state.currentUser);
     return (
 			<header>
         <h1 id="app-header" onClick={this.goHome}>

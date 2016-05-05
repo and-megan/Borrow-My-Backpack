@@ -28,7 +28,6 @@ var UserActions = {
 		UserActions.login({email: "guest", password: "password"});
 	},
 	receiveCurrentUser: function(user){
-
 			AppDispatcher.dispatch({
 			actionType: UserConstants.LOGIN,
 			user: user

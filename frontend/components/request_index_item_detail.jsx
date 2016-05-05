@@ -21,7 +21,7 @@ var RequestIndexItemDetail = React.createClass({
 
           <div>Dates Requested:
             <div>{receivedRequest.start_date} to {receivedRequest.end_date}</div>
-        
+
           </div>
 
         </div>

@@ -32,7 +32,7 @@
 
 .outer-box {
   width: 900px;
-  height: 400px;
+  height: 250px;
   display: block;
   position: relative;
   margin-bottom: 30px;
@@ -44,7 +44,7 @@
 }
 .outer-box-p {
   width: 900px;
-  height: 400px;
+  height: 250px;
   display: block;
   position: relative;
 
@@ -55,16 +55,68 @@
   border-radius: 5px;
 }
 
+.inner-box:after
+{
+    content:"APPROVED";
+    position:absolute;
+    top:70px;
+    left:195px;
+    z-index:1;
+    font-family:Arial,sans-serif;
+    -webkit-transform: rotate(-10deg); /* Safari */
+    -moz-transform: rotate(-10deg); /* Firefox */
+    -ms-transform: rotate(-10deg); /* IE */
+    -o-transform: rotate(-10deg); /* Opera */
+    transform: rotate(-10deg);
+    font-size:94px;
+    color: #083105;
+    background:#fff;
+    border:solid 4px #083105;
+    padding:5px;
+    border-radius:5px;
+    zoom:1;
+    filter:alpha(opacity=20);
+    opacity:0.2;
+    -webkit-text-shadow: 0 0 2px #083105;
+    text-shadow: 0 0 2px #083105;
+    box-shadow: 0 0 2px #083105;
+}
+.inner-box-d:after
+{
+    content:"DENIED";
+    position:absolute;
+    top:70px;
+    left:265px;
+    z-index:1;
+    font-family:Arial,sans-serif;
+    -webkit-transform: rotate(-10deg); /* Safari */
+    -moz-transform: rotate(-10deg); /* Firefox */
+    -ms-transform: rotate(-10deg); /* IE */
+    -o-transform: rotate(-10deg); /* Opera */
+    transform: rotate(-10deg);
+    font-size:94px;
+    color:#c00;
+    background:#fff;
+    border:solid 4px #c00;
+    padding:5px;
+    border-radius:5px;
+    zoom:1;
+    filter:alpha(opacity=20);
+    opacity:0.2;
+    -webkit-text-shadow: 0 0 2px #c00;
+    text-shadow: 0 0 2px #c00;
+    box-shadow: 0 0 2px #c00;
+}
 
 .outer-box img {
-  width: 500px;
+  width: 400px;
   height: 100%;
   position: relative;
   margin-bottom: 30px;
   padding-bottom: 10px;
 }
 .outer-box-p img {
-  width: 500px;
+  width: 400px;
   height: 100%;
   position: relative;
   margin-bottom: 30px;
@@ -169,14 +221,19 @@
 }
 
 .approve-deny-form {
-  background-color: #dee571;
-  display: flex;
-  flex-direction: column;
   align-items: flex-end;
   padding-top: 0;
   margin: 0;
   padding-right: 30px;
   padding-top: 10px;
+  position: relative;
+  top: -100px;
+  z-index: 1;
+  left: -60px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 .inbox-h1-container {
   display: flex;
@@ -188,4 +245,8 @@
 }
 .requests-sent-container {
   margin: 10px;
+}
+.approve-deny-radio {
+  position: relative;
+  left: -18px;
 }

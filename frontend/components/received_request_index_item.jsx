@@ -67,26 +67,27 @@ var ReceivedRequestIndexItem = React.createClass({
       <li className="received-request-index-item">
         <div className="request-index-item-info">
           <RequestIndexItemDetail key={receivedRequest.id} receivedRequest={receivedRequest}/>
+            <form className='approve-deny-form' onSubmit={this.handleSubmit}>
+
+              <section className="approve-deny-radio">
+                <label> Approve
+                  <input type="Radio" name="action" value={receivedRequest.requestApproval}
+                  checked={this.state.requestApproval === "APPROVE"}
+                  onChange={this.updateApproval}/>
+                </label>
+
+                <label> Deny
+                  <input type="Radio" name="action" value={receivedRequest.requestApproval}
+                  checked={this.state.requestApproval === "DENY"}
+                  onChange={this.updateDenial}/>
+                </label>
+              </section>
+
+              <button className="user-button" type="submit"  value="Send a response">Send a response</button>
+            </form>
         </div>
 
-          <form className='approve-deny-form' onSubmit={this.handleSubmit}>
 
-            <section className="approve-deny-radio">
-              <label> Approve
-                <input type="Radio" name="action" value={receivedRequest.requestApproval}
-                checked={this.state.requestApproval === "APPROVE"}
-                onChange={this.updateApproval}/>
-              </label>
-
-              <label> Deny
-                <input type="Radio" name="action" value={receivedRequest.requestApproval}
-                checked={this.state.requestApproval === "DENY"}
-                onChange={this.updateDenial}/>
-              </label>
-            </section>
-
-            <button className="user-button" type="submit"  value="Send a response">Send a response</button>
-          </form>
 
       </li>
     );

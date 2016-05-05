@@ -58,7 +58,7 @@ var FinishedRequestDetail = React.createClass({
                 <div>{receivedRequest.end_date}</div>
               </div>
             </div>
-            <h2 className={displayresponse}>{displayResponse}</h2>
+
         </div>
 
       </div>
