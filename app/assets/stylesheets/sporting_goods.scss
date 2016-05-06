@@ -30,7 +30,7 @@
   padding-top: 10px;
   padding-left: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 // index page
@@ -128,4 +128,9 @@
 }
 .received-request-index-item {
 
+}
+.sporting-good-container-ul {
+  display: flex;
+  width: 100%;
+  align-items: center;
 }

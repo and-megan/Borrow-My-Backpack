@@ -30,14 +30,14 @@ var SentRequestIndexItem = React.createClass({
         <div className={classColor}>
             <img src={sentRequest.sporting_good.pic_url} className="received-request-pic" alt="sporting-good-item-pic" />
             <div className="received-request-detail">
-              <div>You requested this {sentRequest.sporting_good.category}!</div>
+              <div>Waiting to hear back about this {sentRequest.sporting_good.category}....</div>
 
               <div>Dates Requested:
                 <div>{sentRequest.start_date}</div>
                 <div>{sentRequest.end_date}</div>
               </div>
             </div>
-    
+
         </div>
 
       </div>
