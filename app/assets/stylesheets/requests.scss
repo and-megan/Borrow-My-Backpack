@@ -368,3 +368,12 @@
 .tabrow li.selected:after {
   box-shadow: -2px 0px 0 #FFF;
 }
+.no-requests {
+  text-align: center;
+  font-weight: 500;
+  color: #3f3f3f;
+  opacity: 0.9;
+  height: 500px;
+  width: 60%;
+  padding-top: 12px;
+}

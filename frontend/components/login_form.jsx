@@ -100,7 +100,7 @@ var LoginForm = React.createClass({
 		return (<ul>
 		{
 			Object.keys(this.state.userErrors).map(function(key, i){
-				return (<li key={i}>{self.state.userErrors[key]}</li>);
+				return (<li className='success-message' key={i}>{self.state.userErrors[key]}</li>);
 			})
 		}
 		</ul>);
@@ -112,7 +112,7 @@ var LoginForm = React.createClass({
 					<input className="email" type="email" placeholder="Email" valueLink={this.linkState("email")}/>
 
 
-			
+
 					<input className="password" type="password" placeholder="Password" valueLink={this.linkState("password")}/>
 
 			</section>
@@ -167,10 +167,12 @@ var LoginForm = React.createClass({
 	},
 	render: function(){
 		return (
-			<div className="login-form-container">
+			<div className='login-page'>
 				{this.errors()}
-				{this.renderLoginForm()}
-				{this.renderSignupForm()}
+				<div className="login-form-container">
+					{this.renderLoginForm()}
+					{this.renderSignupForm()}
+				</div>
 			</div>
 		);
 	}

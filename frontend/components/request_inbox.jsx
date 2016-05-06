@@ -35,6 +35,11 @@ var RequestInbox = React.createClass({
   goToSentRequests: function () {
     hashHistory.push('sporting_goods/sent_requests');
   },
+  noMessages: function () {
+    if (this.state.receivedRequests.length < 1) {
+      return (<div className='no-requests'>NO CURRENT REQUESTS</div>);
+    }
+  },
   render: function() {
 
     var RequestIndexItemsTags = this.state.receivedRequests.map(function(receivedRequest) {
@@ -57,6 +62,7 @@ var RequestInbox = React.createClass({
         </div>
         <ul className="group-requests">
           {RequestIndexItemsTags}
+          {this.noMessages()}
         </ul>
       </div>
     );

@@ -151,12 +151,14 @@
   align-items: center;
 }
 .success-message {
-  background-color: #256148;
-  color: #fdfefd;
-  opacity: 0.8;
+  text-align: center;
+  background-color: #6fc1c8;
+  color: #e1f2f3;
+  opacity: 0.9;
   height: 40px;
   width: 100%;
-
+  padding-top: 12px;
+  z-index: 10;
 }
 .show-page-buttons {
   display: flex;
