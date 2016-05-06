@@ -67,7 +67,7 @@ module.exports = React.createClass({
         </div>
           <div className="modal-field">
             <label>Type</label>
-            <input list="sporting_goods" value={this.state.category} onChange={this.changeCategory}/>
+            <input className="form-input" list="sporting_goods" value={this.state.category} onChange={this.changeCategory}/>
               <datalist id="sporting_goods">
                 <option value="backpack"></option>
                 <option value="bicycle"></option>
@@ -81,27 +81,18 @@ module.exports = React.createClass({
           <div className="modal-field">
             <br></br>
             <label>Description</label>
-            <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
+            <textarea className="form-textarea" value={this.state.description} onChange={this.changeDescription}></textarea>
           </div>
-            <br></br>
-          <div className="modal-field">
-            <label>Latitude</label>
-            <input type="number" step="0.000001" value={this.state.lat} onChange={this.changeLat}/>
-          </div>
-              <br></br>
-          <div className="modal-field">
-            <label>Longitude</label>
-            <input type="number" step="0.000001" value={this.state.lng} onChange={this.changeLng}/>
-          </div>
+    
             <br></br>
           <div className="modal-field">
             <label>Picture url</label>
-            <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
+            <input type="url" className="form-input" value={this.state.pic_url} onChange={this.changeUrl}/>
           </div>
             <br></br>
           <div className="modal-field">
           <div className="update-button-container">
-            <input type="submit" className="user-button" readOnly="true" value="Update Listing!"/>
+            <input className="form-input" type="submit" className="user-button" readOnly="true" value="Update Listing!"/>
           </div>
           </div>
         </div>

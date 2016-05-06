@@ -16,7 +16,9 @@ var ClickFilter = require('./click_filter');
 var CurrentUserState = require('../mixins/current_user_state');
 var style = {
   overlay : {
-    position        : 'fixed',
+    display         : 'flex',
+    justifyContent  : 'center',
+    alignItems      : 'center',
     top             : 0,
     left            : 0,
     right           : 0,
@@ -25,17 +27,12 @@ var style = {
     zIndex         : 10
   },
   content : {
-    position        : 'fixed',
-    top             : '40px',
-    left            : '350px',
-    right           : '150px',
-    bottom          : '100px',
     border          : '1px solid #ccc',
     padding         : '20px',
     color           : '#515151',
     zIndex          : 11,
     width           : '400px',
-    height          : '555px'
+    height          : '575px'
   }
 };
 var SportingGoodIndex = React.createClass({
@@ -93,6 +90,7 @@ var SportingGoodIndex = React.createClass({
         <div className="sporting-good-index-view">
           <ClickFilter />
           <Modal
+            className='modal'
             style={style}
             isOpen={this.state.formModalOpen}
             onRequestClose={this.closeFormModal}>

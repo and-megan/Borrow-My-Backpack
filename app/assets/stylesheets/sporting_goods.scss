@@ -17,30 +17,35 @@
 }
 
 .sporting-good-show-pic-description {
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
   border-radius: 5px;
-  border:solid 1px #CCC;
-  padding:5px 0 5px 5px;
+  border: solid 1px #CCC;
+  padding: 5px 0 5px 5px;
   background-color: #fdfefe;
-  margin-top: 20px;
-  min-height: 150px;
-  max-height: 200px;
+  /* margin-top: 20px; */
+  /* min-height: 150px; */
+  /* max-height: 200px; */
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
   overflow: auto;
   margin: 5px;
-  -webkit-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
-  -moz-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
-  box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  box-shadow: 3px 3px 11px -1px #a19ea1;
+  height: 280px;
+  max-width: 245px;
+  padding: 10px;
 }
+div#sporting-good-container {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
 .sporting-good-row-1 {
   padding-top: 10px;
   padding-left: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  width: 100%;
+  margin-top: 20px;
 }
 
 // index page
@@ -144,7 +149,7 @@
 }
 .sporting-good-container-ul {
   display: flex;
-  width: 100%;
+
   align-items: center;
   flex-direction: column;
   margin-top: 25px;
@@ -180,6 +185,24 @@
   font-weight: 500
 }
 .request-dates {
-  font-weight: 400px;
+  font-weight: 400;
   margin-top: 50px;
+  text-align: center;
+}
+.show-edit-delete-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+.wants-to-borrow {
+  padding-top: 20px;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 25px;
+  text-align: center;
+}
+.request-dates {
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 15px;
 }

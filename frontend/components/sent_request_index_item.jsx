@@ -39,8 +39,7 @@ var SentRequestIndexItem = React.createClass({
             {this.message()}
 
               <div className='request-dates'>Dates Requested:
-                <div>{sentRequest.start_date}</div>
-                <div>{sentRequest.end_date}</div>
+                <div>{sentRequest.start_date} to {sentRequest.end_date}</div>
               </div>
             </div>
 

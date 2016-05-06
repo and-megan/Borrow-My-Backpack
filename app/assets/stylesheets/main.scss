@@ -2,7 +2,9 @@ body {
   background-color: #eff9f5;
   font-family: 'Lato', sans-serif;
   font-size: 20px;
+  height: 100vh;
 }
+
 
 .app-background {
   background-image: image-url('camping.png');
@@ -12,7 +14,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+#app-container {
+  height: 100%;
+}
+#content {
+  height: 100%;
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -185,4 +192,17 @@ header h1 {
   font-weight: bold;
   padding: 5px;
   border-bottom: 1px solid #CCC;
+}
+.modal {
+  border: 1px solid #ccc;
+background: #fff;
+overflow: auto;
+-webkit-overflow-scrolling: touch;
+border-radius: 4px;
+outline: none;
+padding: 20px;
+color: #515151;
+z-index: 11;
+width: 350px;
+height: 400px;
 }

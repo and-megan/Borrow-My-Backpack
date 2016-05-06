@@ -84,7 +84,7 @@ var NavBar = React.createClass({
     hashHistory.push("/");
   },
   render: function() {
-    console.log(this.state.currentUser);
+
     return (
 			<header>
         <h1 id="app-header" onClick={this.goHome}>

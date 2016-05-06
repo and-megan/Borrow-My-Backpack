@@ -14,6 +14,7 @@ class Api::SportingGoodsController < ApplicationController
 
   def show
     @sporting_good = SportingGood.find(params[:id])
+    render json: @sporting_good
   end
 
   def create

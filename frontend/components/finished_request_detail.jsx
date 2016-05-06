@@ -54,8 +54,7 @@ var FinishedRequestDetail = React.createClass({
               <div className='wants-to-borrow'>{receivedRequest.sender.email} wants to borrow your {receivedRequest.sporting_good.category}!</div>
 
               <div className='request-dates'>Dates Requested:
-                <div>{receivedRequest.start_date} to {receivedRequest.end_date}</div>
-
+                <div className='mm-dd'>{receivedRequest.start_date} to {receivedRequest.end_date}</div>
               </div>
             </div>
 

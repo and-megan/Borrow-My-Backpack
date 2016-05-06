@@ -140,10 +140,7 @@ form#request-form {
 .request-heading {
   text-align: center;
 }
-.request-button-container {
-  margin-left: 190px;
 
-}
 .cancel-request {
   margin-left: 215px;
 }
@@ -160,4 +157,15 @@ div#sporting-good-edit {
 .login-page {
   display: flex;
   flex-direction: column;
+}
+.form-input {
+  margin-top: 3px;
+  width: 50%;
+  height: 20px;
+  text-align: center;
+}
+.form-textarea {
+  margin-top: 3px;
+  width: 50%;
+  height: 40px;
 }

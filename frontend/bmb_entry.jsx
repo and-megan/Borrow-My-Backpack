@@ -36,58 +36,39 @@ var requireNotSignedIn = function () {
 };
 
 var App = React.createClass({
-  getInitialState: function(){
-    return({ modalOpen: false });
+  getInitialState: function() {
+    return {
+      currentUser: ""
+    };
   },
   componentDidMount: function() {
-    this.loginListener = UserStore.addListener(this.toggleModal);
+    this.currentUserHereListener = UserStore.addListener(this.getThisCurrentUser);
+    UserStore.currentUser();
   },
   componentWillUnmount: function() {
-    this.loginListener.remove();
+    this.currentUserHereListener.remove();
   },
-  toggleModal: function () {
-    if (this.state.currentUser) {
-      this.setState({
-        modalOpen: false
-      });
-    } else {
-      this.setState({
-        modalOpen: true
-      });
-    }
+  getThisCurrentUser: function () {
+    this.setState({
+      currentUser: UserStore.currentUser()
+    });
   },
-  closeModal: function(){
-    this.setState({ modalOpen: false });
-  },
-  openModal: function(){
-    this.setState({ modalOpen: true });
-  },
-  modalContent: function(){
-    return(
-
-      <Modal
-        isOpen={this.state.modalOpen}
-        onRequestClose={this.closeModal}>
-        <LoginForm />
-
-      </Modal>
-    );
-  },
-  displayBackground: function () {
-    if (!UserStore.currentUser()) {
-      $('body').addClass('app-background');
-    } else {
-      $('body').removeClass('app-background');
-    }
-  },
+  // displayBackground: function () {
+  //   if (!UserStore.currentUser()) {
+  //     $('body').addClass('app-background');
+  //   } else {
+  //     $('body').removeClass('app-background');
+  //   }
+  // },
   render: function () {
-    if (this.props.location.pathname === '/login') {
-      this.displayBackground();
+    var background;
+    if (!UserStore.currentUser()) {
+      background = 'app-background';
     }
+
     return(
-      <div id="app-container">
+      <div id="app-container" className={background}>
         <NavBar />
-        {this.modalContent}
         {this.props.children}
       </div>
     );

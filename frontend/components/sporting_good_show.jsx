@@ -17,7 +17,9 @@ var RequestBox = require('./request_box');
 var SportingGoodEdit = require('./sporting_good_edit');
 var style1 = {
   overlay : {
-    position        : 'fixed',
+    display         : 'flex',
+    justifyContent  : 'center',
+    alignItems      : 'center',
     top             : 0,
     left            : 0,
     right           : 0,
@@ -26,11 +28,7 @@ var style1 = {
     zIndex         : 10
   },
   content : {
-    position        : 'fixed',
-    top             : '40px',
-    left            : '350px',
-    right           : '150px',
-    bottom          : '100px',
+
     border          : '1px solid #ccc',
     padding         : '20px',
     color           : '#515151',
@@ -41,7 +39,10 @@ var style1 = {
 };
 var style2 = {
   overlay : {
-    position        : 'fixed',
+
+    display         : 'flex',
+    justifyContent  : 'center',
+    alignItems      : 'center',
     top             : 0,
     left            : 0,
     right           : 0,
@@ -50,11 +51,7 @@ var style2 = {
     zIndex         : 10
   },
   content : {
-    position        : 'fixed',
-    top             : '40px',
-    left            : '350px',
-    right           : '150px',
-    bottom          : '100px',
+
     border          : '1px solid #ccc',
     padding         : '20px',
     color           : '#515151',
@@ -68,7 +65,7 @@ var SportingGoodShow = React.createClass({
   getInitialState: function() {
     return {
       sportingGood: {pic_url: "", description: "",
-      user_id: "", id: ""},
+      user_id: "", id: "", user: ""},
       requestModalOpen: false,
       editModalOpen: false,
       messages: []
@@ -91,7 +88,7 @@ var SportingGoodShow = React.createClass({
   },
   successMessage: function () {
     return(<div>{this.state.messages.map(function (message) {
-      return(<div className="success-message">{message}</div>);
+      return(<div className="success-message" key={message}>{message}</div>);
     })}</div>);
   },
   closeRequestModal: function(){
@@ -115,7 +112,9 @@ var SportingGoodShow = React.createClass({
       return;
     }
     return (
-      <button className="user-button" onClick={this.openRequestModal}>Request this {this.state.sportingGood.category}!</button>
+      <div className="request-button-container">
+        <button className="user-button" onClick={this.openRequestModal}>Request this {this.state.sportingGood.category}!</button>
+      </div>
     );
   },
   handleChange: function () {
@@ -130,7 +129,7 @@ var SportingGoodShow = React.createClass({
       return "";
     } else {
       return(
-        <ul>
+        <ul className='show-edit-delete-container'>
           <li>
             <button className="user-button" onClick={this.openEditModal}>Edit Listing</button>
           </li>
@@ -159,6 +158,7 @@ var SportingGoodShow = React.createClass({
     }
 
     return (
+
       <div id="sporting-good-container">
           {this.successMessage()}
         <Link className="back-to-listings" to="/">View all listings</Link>
@@ -169,25 +169,21 @@ var SportingGoodShow = React.createClass({
             <li>
               <img src={this.state.sportingGood.pic_url} className="sporting-good-show-pic" alt="sporting_good_item_show" />
             </li>
-            <div className='show-page-buttons-container'>
-              <div className='show-page-buttons'>
-                <div className='request-form-button'>
-                  {this.toggleRequestForm()}
-                </div>
-                <div className='edit-delete-buttons'>
-                  {this.currentUserEdit()}
-                </div>
-              </div>
-            </div>
             <li className="sporting-good-show-pic-description">
               {this.state.sportingGood.description}
             </li>
           </ul>
 
+                  {this.toggleRequestForm()}
+
+
+                  {this.currentUserEdit()}
+
           <br></br>
 
         </ul>
         <Modal
+          className='modal'
           style={style1}
           isOpen={this.state.requestModalOpen}
           onRequestClose={this.closeRequestModal}>
@@ -200,6 +196,7 @@ var SportingGoodShow = React.createClass({
         </Modal>
 
         <Modal
+          className='modal'
           style={style2}
           isOpen={this.state.editModalOpen}
           onRequestClose={this.closeEditModal}>
