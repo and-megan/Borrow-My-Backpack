@@ -2,11 +2,16 @@ var React = require('react');
 
 
 var SentRequestIndexItem = React.createClass({
-
+  message: function () {
+    if (this.props.sentRequest.status_response === "") {
+      return (<div className='wants-to-borrow'>Waiting to hear back about this {this.props.sentRequest.sporting_good.category}.</div>);
+    }
+  },
   render: function() {
     var classColor;
     var displayResponse;
     var displayresponse;
+    var message = "";
     var outerBox;
     var sentRequest = this.props.sentRequest;
     if (sentRequest.status_response === "APPROVE") {
@@ -25,14 +30,15 @@ var SentRequestIndexItem = React.createClass({
       displayresponse = 'DENIED';
       displayResponse = 'DENIED';
     }
+
     return (
       <div className={outerBox}>
         <div className={classColor}>
             <img src={sentRequest.sporting_good.pic_url} className="received-request-pic" alt="sporting-good-item-pic" />
             <div className="received-request-detail">
-              <div>Waiting to hear back about this {sentRequest.sporting_good.category}....</div>
+            {this.message()}
 
-              <div>Dates Requested:
+              <div className='request-dates'>Dates Requested:
                 <div>{sentRequest.start_date}</div>
                 <div>{sentRequest.end_date}</div>
               </div>

@@ -146,7 +146,8 @@
 }
 .received-request-detail {
   top: 0;
-  left: 500px;
+  left: 415px;
+  top: 10px;
   position: absolute;
   font-size: 18px;
 }
@@ -260,15 +261,110 @@
 .inbox-h1-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
 }
-.inbox-h1 {
-  align-self: center;
-}
+
 .requests-sent-container {
   margin: 10px;
 }
 .approve-deny-radio {
   position: relative;
   left: -18px;
+}
+.tabrow {
+  text-align: center;
+  list-style: none;
+  /* margin: 200px 0 20px; */
+  padding: 0;
+  line-height: 35px;
+  height: 37px;
+  overflow: hidden;
+}
+
+.tabrow-1 {
+  border: 1px solid #AAD8AC;
+  margin-left: 5px;
+  margin-top: 10px;
+  background: -webkit-linear-gradient(top, #B1DFB3 50%, #D4DFD4 100%);
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #FFF;
+  text-shadow: 0 1px #FFF;
+  margin: 0 -5px;
+  padding: 0 30px;
+  cursor: pointer;
+}
+.group-requests {
+  background-color: #d0ebd1;
+  width: 95%;
+}
+.tabrow-2 {
+  cursor: pointer;
+    margin-top: 10px;
+  border: 1px solid #AAD8AC;
+  margin-left: 5px;
+  background: -webkit-linear-gradient(top, #ADB0AD 50%, #D4DFD4 100%);
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #FFF;
+  text-shadow: 0 1px #FFF;
+  margin: 0 -5px;
+  padding: 0 30px;
+
+}
+.tabrow-2:hover{
+  background: -webkit-linear-gradient(top, #7bc97e 50%, #D4DFD4 100%);
+}
+.tabrow a {
+  color: #555;
+  text-decoration: none;
+}
+
+
+.tabrow:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-top: 1px solid #AAA;
+  z-index: 1;
+}
+
+.tabrow li:before,
+.tabrow li:after {
+  border: 1px solid #AAA;
+  position: absolute;
+  top: -1px;
+  width: 6px;
+  height: 6px;
+  content: "";
+}
+
+.tabrow li:before {
+  left: -7px;
+  border-top-right-radius: 6px;
+  border-width: 1px 1px 0px 0px;
+  box-shadow: 2px 0px 0 #ECECEC;
+}
+
+.tabrow li:after {
+  right: -7px;
+  border-top-left-radius: 6px;
+  border-width: 1px 0px 0px 1px;
+  box-shadow: -2px 0px 0 #ECECEC;
+}
+
+.tabrow li.selected:before {
+  box-shadow: 2px 0px 0 #FFF;
+}
+
+.tabrow li.selected:after {
+  box-shadow: -2px 0px 0 #FFF;
 }

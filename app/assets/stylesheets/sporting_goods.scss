@@ -6,31 +6,41 @@
 
   height: 300px;
   overflow: hidden;
-  width: 300px;
+  width: 400px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin: 5px;
+  -webkit-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  -moz-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
 }
 
 .sporting-good-show-pic-description {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 5px;
-  border:solid 1px #46b688;
-  padding:5px;
-  background-color: #eff9f5;
+  border:solid 1px #CCC;
+  padding:5px 0 5px 5px;
+  background-color: #fdfefe;
+  margin-top: 20px;
+  min-height: 150px;
   max-height: 200px;
-  max-width: 40%;
-  min-width: 200px;
+  text-align: center;
+  width: 100%;
   overflow: auto;
   margin: 5px;
+  -webkit-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  -moz-box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
+  box-shadow: 3px 3px 11px -1px rgba(161,158,161,1);
 }
 .sporting-good-row-1 {
   padding-top: 10px;
   padding-left: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 // index page
@@ -92,8 +102,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 300px;
   align-items: flex-start;
+  min-width: 400px;
+  align-items: center;
+
 }
 //sporting good form
 .sporting-good-form {
@@ -125,6 +137,7 @@
   overflow: hidden;
   border-radius: 5px;
   margin: 1px;
+  margin-bottom: 10px;
 }
 .received-request-index-item {
 
@@ -133,4 +146,38 @@
   display: flex;
   width: 100%;
   align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
+  align-items: center;
+}
+.success-message {
+  background-color: #256148;
+  color: #fdfefd;
+  opacity: 0.8;
+  height: 40px;
+  width: 100%;
+
+}
+.show-page-buttons {
+  display: flex;
+  width: 100%;
+
+}
+.show-page-buttons-container {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  margin-left: 1000px;
+}
+.request-form-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.request-header {
+  font-weight: 500
+}
+.request-dates {
+  font-weight: 400px;
+  margin-top: 50px;
 }

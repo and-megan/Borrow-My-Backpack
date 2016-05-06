@@ -79,6 +79,7 @@ section.user-button-container {
   border: none;
   color: #333333;
   margin: 10px;
+  text-align: center;
   font-weight: bold;
   font-size: 15px;
   max-height: 45px;
@@ -115,4 +116,44 @@ section.user-form-fields {
 .user-form-label {
   padding-top: 10px;
   margin-right: 5px;
+}
+.modal-field {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.new-listing {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: 260px
+}
+.cancel{
+  margin-left: 260px;
+}
+
+form#request-form {
+  margin-top: 30px;
+}
+.request-heading {
+  text-align: center;
+}
+.request-button-container {
+  margin-left: 190px;
+
+}
+.cancel-request {
+  margin-left: 215px;
+}
+div#sporting-good-edit {
+  display: flex;
+  justify-content: center;
+}
+.edit-heading {
+  margin-bottom: 30px;
+}
+.update-button-container {
+  margin-left: 195px;
 }

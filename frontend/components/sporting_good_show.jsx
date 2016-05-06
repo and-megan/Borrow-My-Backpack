@@ -15,7 +15,54 @@ var CurrentUserState = require('../mixins/current_user_state');
 //components
 var RequestBox = require('./request_box');
 var SportingGoodEdit = require('./sporting_good_edit');
-
+var style1 = {
+  overlay : {
+    position        : 'fixed',
+    top             : 0,
+    left            : 0,
+    right           : 0,
+    bottom          : 0,
+    backgroundColor : 'rgba(255, 255, 255, 0.8)',
+    zIndex         : 10
+  },
+  content : {
+    position        : 'fixed',
+    top             : '40px',
+    left            : '350px',
+    right           : '150px',
+    bottom          : '100px',
+    border          : '1px solid #ccc',
+    padding         : '20px',
+    color           : '#515151',
+    zIndex          : 11,
+    width           : '350px',
+    height          : '400px'
+  }
+};
+var style2 = {
+  overlay : {
+    position        : 'fixed',
+    top             : 0,
+    left            : 0,
+    right           : 0,
+    bottom          : 0,
+    backgroundColor : 'rgba(255, 255, 255, 0.8)',
+    zIndex         : 10
+  },
+  content : {
+    position        : 'fixed',
+    top             : '40px',
+    left            : '350px',
+    right           : '150px',
+    bottom          : '100px',
+    border          : '1px solid #ccc',
+    padding         : '20px',
+    color           : '#515151',
+    zIndex          : 11,
+    width           : '400px',
+    height          : '555px'
+  }
+};
 var SportingGoodShow = React.createClass({
   mixins: [CurrentUserState],
   getInitialState: function() {
@@ -44,7 +91,7 @@ var SportingGoodShow = React.createClass({
   },
   successMessage: function () {
     return(<div>{this.state.messages.map(function (message) {
-      return(<div>{message}</div>);
+      return(<div className="success-message">{message}</div>);
     })}</div>);
   },
   closeRequestModal: function(){
@@ -113,40 +160,57 @@ var SportingGoodShow = React.createClass({
 
     return (
       <div id="sporting-good-container">
+          {this.successMessage()}
+        <Link className="back-to-listings" to="/">View all listings</Link>
         <ul className="sporting-good-container-ul">
+
+
           <ul className ="sporting-good-row-1">
             <li>
               <img src={this.state.sportingGood.pic_url} className="sporting-good-show-pic" alt="sporting_good_item_show" />
             </li>
+            <div className='show-page-buttons-container'>
+              <div className='show-page-buttons'>
+                <div className='request-form-button'>
+                  {this.toggleRequestForm()}
+                </div>
+                <div className='edit-delete-buttons'>
+                  {this.currentUserEdit()}
+                </div>
+              </div>
+            </div>
             <li className="sporting-good-show-pic-description">
               {this.state.sportingGood.description}
             </li>
           </ul>
 
           <br></br>
-          {this.currentUserEdit()}
-          {this.toggleRequestForm()}
-          {this.successMessage()}
+
         </ul>
         <Modal
+          style={style1}
           isOpen={this.state.requestModalOpen}
           onRequestClose={this.closeRequestModal}>
 
           <RequestBox user={this.state.currentUser} sportingGood={this.state.sportingGood} requestModalOpen={this.state.requestModalOpen} onClick={this.closeRequestModal}/>
 
-          <button className="user-button" value="Cancel Request" onClick={this.closeRequestModal}>Cancel</button>
-
+          <div className="cancel-request">
+            <button className="user-button" value="Cancel Request" onClick={this.closeRequestModal}>Cancel</button>
+          </div>
         </Modal>
 
         <Modal
+          style={style2}
           isOpen={this.state.editModalOpen}
           onRequestClose={this.closeEditModal}>
           <div>
             <SportingGoodEdit sportingGood={this.state.sportingGood}/>
           </div>
-          <button className="user-button" value="Cancel" onClick={this.closeEditModal}>Cancel</button>
+          <div className="cancel">
+            <button className="user-button" value="Cancel" onClick={this.closeEditModal}>Cancel</button>
+          </div>
         </Modal>
-        <Link className="back-to-listings" to="/">View all listings</Link>
+
     </div>
     );
   }

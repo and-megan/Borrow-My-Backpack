@@ -21,20 +21,21 @@ var style = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(255, 255, 255, 0.75)',
+    backgroundColor : 'rgba(255, 255, 255, 0.8)',
     zIndex         : 10
   },
   content : {
     position        : 'fixed',
-    top             : '100px',
-    left            : '150px',
+    top             : '40px',
+    left            : '350px',
     right           : '150px',
     bottom          : '100px',
     border          : '1px solid #ccc',
     padding         : '20px',
     color           : '#515151',
     zIndex          : 11,
-    width           : '350px'
+    width           : '400px',
+    height          : '555px'
   }
 };
 var SportingGoodIndex = React.createClass({
@@ -99,7 +100,9 @@ var SportingGoodIndex = React.createClass({
               <SportingGoodForm sportingGood={this.state.sportingGood}
               onClick={this.closeFormModal}/>
             </div>
-            <button className="user-button" value="Cancel" onClick={this.closeFormModal}>Cancel</button>
+            <div className="cancel">
+              <button className="user-button" value="Cancel" onClick={this.closeFormModal}>Cancel</button>
+            </div>
           </Modal>
 
           <ul className = "list-group">

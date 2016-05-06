@@ -56,28 +56,32 @@ var RequestBox = React.createClass({
   render: function() {
     var button =
       <div className="request-button-container">
-        <button type="submit" className="user-button" value="Make Request" >Send your request</button>
+        <button type="submit" className="user-button" value="Make Request" >Request it</button>
       </div>;
 
     return (
       <div className="request-box-container">
         <div className="request-heading">
-          <text className="request-title">Want to borrow this {this.props.sportingGood.category}?</text>
+          <text className="modal-title">Want to borrow this {this.props.sportingGood.category}?</text>
         </div>
         <div className="request-form-container">
           <form className="" onSubmit={this.handleSubmit} id="request-form">
-            <label className="request-field-date-label">Start:  </label>
-            <input
-              type="date"
-              valueLink={this.linkState('start_date')}
-              className="request-field-date"/>
+            <div className="modal-field">
+              <label className="request-field-date-label">Start</label>
+              <input
+                type="date"
+                valueLink={this.linkState('start_date')}
+                className="request-field-date"/>
+            </div>
             <br/>
             <br/>
-            <label className="request-field-date-label">End:  </label>
-            <input
-              type="date"
-              valueLink={this.linkState('end_date')}
-              className="request-field-date"/>
+            <div className="modal-field">
+              <label className="request-field-date-label">End</label>
+              <input
+                type="date"
+                valueLink={this.linkState('end_date')}
+                className="request-field-date"/>
+            </div>
             <br/>
             <br/>
             {button}

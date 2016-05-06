@@ -62,32 +62,48 @@ module.exports = React.createClass({
       return(
         <form onSubmit={this.handleSubmit}>
         <div className="sporting-edit-div">
+        <div className="edit-heading">
+          <h2 className="modal-title">Edit this listing</h2>
+        </div>
+          <div className="modal-field">
+            <label>Type</label>
+            <input list="sporting_goods" value={this.state.category} onChange={this.changeCategory}/>
+              <datalist id="sporting_goods">
+                <option value="backpack"></option>
+                <option value="bicycle"></option>
+                <option value="kayak"></option>
+                <option value="snowboard"></option>
+                <option value="surfboard"></option>
+                <option value="tent"></option>
+              </datalist>
+          </div>
 
-        <label>Type</label>
-        <input list="sporting_goods" value={this.state.category} onChange={this.changeCategory}/>
-          <datalist id="sporting_goods">
-            <option value="backpack"></option>
-            <option value="bicycle"></option>
-            <option value="kayak"></option>
-            <option value="snowboard"></option>
-            <option value="surfboard"></option>
-            <option value="tent"></option>
-          </datalist>
-
-          <br></br>
-          <label>Description</label>
-          <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
-          <br></br>
-          <label>Latitude</label>
-          <input type="number" step="0.000001" value={this.state.lat} onChange={this.changeLat}/>
-          <br></br>
-          <label>Longitude</label>
-          <input type="number" step="0.000001" value={this.state.lng} onChange={this.changeLng}/>
-          <br></br>
-          <label>Picture url</label>
-          <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
-          <br></br>
-          <input type="submit" className="user-button" readOnly="true" value="Update Listing!"/>
+          <div className="modal-field">
+            <br></br>
+            <label>Description</label>
+            <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
+          </div>
+            <br></br>
+          <div className="modal-field">
+            <label>Latitude</label>
+            <input type="number" step="0.000001" value={this.state.lat} onChange={this.changeLat}/>
+          </div>
+              <br></br>
+          <div className="modal-field">
+            <label>Longitude</label>
+            <input type="number" step="0.000001" value={this.state.lng} onChange={this.changeLng}/>
+          </div>
+            <br></br>
+          <div className="modal-field">
+            <label>Picture url</label>
+            <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
+          </div>
+            <br></br>
+          <div className="modal-field">
+          <div className="update-button-container">
+            <input type="submit" className="user-button" readOnly="true" value="Update Listing!"/>
+          </div>
+          </div>
         </div>
         </form>
       );

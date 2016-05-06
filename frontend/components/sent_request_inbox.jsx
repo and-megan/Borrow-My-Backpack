@@ -42,15 +42,16 @@ var SentRequestInbox = React.createClass({
     });
     return (
       <div className="requests-container">
-      <div className='inbox-h1-container'>
-        <h1 className='inbox-h1'>Your Sent Requests</h1>
-        <div>
-          <a className="link" onClick={this.goToReceivedRequests}>See your received requests</a>
+        <div className='inbox-h1-container'>
+          <ul className="tabrow">
+            <li className='tabrow-2'><a onClick={this.goToReceivedRequests}>Received Requests</a></li>
+            <li className='tabrow-1'><a>Sent Requests</a></li>
+          </ul>
+
         </div>
-        </div>
-        <ul className="group-requests">
-          {SentIndexItemsTags}
-        </ul>
+          <ul className="group-requests">
+            {SentIndexItemsTags}
+          </ul>
       </div>
     );
   }

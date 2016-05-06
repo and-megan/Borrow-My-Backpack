@@ -49,10 +49,11 @@ var RequestInbox = React.createClass({
     return (
       <div className="requests-container">
         <div className='inbox-h1-container'>
-        <h1 className='inbox-h1'>Received Requests</h1>
-          <div>
-              <a className="link" onClick={this.goToSentRequests}>See your sent requests</a>
-          </div>
+        <ul className="tabrow">
+          <li className='tabrow-1'><a>Received Requests</a></li>
+          <li className='tabrow-2'><a onClick={this.goToSentRequests}>Sent Requests</a></li>
+        </ul>
+
         </div>
         <ul className="group-requests">
           {RequestIndexItemsTags}

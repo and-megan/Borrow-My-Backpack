@@ -77,36 +77,42 @@ module.exports = React.createClass({
           <br></br>
           <br></br>
           <form onSubmit={this.handleSubmit}>
+          <div className="modal-field">
+            <label>Type</label>
+            <input list="sporting_goods" value={this.state.category} onChange={this.changeCategory}/>
+              <datalist id="sporting_goods">
+                <option value="backpack"></option>
+                <option value="bicycle"></option>
+                <option value="kayak"></option>
+                <option value="snowboard"></option>
+                <option value="surfboard"></option>
+                <option value="tent"></option>
+              </datalist>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="modal-field">
+              <label>Description</label>
+              <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="modal-field">
+              <label>Address</label>
+              <textarea type="text" id="address-input" value={this.state.address} onChange={this.changeAddress}/>
+            </div>
+              <br></br>
+              <br></br>
 
-          <label>Type</label>
-          <input list="sporting_goods" value={this.state.category} onChange={this.changeCategory}/>
-            <datalist id="sporting_goods">
-              <option value="backpack"></option>
-              <option value="bicycle"></option>
-              <option value="kayak"></option>
-              <option value="snowboard"></option>
-              <option value="surfboard"></option>
-              <option value="tent"></option>
-            </datalist>
+            <div className="modal-field">
+              <label>Picture Url</label>
+              <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
+            </div>
             <br></br>
             <br></br>
-            <label>Description</label>
-            <textarea value={this.state.description} onChange={this.changeDescription}></textarea>
-            <br></br>
-            <br></br>
-
-            <label>Address</label>
-            <textarea type="text" id="address-input" value={this.state.address} onChange={this.changeAddress}/>
-            <br></br>
-            <br></br>
-
-            <label>Picture Url</label>
-            <input type="url" value={this.state.pic_url} onChange={this.changeUrl}/>
-            <br></br>
-            <br></br>
-
-            <button className="user-button" type="submit"  value="Create a listing">List it!</button>
-
+            <div className="new-listing">
+              <button className="user-button" type="submit"  value="Create a listing">List it!</button>
+            </div>
           </form>
       </div>
     );

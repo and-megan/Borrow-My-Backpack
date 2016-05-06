@@ -51,11 +51,11 @@ var FinishedRequestDetail = React.createClass({
         <div className={classColor}>
             <img src={receivedRequest.sporting_good.pic_url} className="received-request-pic" alt="sporting-good-item-pic" />
             <div className="received-request-detail">
-              <div>{receivedRequest.sender.email} wants to borrow your {receivedRequest.sporting_good.category}!</div>
+              <div className='wants-to-borrow'>{receivedRequest.sender.email} wants to borrow your {receivedRequest.sporting_good.category}!</div>
 
-              <div>Dates Requested:
-                <div>{receivedRequest.start_date}</div>
-                <div>{receivedRequest.end_date}</div>
+              <div className='request-dates'>Dates Requested:
+                <div>{receivedRequest.start_date} to {receivedRequest.end_date}</div>
+
               </div>
             </div>
 
