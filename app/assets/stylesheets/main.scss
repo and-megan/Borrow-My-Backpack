@@ -4,11 +4,14 @@ body {
   font-size: 20px;
 }
 
-// .app-background {
-//   background-image: image-url('bg.jpeg');
-//   background-repeat: no-repeat;
-//   background-size: 100%;
-// }
+.app-background {
+  background-image: image-url('camping.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 header {
   display: flex;
@@ -23,12 +26,27 @@ header h1 {
   color: #b6e3d0;
 }
 
-#app-container {
-
+.welcome-home {
+  color: #ffffee;
+  font-size: 45px;
+  text-align: center;
+  margin-top: 50px;
+  text-stroke: 10px #000;
+  text-shadow: 0px 0px 3px #000;
+  font-weight: 700;
+}
+.tagline {
+  color: #ffffee;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 20px;
+  text-stroke: 10px #000;
+  text-shadow: 0px 0px 3px #000;
+  font-weight: 700;
 }
 .greeting {
   font-size: 20px;
-  color: #b8e4d2;
+  color: #ffffed;
   padding-top: 60px;
   padding-left: 300px;
 }

@@ -169,10 +169,12 @@ var LoginForm = React.createClass({
 		return (
 			<div className='login-page'>
 				{this.errors()}
+				<div className="blackground"><p className="tagline">Here at Borrow My Backpack we believe in exploring without the need for big purchases. Share your kayaks, snowboards,  backpacks, and more with our like-minded community.</p></div>
 				<div className="login-form-container">
 					{this.renderLoginForm()}
 					{this.renderSignupForm()}
 				</div>
+				<div className="blackground"><h2 className="welcome-home">Welcome home.</h2></div>
 			</div>
 		);
 	}

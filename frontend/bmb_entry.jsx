@@ -20,7 +20,7 @@ var NavBar = require('./components/nav_bar');
 var RequestInbox = require('./components/request_inbox');
 var SentRequestInbox = require('./components/sent_request_inbox');
 //Store
-var UserStore = window.UserStore = require('./stores/user_store');
+var UserStore = require('./stores/user_store');
 
 
 var requireSignedIn = function () {
@@ -74,7 +74,11 @@ var App = React.createClass({
     );
   },
   displayBackground: function () {
-    $('body').addClass('app-background');
+    if (!UserStore.currentUser()) {
+      $('body').addClass('app-background');
+    } else {
+      $('body').removeClass('app-background');
+    }
   },
   render: function () {
     if (this.props.location.pathname === '/login') {
