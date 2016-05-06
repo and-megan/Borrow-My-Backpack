@@ -107,6 +107,28 @@
     text-shadow: 0 0 2px #c00;
     box-shadow: 0 0 2px #c00;
 }
+.inner-box-p:after {
+  content: "PENDING";
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  z-index: 1;
+  font-family: Arial,sans-serif;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  font-size: 74px;
+  color: black;
+  background: #fff;
+  border: solid 4px black;
+  padding: 5px;
+  border-radius: 5px;
+  zoom: 1;
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+  -webkit-text-shadow: 0 0 2px black;
+  text-shadow: 0 0 2px black;
+  box-shadow: 0 0 2px black;
+}
 
 .outer-box img {
   width: 400px;

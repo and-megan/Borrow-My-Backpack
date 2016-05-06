@@ -2,8 +2,10 @@ class Api::RequestsController < ApplicationController
   def index
     # @requests = Request.all
     #sent requests and received request using my associations
-    @sent_requests = current_user.requests
-    @received_requests = current_user.received_requests
+    @sent_requests = current_user.requests.order('requests.created_at DESC')
+
+    @received_requests = current_user.received_requests.order('requests.created_at DESC')
+
   end
 
   def create

@@ -26,7 +26,6 @@ var RequestIndexItemDetail = React.createClass({
 
         </div>
       </div>
-        <h2 className='PENDING'>PENDING</h2>
 
       </div>
     );

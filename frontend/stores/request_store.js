@@ -12,9 +12,12 @@ RequestStore.find = function(id) {
 };
 
 RequestStore.all = function() {
-  return Object.keys(_requests).map(function(id) {
+  var sortedRequests;
+    sortedRequests = Object.keys(_requests).map(function(id) {
     return _requests[id];
   });
+  return (sortedRequests.sort(function(a, b){return b.id - a.id;}));
+
 };
 
 RequestStore.setRequest = function(request) {
@@ -26,6 +29,7 @@ RequestStore.resetRequests = function(requests) {
   for (var i = 0; i < requests.length; i++) {
     _requests[requests[i].id] = requests[i];
   }
+
 };
 
 RequestStore.removeRequest = function(request) {

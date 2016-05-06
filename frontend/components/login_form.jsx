@@ -40,7 +40,7 @@ var LoginForm = React.createClass({
 	},
 	demoLogin: function (e) {
 		e.preventDefault();
-	
+
 		UserActions.login({
 			email: "borrow@backpack.com",
 			password: "password"
@@ -108,11 +108,11 @@ var LoginForm = React.createClass({
 	formFields: function () {
 		return(
 			<section className="user-form-fields">
-				<label className="user-form-label">Email </label>
+
 					<input className="email" type="email" placeholder="Email" valueLink={this.linkState("email")}/>
 
 
-				<label className="user-form-label">Password </label>
+			
 					<input className="password" type="password" placeholder="Password" valueLink={this.linkState("password")}/>
 
 			</section>
