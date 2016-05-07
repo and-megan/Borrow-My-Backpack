@@ -74,21 +74,21 @@ toggleFilterState: function (e) {
 
 ## Sign In
 The Sign-in page uses BCrypt to encrypt and salt passwords before they are saved to the database. A guest demo account was created for people to easily test the site's features.
-![sign-in-page](https://github.com/appacademy/Borrow-My-Backpack/tree/master/docs/sign-in-page.png)
+![sign-in-screen](https://github.com/and-megan/Borrow-My-Backpack/blob/master/docs/sign-in-screen.png)
 
 
 ## Home Page
 The home page hosts all available sporting goods. Users can click on items to view details. Users can toggle on or off categories to dynamically search through the listings. The map utilizes Google's API to find locations on a map and place markers indicating the location of the sporting good.
-![home-page](https://github.com/appacademy/Borrow-My-Backpack/tree/master/docs/home-page.png)
+![home-page](https://github.com/and-megan/Borrow-My-Backpack/blob/master/docs/home-page.png)
 
 
 ## Create, edit, and delete listings
 Users can quickly load new sporting goods to lend. A thumbnail of the listing and a new marker are created as soon as the listing is saved.
-![new-listing](https://github.com/appacademy/Borrow-My-Backpack/tree/master/docs/new-listing.png)
+![new-listing](https://github.com/and-megan/Borrow-My-Backpack/blob/master/docs/new-listing.png)
 
 ## Respond and view requests
 Users can view received and sent requests. They are able to toggle between the two inboxes. Received requests can be approved or denied.
-![request-response](https://github.com/appacademy/Borrow-My-Backpack/tree/master/docs/request-response.png)
+![request-response](https://github.com/and-megan/Borrow-My-Backpack/blob/master/docs/request-response.png)
 
 ### Technology
 * React.js/Flux
