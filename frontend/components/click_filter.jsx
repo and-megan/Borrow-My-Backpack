@@ -31,8 +31,8 @@ var ClickFilter = React.createClass({
       this.updateStore(newFilterState);
     } else {
 
-      var backpack = this.state.filters.indexOf(e.target.value);
-      var newFilters = this.state.filters.splice(backpack, 1);
+      var parameter = this.state.filters.indexOf(e.target.value);
+      var newFilters = this.state.filters.splice(parameter, 1);
 
       var updatedState={};
       updatedState[e.target.value] = true;

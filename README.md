@@ -6,9 +6,9 @@
 
 ## About
 
-Borrow My Backpack is a web application inspired by CouchSurfing. Borrow My Backpack is built using Ruby on Rails and React.js.
+Borrow My Backpack is a web application inspired by CouchSurfing. It is built using Ruby on Rails and React.js.
 
-Borrow My Backpack allows users to share sports equipment. Lenders can post their equipment, such as backpacks and kayaks. Borrowers search through listed equipment and send requests with specific dates to the lender. Lenders can accept or reject borrower requests. Borrow My Backpack would allow people to experience outdoor activities without necessitating large purchases. This app was not built for commercial purposes, but rather to showcase the skills of the developer.
+This app allows users to share sports equipment. Lenders can post their equipment, such as backpacks and kayaks. Borrowers search through listed equipment and send requests with specific dates to the lender. Lenders can accept or reject borrower requests. Borrow My Backpack would allow people to experience outdoor activities without necessitating large purchases. This app was not built for commercial purposes, but rather to showcase the skills of Megan Anderson, the developer.
 
 ## Features
 
@@ -20,25 +20,75 @@ Borrow My Backpack allows users to do the following:
 * Approve and deny requests
 * View and click on listings on a map
 
+## Single Page App
+Borrow My Backpack exists as a single page app. React components are rendered into one static page. DOM Elements are altered depending on user input. This allows for fast rendering, responsive design, immediate visual feedback, and little server load.
+
+## Associations
+This app makes liberal use of associations. Associations allow for an elegant, quick way to make Active Record queries. JSON information is rendered through jBuilder files and returned to the front-end.
+``` ruby
+json.extract! request, *request.attributes.keys
+json.sender request.sender
+json.sporting_good request.sporting_good
+json.start_date request.start_date.strftime("%B %d, %Y")
+json.end_date request.end_date.strftime("%B %d, %Y")
+```
+## React Router
+This app utilizes the react router library. This allows for an easy way to manage state throughout the site. React router makes navigation simple and quick, by rendering components and giving the app the ability to use HashHistory.
+
+``` javascript
+<Route path="/" component={App}>
+  <Route path="login" onEnter={requireNotSignedIn} component={LoginForm} />
+  <Route component={Landing} >
+    <IndexRoute component={SportingGoodIndex} />
+    <Route path="sporting_goods/received_requests" component={RequestInbox} />
+    <Route path="sporting_goods/sent_requests" component={SentRequestInbox} />
+    <Route path="sporting_goods/:sportingGoodId" component={SportingGoodShow} />
+    <Route path="sporting_goods/:sportingGoodId/edit" component={SportingGoodEdit} />
+  </Route>
+</Route>
+```
+## Flux Cycles
+Borrow My Backpack shows mastery of Flux cycles. Several Flux cycles have been implemented. This allows for clear, one-way paths of information travel and retrieval. User actions and database retrieval are explicitly linked. The below code features a click-handler which sets filters to a component's state and fires off a message to the back-end to filter data by the given parameters.
+``` javascript
+toggleFilterState: function (e) {
+  if (this.state.filters.indexOf(e.target.value) === -1) {
+    var newState = {};
+    var newFilterState = this.state.filters.concat(e.target.value);
+    newState[e.target.value] = true;
+    newState['filters'] = newFilterState;
+    this.setState(newState);
+    this.updateStore(newFilterState);
+  } else {
+
+    var parameter = this.state.filters.indexOf(e.target.value);
+    var newFilters = this.state.filters.splice(parameter, 1);
+
+    var updatedState={};
+    updatedState[e.target.value] = true;
+    updatedState['filters'] = this.state.filters;
+    this.setState(updatedState);
+    this.updateStore(this.state.filters);
+  }
+},
+```
 
 ## Sign In
-![sign-in-page]
-[sign-in-page]: (./app/assets/images/sign-in-screen.png)
 The Sign-in page uses BCrypt to encrypt and salt passwords before they are saved to the database. A guest demo account was created for people to easily test the site's features.
+![sign-in-page](https://github.com/appacademy/Borrow-My-Backpack/tree/master/docs/sign-in-page.png)
+
 
 ## Home Page
-![home-page]
-[home-page](/app/assets/images/home-page.png)
 The home page hosts all available sporting goods. Users can click on items to view details. Users can toggle on or off categories to dynamically search through the listings. The map utilizes Google's API to find locations on a map and place markers indicating the location of the sporting good.
+![home-page](https://github.com/appacademy/Borrow-My-Backpack/tree/master/docs/home-page.png)
+
 
 ## Create, edit, and delete listings
-![new-listing]
-[new-listing](/app/assets/images/new-listing.png)
 Users can quickly load new sporting goods to lend. A thumbnail of the listing and a new marker are created as soon as the listing is saved.
+![new-listing](https://github.com/appacademy/Borrow-My-Backpack/tree/master/docs/new-listing.png)
 
 ## Respond and view requests
-![request-response]
-[request-response](/app/assets/images/request-response.png)
+Users can view received and sent requests. They are able to toggle between the two inboxes. Received requests can be approved or denied.
+![request-response](https://github.com/appacademy/Borrow-My-Backpack/tree/master/docs/request-response.png)
 
 ### Technology
 * React.js/Flux
