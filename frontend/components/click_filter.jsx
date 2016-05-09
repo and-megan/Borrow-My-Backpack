@@ -61,32 +61,32 @@ var ClickFilter = React.createClass({
         <h2 className="filter-header">Filter By Type</h2>
         <div className="click-filter-container">
           <div className="checkbox-label">
-            <label for="checkboxBa" >Backpack</label>
+            <label htmlFor="checkboxBa" >Backpack</label>
             <input className="checkboxBa" type="checkbox" defaultChecked={this.state.backpackButton} onClick={this.toggleFilterState} value="backpack"/>
           </div>
           <br></br>
           <div className="checkbox-label">
-            <label for="checkboxBi">Bicycle</label>
+            <label htmlFor="checkboxBi">Bicycle</label>
             <input className="checkboxBi" type="checkbox" defaultChecked={this.state.bicycleButton} onClick={this.toggleFilterState} value="bicycle"/>
           </div>
           <br></br>
           <div className="checkbox-label">
-            <label for="checkboxKa">Kayak</label>
+            <label htmlFor="checkboxKa">Kayak</label>
             <input className="checkboxKa" type="checkbox" defaultChecked={this.state.kayakButton} onClick={this.toggleFilterState} value="kayak"/>
           </div>
           <br></br>
           <div className="checkbox-label">
-            <label for="checkboxSn">Snowboard</label>
+            <label htmlFor="checkboxSn">Snowboard</label>
             <input className="checkboxSn" type="checkbox" defaultChecked={this.state.snowboardButton} onClick={this.toggleFilterState} value="snowboard"/>
           </div>
           <br></br>
           <div className="checkbox-label">
-            <label for="checkboxSu">Surfboard</label>
+            <label htmlFor="checkboxSu">Surfboard</label>
             <input className="checkboxSu" type="checkbox" defaultChecked={this.state.surfboardButton} onClick={this.toggleFilterState} value="surfboard"/>
           </div>
           <br></br>
           <div className="checkbox-label">
-            <label for="checkboxTe">Tent</label>
+            <label htmlFor="checkboxTe">Tent</label>
             <input className="checkboxTe" type="checkbox" defaultChecked={this.state.tentButton} onClick={this.toggleFilterState} value="tent"/>
           </div>
         </div>

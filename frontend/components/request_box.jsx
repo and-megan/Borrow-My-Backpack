@@ -55,8 +55,10 @@ var RequestBox = React.createClass({
 
   render: function() {
     var button =
-      <div className="request-button-container">
-        <button type="submit" className="user-button" value="Make Request" >Request it</button>
+      <div className='modal-field'>
+        <div className="request-button-container">
+          <button type="submit" className="user-button" value="Make Request" >Request it</button>
+        </div>
       </div>;
 
     return (

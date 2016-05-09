@@ -10,7 +10,6 @@ var SportingGoodIndexItem = React.createClass({
     hashHistory.push("sporting_goods/" + this.props.sportingGood.id);
   },
   render: function() {
-    debugger;
     return (
       <li className="sporting-good-index-item">
         <div className="view-search-effect">

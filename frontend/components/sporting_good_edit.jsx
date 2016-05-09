@@ -83,7 +83,7 @@ module.exports = React.createClass({
             <label>Description</label>
             <textarea className="form-textarea" value={this.state.description} onChange={this.changeDescription}></textarea>
           </div>
-    
+
             <br></br>
           <div className="modal-field">
             <label>Picture url</label>
