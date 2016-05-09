@@ -10,4 +10,5 @@ json.array! @sporting_goods do |sporting_good|
   json.description sporting_good.description
   json.category sporting_good.category
   json.pic_url sporting_good.pic_url
+  json.user sporting_good.user
 end

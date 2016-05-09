@@ -1,11 +1,27 @@
 var React = require('react');
-
+var RequestClientActions = require('../actions/request_client_actions');
 
 var SentRequestIndexItem = React.createClass({
+  getInitialState: function() {
+    var sentRequest = this.props.sentRequest;
+    return {
+      sentRequest: sentRequest
+    };
+  },
+  componentWillReceiveProps: function(nextProps) {
+    var sentRequest = nextProps.sentRequest;
+    this.setState({
+      sentRequest: sentRequest
+    });
+  },
   message: function () {
     if (this.props.sentRequest.status_response === "") {
       return (<div className='wants-to-borrow'>Waiting to hear back about this {this.props.sentRequest.sporting_good.category}.</div>);
     }
+  },
+  deleteListing: function () {
+    var requestId = this.props.sentRequest.id;
+    RequestClientActions.deleteRequest(requestId);
   },
   render: function() {
     var classColor;
@@ -34,6 +50,7 @@ var SentRequestIndexItem = React.createClass({
     return (
       <div className={outerBox}>
         <div className={classColor}>
+          <div className='delete-me' onClick={this.deleteListing}>X</div>
             <img src={sentRequest.sporting_good.pic_url} className="received-request-pic" alt="sporting-good-item-pic" />
             <div className="received-request-detail">
             {this.message()}

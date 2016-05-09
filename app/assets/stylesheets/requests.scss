@@ -35,7 +35,7 @@
   height: 250px;
   display: block;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   padding-bottom: 10px;
   margin-top: 15px;
   -webkit-border-radius: 5px;
@@ -47,7 +47,7 @@
   height: 250px;
   display: block;
   position: relative;
-
+  margin-bottom: 5px;
   padding-bottom: 10px;
   margin-top: 15px;
   -webkit-border-radius: 5px;
@@ -134,14 +134,14 @@
   width: 400px;
   height: 100%;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding-bottom: 10px;
 }
 .outer-box-p img {
   width: 400px;
   height: 100%;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding-bottom: 10px;
 }
 .received-request-detail {
@@ -244,18 +244,34 @@
 }
 
 .approve-deny-form {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
   align-items: flex-end;
   padding-top: 0;
   margin: 0;
-  padding-right: 30px;
-  padding-top: 10px;
+  /* padding-right: 30px; */
+  padding-top: -3px;
+  padding-bottom: 26px;
   position: relative;
-  top: -100px;
+  top: -115px;
   z-index: 1;
   left: -20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
 }
 .inbox-h1-container {
@@ -300,6 +316,7 @@
 .group-requests {
   background-color: #d0ebd1;
   width: 95%;
+  padding-bottom: 15px;
 }
 .tabrow-2 {
   cursor: pointer;
@@ -376,4 +393,19 @@
   height: 500px;
   width: 60%;
   padding-top: 12px;
+}
+.delete-me {
+  font-size: 25px;
+  color: #000066;
+  cursor: pointer;
+  width: 25px;
+  margin-left: 875px;
+  position: absolute;
+  margin-top: 5px;
+}
+.delete-me:hover {
+  color: #0000b2;
+}
+.request-index-item-info {
+  max-height: 260px;
 }

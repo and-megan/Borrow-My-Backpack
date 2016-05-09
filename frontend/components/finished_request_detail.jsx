@@ -11,25 +11,17 @@ var FinishedRequestDetail = React.createClass({
       receivedRequest: receivedRequest
     };
   },
-  // componentDidMount: function() {
-  //   this.finishedRequest = RequestStore.addListener(this.getFinishedRequest);
-  //   RequestClientActions.getRequest(this.props.receivedRequest.id);
-  // },
-  // componentWillUnmount: function() {
-  //   this.finishedRequest.remove();
-  // },
+
   componentWillReceiveProps: function(nextProps) {
     var receivedRequest = nextProps.receivedRequest;
     this.setState({
       receivedRequest: receivedRequest
     });
   },
-  // getFinishedRequest: function () {
-  //   var id = this.state.receivedRequest.id;
-  //   this.setState({
-  //     receivedRequest: RequestStore.find(id)
-  //   });
-  // },
+  deleteListing: function () {
+    var requestId = this.props.receivedRequest.id;
+    RequestClientActions.deleteRequest(requestId);
+  },
   render: function() {
 
     var classColor;
@@ -49,6 +41,7 @@ var FinishedRequestDetail = React.createClass({
     return (
       <div className="outer-box">
         <div className={classColor}>
+          <div className='delete-me' onClick={this.deleteListing}>X</div>
             <img src={receivedRequest.sporting_good.pic_url} className="received-request-pic" alt="sporting-good-item-pic" />
             <div className="received-request-detail">
               <div className='wants-to-borrow'>{receivedRequest.sender.email} wants to borrow your {receivedRequest.sporting_good.category}!</div>

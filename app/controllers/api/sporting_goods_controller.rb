@@ -5,6 +5,9 @@ class Api::SportingGoodsController < ApplicationController
     if (params[:filters])
       @sporting_goods = SportingGood.where(category: params[:filters])
       render json: @sporting_goods
+    elsif (params[:id])
+      @sporting_goods = SportingGood.where(id: params[:id])
+      render json: @sporting_goods
     else
       @sporting_goods = SportingGood.all
       render json: @sporting_goods
