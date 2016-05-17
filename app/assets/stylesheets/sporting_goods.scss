@@ -1,12 +1,8 @@
 // show page
 .sporting-good-show-pic {
-  // display: flex;
-  // width: 200px;
-  // height: 200px;
-
-  height: 300px;
+  height: 400px;
   overflow: hidden;
-  width: 400px;
+  width: 600px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -21,16 +17,12 @@
   border: solid 1px #CCC;
   padding: 5px 0 5px 5px;
   background-color: #fdfefe;
-  /* margin-top: 20px; */
-  /* min-height: 150px; */
-  /* max-height: 200px; */
   text-align: center;
-  /* width: 100%; */
   overflow: auto;
-  margin: 5px;
+  margin: 15px;
   box-shadow: 3px 3px 11px -1px #a19ea1;
-  height: 280px;
-  max-width: 245px;
+  height: 380px;
+  width: 350px;
   padding: 10px;
 }
 div#sporting-good-container {
@@ -147,10 +139,9 @@ div#sporting-good-container {
 
 .sporting-good-container-ul {
   display: flex;
-
   align-items: center;
   flex-direction: column;
-  margin-top: 25px;
+  margin-top: 10px;
   align-items: center;
 }
 .success-message {
@@ -203,4 +194,12 @@ div#sporting-good-container {
   font-weight: 400;
   font-size: 20px;
   margin-top: 15px;
+}
+a.back-to-listings {
+  padding: 8px;
+  text-decoration: none;
+  color: #0000c4;
+}
+a.back-to-listings:hover {
+  color: #4e4eff;
 }

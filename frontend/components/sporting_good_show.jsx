@@ -154,6 +154,7 @@ var SportingGoodShow = React.createClass({
   },
 
   render: function() {
+    debugger;
     if (!this.state.currentUser || !this.state.sportingGood) {
       return (<div></div>);
     }
@@ -162,7 +163,8 @@ var SportingGoodShow = React.createClass({
 
       <div id="sporting-good-container">
           {this.successMessage()}
-        <Link className="back-to-listings" to="/">View all listings</Link>
+        <Link className="back-to-listings" to="/">
+        &#8592; Back to all listings</Link>
         <ul className="sporting-good-container-ul">
 
 
