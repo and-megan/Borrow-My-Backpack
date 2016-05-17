@@ -58,7 +58,7 @@ var ClickFilter = React.createClass({
 
     return (
       <div className="click-filter-all">
-        <h2 className="filter-header">Filter By Type</h2>
+        <h2 className="filter-header"></h2>
         <div className="click-filter-container">
           <div className="checkbox-label">
             <label htmlFor="checkboxBa" >Backpack</label>
@@ -98,12 +98,3 @@ var ClickFilter = React.createClass({
 });
 
 module.exports = ClickFilter;
-// <button className={this.state.bicycleButton} onClick={this.toggleBicycle}>Bicycles</button>
-// <br></br>
-// <button className={this.state.kayakButton} onClick={this.toggleKayak}>Kayaks</button>
-// <br></br>
-// <button className={this.state.snowboardButton} onClick={this.toggleSnowboard}>Snowboards</button>
-// <br></br>
-// <button className={this.state.surfboardButton} onClick={this.toggleSurfboard}>Surfboard</button>
-// <br></br>
-// <button className={this.state.tentButton} onClick={this.toggleTent}>Tent</button>

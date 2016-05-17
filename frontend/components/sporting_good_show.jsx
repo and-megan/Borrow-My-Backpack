@@ -63,6 +63,7 @@ var style2 = {
 var SportingGoodShow = React.createClass({
   mixins: [CurrentUserState],
   getInitialState: function() {
+
     return {
       sportingGood: {pic_url: "", description: "",
       user_id: "", id: "", user: ""},

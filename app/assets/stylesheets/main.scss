@@ -68,6 +68,9 @@ header h1 {
 .nav-buttons:hover {
   color: #a8dec7;
 }
+.hide-nav-buttons {
+  display: none;
+}
 .profile-link {
   position: relative;
   width: 200px;
@@ -194,15 +197,16 @@ header h1 {
   border-bottom: 1px solid #CCC;
 }
 .modal {
+  background-image: image-url('blizzard.png');
   border: 1px solid #ccc;
-background: #fff;
-overflow: auto;
--webkit-overflow-scrolling: touch;
-border-radius: 4px;
-outline: none;
-padding: 20px;
-color: #515151;
-z-index: 11;
-width: 350px;
-height: 400px;
+  // background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  color: #515151;
+  z-index: 11;
+  width: 350px;
+  height: 400px;
 }

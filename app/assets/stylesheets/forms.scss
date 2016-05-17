@@ -3,13 +3,9 @@
 .login-form-container {
   display: flex;
   justify-content: center;
-  // background-color: #D9B1A3;
   width: 65%;
   height: 100%;
   margin: 10px auto;
-  // padding-top: 30px;
-  // padding: 40px;
-  // border: solid 1px #3A4039;
 }
 
 .user-form {
@@ -142,7 +138,7 @@ form#request-form {
 }
 
 .cancel-request {
-  margin-left: 215px;
+  margin-left: 110px;
 }
 div#sporting-good-edit {
   display: flex;
@@ -168,4 +164,7 @@ div#sporting-good-edit {
   margin-top: 3px;
   width: 50%;
   height: 40px;
+}
+label.request-field-date-label {
+  padding-bottom: 8px;
 }

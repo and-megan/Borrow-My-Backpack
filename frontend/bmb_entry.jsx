@@ -53,13 +53,6 @@ var App = React.createClass({
       currentUser: UserStore.currentUser()
     });
   },
-  // displayBackground: function () {
-  //   if (!UserStore.currentUser()) {
-  //     $('body').addClass('app-background');
-  //   } else {
-  //     $('body').removeClass('app-background');
-  //   }
-  // },
   render: function () {
     var background;
     if (!UserStore.currentUser()) {
@@ -78,16 +71,16 @@ var App = React.createClass({
 
 
 var routes = (
-    <Route path="/" component={App}>
-      <Route path="login" onEnter={requireNotSignedIn} component={LoginForm} />
-      <Route component={Landing} >
-        <IndexRoute component={SportingGoodIndex} />
-        <Route path="sporting_goods/received_requests" component={RequestInbox} />
-        <Route path="sporting_goods/sent_requests" component={SentRequestInbox} />
-        <Route path="sporting_goods/:sportingGoodId" component={SportingGoodShow} />
-        <Route path="sporting_goods/:sportingGoodId/edit" component={SportingGoodEdit} />
-      </Route>
+  <Route path="/" component={App}>
+    <Route path="login" onEnter={requireNotSignedIn} component={LoginForm} />
+    <Route component={Landing} >
+      <IndexRoute component={SportingGoodIndex} />
+      <Route path="sporting_goods/received_requests" component={RequestInbox} />
+      <Route path="sporting_goods/sent_requests" component={SentRequestInbox} />
+      <Route path="sporting_goods/:sportingGoodId" component={SportingGoodShow} />
+      <Route path="sporting_goods/:sportingGoodId/edit" component={SportingGoodEdit} />
     </Route>
+  </Route>
 );
 
 
