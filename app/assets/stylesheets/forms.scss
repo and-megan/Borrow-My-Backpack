@@ -121,10 +121,21 @@ section.user-form-fields {
   flex-direction: column;
 }
 .new-listing {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
   align-items: flex-end;
-  margin-left: 260px
+  margin-left: 139px;
+  margin-top: -10px;
 }
 .cancel {
   margin-left: 138px;
@@ -149,8 +160,8 @@ div#sporting-good-edit {
   margin-bottom: 30px;
 }
 .update-button-container {
-
-  margin-top: 40px;
+  margin-top: 60px;
+  margin-bottom: 10px;
 }
 .login-page {
   display: flex;

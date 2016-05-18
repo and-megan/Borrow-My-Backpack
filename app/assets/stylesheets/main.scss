@@ -190,6 +190,9 @@ header h1 {
   flex-direction: row-reverse;
   align-items: flex-start;
 }
+.label-text {
+  padding-left: 5px;
+}
 .modal-title {
   text-align: center;
   font-weight: bold;
@@ -197,7 +200,7 @@ header h1 {
   border-bottom: 1px solid #CCC;
 }
 .modal {
-  background-image: image-url('blizzard.png');
+  background-image: image-url('cream_dust.png');
   border: 1px solid #ccc;
   // background: #fff;
   overflow: auto;

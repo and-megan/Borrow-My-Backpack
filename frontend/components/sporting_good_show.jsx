@@ -154,7 +154,6 @@ var SportingGoodShow = React.createClass({
   },
 
   render: function() {
-    debugger;
     if (!this.state.currentUser || !this.state.sportingGood) {
       return (<div></div>);
     }

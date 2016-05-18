@@ -100,7 +100,8 @@ module.exports = React.createClass({
             <br></br>
             <div className="modal-field">
               <label>Address</label>
-              <textarea type="text" id='address-input' value={this.state.address} onChange={this.changeAddress}/>
+              <textarea type="text"
+                className="form-textarea" value={this.state.address} onChange={this.changeAddress}/>
             </div>
               <br></br>
               <br></br>
