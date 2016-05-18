@@ -32,7 +32,7 @@ var style = {
     color           : '#515151',
     zIndex          : 11,
     width           : '400px',
-    height          : '575px'
+    height          : '600px'
   }
 };
 var SportingGoodIndex = React.createClass({

@@ -163,7 +163,7 @@ var SportingGoodShow = React.createClass({
       <div id="sporting-good-container">
           {this.successMessage()}
         <Link className="back-to-listings" to="/">
-        &#8592; Back to all listings</Link>
+        &#8592; <u>Back to all listings</u></Link>
         <ul className="sporting-good-container-ul">
 
 

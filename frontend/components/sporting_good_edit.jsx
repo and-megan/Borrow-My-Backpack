@@ -86,7 +86,7 @@ module.exports = React.createClass({
 
             <br></br>
           <div className="modal-field">
-            <label>Picture url</label>
+            <label>Picture URL</label>
             <input type="url" className="form-input" value={this.state.pic_url} onChange={this.changeUrl}/>
           </div>
             <br></br>
