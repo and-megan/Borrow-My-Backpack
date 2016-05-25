@@ -146,8 +146,8 @@
 }
 .received-request-detail {
   top: 0;
-  left: 415px;
-  top: 10px;
+  left: 425px;
+  top: 35px;
   position: absolute;
   font-size: 18px;
 }
@@ -402,6 +402,7 @@
   margin-left: 875px;
   position: absolute;
   margin-top: 5px;
+  display: block;
 }
 .delete-me:hover {
   color: #0000b2;

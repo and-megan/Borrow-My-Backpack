@@ -70,13 +70,3 @@ var SentRequestIndexItem = React.createClass({
 });
 
 module.exports = SentRequestIndexItem;
-// <ul className='completed-request-container'>
-//   <li className={classColor}>
-//     <h2>{statusResponse}</h2>
-//   </li>
-//   <li>{sentRequest.sporting_good.category}</li>
-//   <li className="sporting-good-index-item">
-//     <img src={sentRequest.sporting_good.pic_url} className="received-request-pic" alt="sporting-good-item-pic" />
-//   </li>
-//   <li>{sentRequest.start_date} to {sentRequest.end_date}</li>
-// </ul>

@@ -69,7 +69,10 @@ pic_url: "http://i.imgur.com/ogPVR.jpg"
 SportingGood.create!(
 id: 1002,
 user_id: 1001,
-description: "Large. It is worn, but reliable. It fits a backpacking tent, sleeping bag, and minimal cooking equipment.",
+description: "Top-loading backpack easily holds a sleeping bag and a few extras. Has a ''rip-and-stick'' torso adjustment, shoulder strap system that easily slides on pack's frame to fit torsos of varying lengths
+Waistbelt wraps around and adjusts for the best fit; hipbelt sports two mesh zip pockets for stashing rocks, other found treasures or action figures!
+Hydration-compatible, zippered side pocket with a tube exit port holds up to a 1-liter reservoir. Top zippered pocket lets for stashing a headlamp, camp gear, and other gadgets. Unique ''windowpane'' panels on two zippered stash pockets let to allow you to inside, helping you to find your gear more quickly.
+Bottom zippered storage compartment lets you keep dirty shoes or clothes separate from main compartment",
 category: "backpack",
 lat: 37.769996,
 lng: -122.511281,
@@ -79,7 +82,9 @@ pic_url: "http://i.imgur.com/NGi79xE.jpg"
 SportingGood.create!(
 id: 1003,
 user_id: 1002,
-description: "3 years old. I can lend you boots, too.",
+description: "Borrow my snowboard (with Dakine stomp pad) and bindings setup. For the past few seasons, these have been used only as a backup board and haven't gotten much use. It's a fun jibbing board for those around 5ft 6in.
+
+It's about a 149 cm board. I don't know what brand this board is because the person I bought it from had spray painted over the whole top of it (he claimed it is a Burton; I have my doubts, but who knows). I have since done another coat of spray paint on it. Although the board has a little gash on the bottom (shown in pics), it doesn't affect the ride. I purchased the bindings new in the fall of 2005. They are Sims Link Helium bindings in size LARGE (I think they fit boot size 9-13). These aluminum bindings are in great shape and have plenty of life left in them. I've replaced one of the toe ratchets as well as some of the binding hardware with much higher quality nuts and bolts.",
 category: "snowboard",
 lat: 37.786049,
 lng: -122.481804,
@@ -89,7 +94,7 @@ pic_url: "http://i.imgur.com/QuevphZ.jpg"
 SportingGood.create!(
 id: 1004,
 user_id: 1002,
-description: "Rain fly included. The outermost pocket has a broken zipper, but in great shape other than that. It holds 38L. It would most comfortably fit someone between 5 foot 5 inches and 5 foot 10 inches.",
+description: "Rain fly included. The outermost pocket has a broken zipper, but in great shape other than that. It holds 38L. It would most comfortably fit someone between 5 foot 5 inches and 5 foot 10 inches. Very durable and strong material used for suspension and provides cooling airflow across the back. Shoulder straps and hipbelt use moisture-wicking mesh to help keep you dry on the main contact point of the body. It's very clean and ready for your backpacking activities. You are welcome to borrow my water bladder, which holds 3L.",
 category: "backpack",
 lat: 37.786049,
 lng: -122.481804,
@@ -99,7 +104,9 @@ pic_url: "http://i.imgur.com/UINm0AN.jpg"
 SportingGood.create!(
 id: 1005,
 user_id: 1001,
-description: "I'm out of town until September, so I'm hoping my surfboard can get a little love.",
+description: "I'm out of town until September, so I'm hoping my surfboard can get a little love. If you'd like a wetsuit for the freezing cold Pacific Ocean, you can borrow mine! It's an adult sized medium.
+
+5ft 5in performance fish surfboard. This board is catches waves well and is very fast, yet holds in in steeper sections due to a narrower tail. I really like this board, and have got it copied many times because it works so well.This Two Crows surfboard is in average-good condition with 2 repaired small dings and pressure dents on the deck.",
 category: "surfboard",
 lat: 37.786049,
 lng: -122.481804,

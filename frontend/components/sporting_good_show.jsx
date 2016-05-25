@@ -33,7 +33,7 @@ var style1 = {
     padding         : '20px',
     color           : '#515151',
     zIndex          : 11,
-    width           : '350px',
+    width           : '400px',
     height          : '400px'
   }
 };
@@ -172,6 +172,7 @@ var SportingGoodShow = React.createClass({
               <img src={this.state.sportingGood.pic_url} className="sporting-good-show-pic" alt="sporting_good_item_show" />
             </li>
             <li className="sporting-good-show-pic-description">
+                <div className="show-description-title">About this {this.state.sportingGood.category}: </div>
               {this.state.sportingGood.description}
             </li>
           </ul>
